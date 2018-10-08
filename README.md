@@ -27,3 +27,4 @@ crany1992@gmail.com, crany1992@gmail.com
 ## License
 
 ICLabel is available under the MIT license. See the LICENSE file for more info.
+

@@ -1,0 +1,6 @@
+framework module ICLabel {
+  umbrella header "ICLabel-umbrella.h"
+
+  export *
+  module * { export * }
+}

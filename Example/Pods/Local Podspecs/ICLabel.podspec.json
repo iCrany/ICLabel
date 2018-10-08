@@ -1,0 +1,22 @@
+{
+  "name": "ICLabel",
+  "version": "0.1.0",
+  "summary": "A short description of ICLabel.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/crany1992@gmail.com/ICLabel",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "crany1992@gmail.com": "crany1992@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/crany1992@gmail.com/ICLabel.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "ICLabel/Classes/**/*"
+}

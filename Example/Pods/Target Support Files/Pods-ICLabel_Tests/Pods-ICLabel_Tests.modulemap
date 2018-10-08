@@ -1,0 +1,6 @@
+framework module Pods_ICLabel_Tests {
+  umbrella header "Pods-ICLabel_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
