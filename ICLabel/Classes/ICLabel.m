@@ -64,6 +64,7 @@ static BOOL kIsInDebugMode = NO;
     _textColor = [UIColor blackColor];
     
     _isNeedRelayout = YES;
+    self.userInteractionEnabled = NO; // default is NO
     
     _truncationToken = [[NSAttributedString alloc] initWithString:kEllipsisCharacter];
     _lineBreakMode = NSLineBreakByTruncatingTail;
