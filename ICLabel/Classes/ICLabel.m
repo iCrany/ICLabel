@@ -133,7 +133,7 @@ static BOOL kIsInDebugMode = NO;
     
     //这里处理获取被点击区域的 CFIndex 坐标
     NSInteger lineCount = CFArrayGetCount(_ctLines);
-    CGPoint *origins = malloc(lineCount * sizeof(CGPoint));
+    CGPoint origins[lineCount];
     if (lineCount >= 0) {
         CTFrameGetLineOrigins(_ctFrame, CFRangeMake(0, 0), origins);
         for (int i = 0; i < lineCount; i++) {
@@ -199,9 +199,6 @@ static BOOL kIsInDebugMode = NO;
             }
         }
     }
-    
-    CFRelease(origins);
-    
     return retIndex;
 }
 

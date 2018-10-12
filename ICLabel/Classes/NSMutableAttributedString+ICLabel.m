@@ -9,6 +9,7 @@
 #import "NSMutableAttributedString+ICLabel.h"
 #import "ICLabelAttachment.h"
 #import "ICLabelMarco.h"
+#import <CoreText/CoreText.h>
 
 @implementation NSMutableAttributedString (ICLabel)
 
