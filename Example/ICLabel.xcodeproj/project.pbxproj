@@ -13,7 +13,7 @@
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* ICAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* ICAppDelegate.m */; };
-		6003F5A7195388D20070C39A /* ICViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* ICViewController.m */; };
+		6003F5A7195388D20070C39A /* ICDemoTableViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* ICDemoTableViewVC.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -21,9 +21,28 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
-		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		87554070409C637EF0F6FCD8 /* Pods_ICLabel_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E9DCF3F8D271E013713CDD /* Pods_ICLabel_Example.framework */; };
 		A5B0F74164176F349C412064 /* Pods_ICLabel_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A8261370E10EAB14F80D70 /* Pods_ICLabel_Tests.framework */; };
+		ECA47D4521BA740000A1438C /* ICBenchMarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D2B21BA740000A1438C /* ICBenchMarkCell.swift */; };
+		ECA47D4621BA740000A1438C /* DisplayingTextInNonrectangularRegionView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D2E21BA740000A1438C /* DisplayingTextInNonrectangularRegionView.m */; };
+		ECA47D4721BA740000A1438C /* ApplyingParagraphStyleView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D2F21BA740000A1438C /* ApplyingParagraphStyleView.m */; };
+		ECA47D4821BA740000A1438C /* LayingOutParagraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D3121BA740000A1438C /* LayingOutParagraphView.swift */; };
+		ECA47D4921BA740000A1438C /* ColumnarLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D3221BA740000A1438C /* ColumnarLayoutView.m */; };
+		ECA47D4A21BA740000A1438C /* SimpleTextLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D3321BA740000A1438C /* SimpleTextLabelView.m */; };
+		ECA47D4B21BA740000A1438C /* ManualLineBreakingView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D3621BA740000A1438C /* ManualLineBreakingView.m */; };
+		ECA47D4C21BA740000A1438C /* CoreTextLineSpacingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D3821BA740000A1438C /* CoreTextLineSpacingVC.swift */; };
+		ECA47D4D21BA740000A1438C /* ICLineSpacingDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D3921BA740000A1438C /* ICLineSpacingDemoVC.swift */; };
+		ECA47D4E21BA740000A1438C /* ICExpendLabelDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D3A21BA740000A1438C /* ICExpendLabelDemoVC.swift */; };
+		ECA47D4F21BA740000A1438C /* TTTAttributedLabelDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D3B21BA740000A1438C /* TTTAttributedLabelDemoVC.swift */; };
+		ECA47D5121BA740000A1438C /* ICLabelDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D3D21BA740000A1438C /* ICLabelDemoVC.swift */; };
+		ECA47D5221BA740000A1438C /* YYLabelTouchDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D3E21BA740000A1438C /* YYLabelTouchDemoVC.swift */; };
+		ECA47D5321BA740000A1438C /* ICLabelBenchmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D3F21BA740000A1438C /* ICLabelBenchmarkVC.swift */; };
+		ECA47D5421BA740000A1438C /* ICAttachmentLayerDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D4021BA740000A1438C /* ICAttachmentLayerDemoVC.swift */; };
+		ECA47D5621BA740000A1438C /* ICLineBreakModeDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D4221BA740000A1438C /* ICLineBreakModeDemoVC.swift */; };
+		ECA47D5821BA740000A1438C /* ICAttachmentLabelDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D4421BA740000A1438C /* ICAttachmentLabelDemoVC.swift */; };
+		ECA47D5B21BA741A00A1438C /* CommomMarco.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D5A21BA741A00A1438C /* CommomMarco.swift */; };
+		ECA47D5E21BA745F00A1438C /* CoreTextConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D5D21BA745F00A1438C /* CoreTextConstant.swift */; };
+		ECA47D6121BA866200A1438C /* DemoItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D6021BA866200A1438C /* DemoItemModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +71,8 @@
 		6003F59B195388D20070C39A /* ICLabel-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ICLabel-Prefix.pch"; sourceTree = "<group>"; };
 		6003F59C195388D20070C39A /* ICAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICAppDelegate.h; sourceTree = "<group>"; };
 		6003F59D195388D20070C39A /* ICAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* ICViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* ICViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICViewController.m; sourceTree = "<group>"; };
+		6003F5A5195388D20070C39A /* ICDemoTableViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICDemoTableViewVC.h; sourceTree = "<group>"; };
+		6003F5A6195388D20070C39A /* ICDemoTableViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICDemoTableViewVC.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* ICLabel_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ICLabel_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -63,10 +82,35 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83E9DCF3F8D271E013713CDD /* Pods_ICLabel_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICLabel_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B907BE2D0DAD28F18702BC5C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DC9D029D45596C921CFB9F98 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E1A8261370E10EAB14F80D70 /* Pods_ICLabel_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICLabel_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECA47D2821BA581300A1438C /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		ECA47D2B21BA740000A1438C /* ICBenchMarkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICBenchMarkCell.swift; sourceTree = "<group>"; };
+		ECA47D2C21BA740000A1438C /* ColumnarLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColumnarLayoutView.h; sourceTree = "<group>"; };
+		ECA47D2D21BA740000A1438C /* SimpleTextLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTextLabelView.h; sourceTree = "<group>"; };
+		ECA47D2E21BA740000A1438C /* DisplayingTextInNonrectangularRegionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayingTextInNonrectangularRegionView.m; sourceTree = "<group>"; };
+		ECA47D2F21BA740000A1438C /* ApplyingParagraphStyleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyingParagraphStyleView.m; sourceTree = "<group>"; };
+		ECA47D3021BA740000A1438C /* ManualLineBreakingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManualLineBreakingView.h; sourceTree = "<group>"; };
+		ECA47D3121BA740000A1438C /* LayingOutParagraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayingOutParagraphView.swift; sourceTree = "<group>"; };
+		ECA47D3221BA740000A1438C /* ColumnarLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColumnarLayoutView.m; sourceTree = "<group>"; };
+		ECA47D3321BA740000A1438C /* SimpleTextLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTextLabelView.m; sourceTree = "<group>"; };
+		ECA47D3421BA740000A1438C /* DisplayingTextInNonrectangularRegionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayingTextInNonrectangularRegionView.h; sourceTree = "<group>"; };
+		ECA47D3521BA740000A1438C /* ApplyingParagraphStyleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyingParagraphStyleView.h; sourceTree = "<group>"; };
+		ECA47D3621BA740000A1438C /* ManualLineBreakingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManualLineBreakingView.m; sourceTree = "<group>"; };
+		ECA47D3821BA740000A1438C /* CoreTextLineSpacingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreTextLineSpacingVC.swift; sourceTree = "<group>"; };
+		ECA47D3921BA740000A1438C /* ICLineSpacingDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICLineSpacingDemoVC.swift; sourceTree = "<group>"; };
+		ECA47D3A21BA740000A1438C /* ICExpendLabelDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICExpendLabelDemoVC.swift; sourceTree = "<group>"; };
+		ECA47D3B21BA740000A1438C /* TTTAttributedLabelDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTAttributedLabelDemoVC.swift; sourceTree = "<group>"; };
+		ECA47D3D21BA740000A1438C /* ICLabelDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICLabelDemoVC.swift; sourceTree = "<group>"; };
+		ECA47D3E21BA740000A1438C /* YYLabelTouchDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYLabelTouchDemoVC.swift; sourceTree = "<group>"; };
+		ECA47D3F21BA740000A1438C /* ICLabelBenchmarkVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICLabelBenchmarkVC.swift; sourceTree = "<group>"; };
+		ECA47D4021BA740000A1438C /* ICAttachmentLayerDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICAttachmentLayerDemoVC.swift; sourceTree = "<group>"; };
+		ECA47D4221BA740000A1438C /* ICLineBreakModeDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICLineBreakModeDemoVC.swift; sourceTree = "<group>"; };
+		ECA47D4421BA740000A1438C /* ICAttachmentLabelDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICAttachmentLabelDemoVC.swift; sourceTree = "<group>"; };
+		ECA47D5A21BA741A00A1438C /* CommomMarco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommomMarco.swift; sourceTree = "<group>"; };
+		ECA47D5D21BA745F00A1438C /* CoreTextConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTextConstant.swift; sourceTree = "<group>"; };
+		ECA47D6021BA866200A1438C /* DemoItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoItemModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,11 +176,9 @@
 		6003F593195388D20070C39A /* Example for ICLabel */ = {
 			isa = PBXGroup;
 			children = (
+				ECA47CEA21BA57C900A1438C /* Module */,
 				6003F59C195388D20070C39A /* ICAppDelegate.h */,
 				6003F59D195388D20070C39A /* ICAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* ICViewController.h */,
-				6003F5A6195388D20070C39A /* ICViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -152,6 +194,7 @@
 				6003F596195388D20070C39A /* InfoPlist.strings */,
 				6003F599195388D20070C39A /* main.m */,
 				6003F59B195388D20070C39A /* ICLabel-Prefix.pch */,
+				ECA47D2821BA581300A1438C /* Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -194,6 +237,88 @@
 				1496B3522620960D70AEFFA7 /* Pods-ICLabel_Tests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		ECA47CEA21BA57C900A1438C /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				ECA47D5C21BA745300A1438C /* Constant */,
+				ECA47D5921BA740A00A1438C /* Marco */,
+				ECA47D2921BA73CE00A1438C /* Example */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		ECA47D2921BA73CE00A1438C /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				ECA47D5F21BA863000A1438C /* Model */,
+				ECA47D3721BA740000A1438C /* VC */,
+				ECA47D2A21BA740000A1438C /* View */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		ECA47D2A21BA740000A1438C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ECA47D2B21BA740000A1438C /* ICBenchMarkCell.swift */,
+				ECA47D2C21BA740000A1438C /* ColumnarLayoutView.h */,
+				ECA47D2D21BA740000A1438C /* SimpleTextLabelView.h */,
+				ECA47D2E21BA740000A1438C /* DisplayingTextInNonrectangularRegionView.m */,
+				ECA47D2F21BA740000A1438C /* ApplyingParagraphStyleView.m */,
+				ECA47D3021BA740000A1438C /* ManualLineBreakingView.h */,
+				ECA47D3121BA740000A1438C /* LayingOutParagraphView.swift */,
+				ECA47D3221BA740000A1438C /* ColumnarLayoutView.m */,
+				ECA47D3321BA740000A1438C /* SimpleTextLabelView.m */,
+				ECA47D3421BA740000A1438C /* DisplayingTextInNonrectangularRegionView.h */,
+				ECA47D3521BA740000A1438C /* ApplyingParagraphStyleView.h */,
+				ECA47D3621BA740000A1438C /* ManualLineBreakingView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ECA47D3721BA740000A1438C /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				6003F5A5195388D20070C39A /* ICDemoTableViewVC.h */,
+				6003F5A6195388D20070C39A /* ICDemoTableViewVC.m */,
+				ECA47D3821BA740000A1438C /* CoreTextLineSpacingVC.swift */,
+				ECA47D3921BA740000A1438C /* ICLineSpacingDemoVC.swift */,
+				ECA47D3A21BA740000A1438C /* ICExpendLabelDemoVC.swift */,
+				ECA47D3B21BA740000A1438C /* TTTAttributedLabelDemoVC.swift */,
+				ECA47D3D21BA740000A1438C /* ICLabelDemoVC.swift */,
+				ECA47D3E21BA740000A1438C /* YYLabelTouchDemoVC.swift */,
+				ECA47D3F21BA740000A1438C /* ICLabelBenchmarkVC.swift */,
+				ECA47D4021BA740000A1438C /* ICAttachmentLayerDemoVC.swift */,
+				ECA47D4221BA740000A1438C /* ICLineBreakModeDemoVC.swift */,
+				ECA47D4421BA740000A1438C /* ICAttachmentLabelDemoVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		ECA47D5921BA740A00A1438C /* Marco */ = {
+			isa = PBXGroup;
+			children = (
+				ECA47D5A21BA741A00A1438C /* CommomMarco.swift */,
+			);
+			path = Marco;
+			sourceTree = "<group>";
+		};
+		ECA47D5C21BA745300A1438C /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				ECA47D5D21BA745F00A1438C /* CoreTextConstant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		ECA47D5F21BA863000A1438C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ECA47D6021BA866200A1438C /* DemoItemModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,7 +402,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
@@ -338,11 +462,27 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ICLabel_Example/Pods-ICLabel_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DTCoreText/DTCoreText.framework",
+				"${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework",
 				"${BUILT_PRODUCTS_DIR}/ICLabel/ICLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/M80AttributedLabel/M80AttributedLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-4/iOS/RevealServer.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/TTTAttributedLabel/TTTAttributedLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTCoreText.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTFoundation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ICLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M80AttributedLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTTAttributedLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -380,9 +520,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECA47D5E21BA745F00A1438C /* CoreTextConstant.swift in Sources */,
 				6003F59E195388D20070C39A /* ICAppDelegate.m in Sources */,
-				6003F5A7195388D20070C39A /* ICViewController.m in Sources */,
+				ECA47D4C21BA740000A1438C /* CoreTextLineSpacingVC.swift in Sources */,
+				ECA47D5621BA740000A1438C /* ICLineBreakModeDemoVC.swift in Sources */,
+				ECA47D4A21BA740000A1438C /* SimpleTextLabelView.m in Sources */,
+				ECA47D5221BA740000A1438C /* YYLabelTouchDemoVC.swift in Sources */,
+				ECA47D5821BA740000A1438C /* ICAttachmentLabelDemoVC.swift in Sources */,
+				ECA47D5321BA740000A1438C /* ICLabelBenchmarkVC.swift in Sources */,
+				ECA47D4F21BA740000A1438C /* TTTAttributedLabelDemoVC.swift in Sources */,
+				ECA47D4D21BA740000A1438C /* ICLineSpacingDemoVC.swift in Sources */,
+				ECA47D4921BA740000A1438C /* ColumnarLayoutView.m in Sources */,
+				6003F5A7195388D20070C39A /* ICDemoTableViewVC.m in Sources */,
+				ECA47D5121BA740000A1438C /* ICLabelDemoVC.swift in Sources */,
+				ECA47D4E21BA740000A1438C /* ICExpendLabelDemoVC.swift in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				ECA47D5421BA740000A1438C /* ICAttachmentLayerDemoVC.swift in Sources */,
+				ECA47D4721BA740000A1438C /* ApplyingParagraphStyleView.m in Sources */,
+				ECA47D6121BA866200A1438C /* DemoItemModel.swift in Sources */,
+				ECA47D4621BA740000A1438C /* DisplayingTextInNonrectangularRegionView.m in Sources */,
+				ECA47D4521BA740000A1438C /* ICBenchMarkCell.swift in Sources */,
+				ECA47D4821BA740000A1438C /* LayingOutParagraphView.swift in Sources */,
+				ECA47D5B21BA741A00A1438C /* CommomMarco.swift in Sources */,
+				ECA47D4B21BA740000A1438C /* ManualLineBreakingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +669,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3812FE2D1BA594EFDD693D6E /* Pods-ICLabel_Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ICLabel/ICLabel-Prefix.pch";
@@ -516,6 +677,8 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -524,6 +687,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 01EF531FB8D470EC40E1CEE0 /* Pods-ICLabel_Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ICLabel/ICLabel-Prefix.pch";
@@ -531,6 +695,8 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -539,6 +705,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 586C1F8E97DF0E985E05FECD /* Pods-ICLabel_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -563,6 +730,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1496B3522620960D70AEFFA7 /* Pods-ICLabel_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

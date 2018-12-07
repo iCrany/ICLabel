@@ -2,17 +2,24 @@
 //  ICAppDelegate.m
 //  ICLabel
 //
-//  Created by crany1992@gmail.com on 10/08/2018.
-//  Copyright (c) 2018 crany1992@gmail.com. All rights reserved.
+//  Created by iCrany on 10/08/2018.
+//  Copyright (c) 2018 iCrany. All rights reserved.
 //
 
 #import "ICAppDelegate.h"
+#import "ICDemoTableViewVC.h"
 
 @implementation ICAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, UIScreen.mainScreen.bounds.size.height)];
+    ICDemoTableViewVC *rootVC = [[ICDemoTableViewVC alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:rootVC];
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

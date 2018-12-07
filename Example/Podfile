@@ -1,7 +1,18 @@
+platform :ios, '8.0'
 use_frameworks!
+
+inhibit_all_warnings! #ignore all warning from all pods
 
 target 'ICLabel_Example' do
   pod 'ICLabel', :path => '../'
+  pod 'YYText'
+  pod 'M80AttributedLabel'
+  pod 'TTTAttributedLabel'
+  pod 'DTCoreText'
+  pod 'SwiftLint'
+  pod 'SnapKit', '~> 4.0'
+  pod 'Masonry', '~> 0.6'
+  pod 'Reveal-SDK', '~> 4.0.0' , :configurations => ['Debug']
 
   target 'ICLabel_Tests' do
     inherit! :search_paths

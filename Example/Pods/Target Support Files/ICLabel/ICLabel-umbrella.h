@@ -10,6 +10,13 @@
 #endif
 #endif
 
+#import "ICHighlight.h"
+#import "ICLabel.h"
+#import "ICLabelAttachment.h"
+#import "ICLabelDrawService.h"
+#import "ICLabelMarco.h"
+#import "ICLinkData.h"
+#import "NSMutableAttributedString+ICLabel.h"
 
 FOUNDATION_EXPORT double ICLabelVersionNumber;
 FOUNDATION_EXPORT const unsigned char ICLabelVersionString[];
