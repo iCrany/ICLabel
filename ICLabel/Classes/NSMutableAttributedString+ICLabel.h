@@ -71,4 +71,16 @@
 - (void)ic_setHightlight:(ICHighlight *)hightlight;
 - (void)ic_setHightlight:(ICHighlight *)hightlight range:(NSRange)range;
 
+//################################## Other helper method ##################################
+
+/**
+ 该方法会根据 maxWith / font 参数来判断是否需要添加 lineSpacing 参数，因为 UILabel 在支持 lineSpacing 的前提下，若文本只显示一行，UILabel 会将 lineSpacing 一起统计到计算的高度中去，
+ 所以该方法会动态监测若只有一行就不添加 lineSpacing 参数了
+
+ @param lineSpacing 行间距
+ @param maxWidth 控件占据的最大宽度
+ @param font 控件的字体
+ */
+- (void)ic_setParagraphStyle_linespacing:(CGFloat)lineSpacing maxWidth:(CGFloat)maxWidth withFont:(UIFont *)font;
+
 @end

@@ -255,10 +255,39 @@ static BOOL kIsInDebugMode = NO;
         
 #ifdef DEBUG
         if (kIsInDebugMode) {
-            UIView *baselineView = [[UIView alloc] initWithFrame:CGRectMake(ctLineOriginPoint.x, rect.size.height - ctLineOriginPoint.y, lineWidth, 1)];
+            UIView *baselineView = [[UIView alloc] initWithFrame:CGRectMake(ctLineOriginPoint.x,
+                                                                            rect.size.height - ctLineOriginPoint.y,
+                                                                            lineWidth,
+                                                                            1)];
             baselineView.backgroundColor = (i == 0 ? [UIColor redColor] : [UIColor blueColor]);
-            baselineView.alpha = 0.5;
             [self addSubview:baselineView];
+            
+            UIView *capHeightView = [[UIView alloc] initWithFrame:CGRectMake(ctLineOriginPoint.x,
+                                                                             rect.size.height - ctLineOriginPoint.y - self.font.capHeight,
+                                                                             lineWidth, 1)];
+            capHeightView.backgroundColor = [UIColor blackColor];
+            [self addSubview:capHeightView];
+            
+            UIView *descenderView = [[UIView alloc] initWithFrame:CGRectMake(ctLineOriginPoint.x,
+                                                                             rect.size.height - ctLineOriginPoint.y + lineDescent,
+                                                                             lineWidth,
+                                                                             1)];
+            descenderView.backgroundColor = [UIColor greenColor];
+            [self addSubview:descenderView];
+            
+            UIView *ascenderView = [[UIView alloc] initWithFrame:CGRectMake(ctLineOriginPoint.x,
+                                                                            rect.size.height - ctLineOriginPoint.y - lineAscent,
+                                                                            lineWidth,
+                                                                            1)];
+            ascenderView.backgroundColor = [UIColor orangeColor];
+            [self addSubview:ascenderView];
+            
+            UIView *leadingView = [[UIView alloc] initWithFrame:CGRectMake(ctLineOriginPoint.x,
+                                                                           rect.size.height - ctLineOriginPoint.y + lineDescent + lineLeading,
+                                                                           lineWidth,
+                                                                           1)];
+            leadingView.backgroundColor = [UIColor brownColor];
+            [self addSubview:leadingView];
         }
 #endif
 
@@ -388,6 +417,10 @@ static BOOL kIsInDebugMode = NO;
                 //经调试该接口是会主动自己做相关的截断操作，我们仅仅需要将 truncationToken 添加到需要进行裁断处理的当前行字符中去即可，不需要自己做截断字符串的动作
                 CTLineRef truncationedLine = CTLineCreateTruncatedLine(curCTLine, rect.size.width, truncationType, truncationToken);
                 
+                //If the width of the line specified in truncationToken is greater, this function will return NULL if truncation is needed
+                if (!truncationedLine) {
+                    truncationedLine = CFRetain(truncationToken);
+                }
                 CTLineDraw(truncationedLine, context); //单独绘制做裁断的这一行的数据
                 
                 CFRelease(curCTLine);
@@ -451,7 +484,6 @@ static BOOL kIsInDebugMode = NO;
     }
     
     if (self.curHightlight) {
-#warning TODO: 这里应该对当前点击的文字或者附件进行高亮的绘制处理
         [self setNeedsDisplay];
     } else {
         [super touchesBegan:touches withEvent:event];
@@ -468,7 +500,6 @@ static BOOL kIsInDebugMode = NO;
     
     CFIndex clostestIndex = [self __getClostestIndex:locationInView];
     if (clostestIndex != kCFNotFound) {
-#warning TODO: 点击的内容已经变更了，所以这里也应该对当前点击的文字或者附件进行高亮的绘制处理
         NSDictionary *dict = [self.attributedString attributesAtIndex:clostestIndex longestEffectiveRange:nil inRange:NSMakeRange(0, self.attributedString.length)];
         ICHighlight *hightlight = dict[ICTextHighlightAttributeName];
         self.curHightlight = hightlight;
@@ -553,11 +584,6 @@ static BOOL kIsInDebugMode = NO;
 - (void)setAttributedString:(NSMutableAttributedString *)attributedString {
     if (![attributedString isEqualToAttributedString:_attributedString]) {
         _attributedString = attributedString;
-        
-        [_attributedString ic_setFont:self.font];
-        [_attributedString ic_setForegroundColor:self.textColor];
-        [_attributedString ic_setParagraphStyle_linespacing:_lineSpacing];
-        
         [self relayoutText];
     }
 }
@@ -581,13 +607,17 @@ static BOOL kIsInDebugMode = NO;
 - (void)setFont:(UIFont *)font {
     if (self.font != font) {
         _font = font;
+        [_attributedString ic_setFont:_font];
         [self relayoutText];
     }
 }
 
 - (void)setTextColor:(UIColor *)textColor {
-    _textColor = textColor;
-    [self relayoutText];
+    if (self.textColor != textColor) {
+        _textColor = textColor;
+        [_attributedString ic_setForegroundColor:self.textColor];
+        [self relayoutText];
+    }
 }
 
 - (void)setTruncationToken:(NSAttributedString *)truncationToken {

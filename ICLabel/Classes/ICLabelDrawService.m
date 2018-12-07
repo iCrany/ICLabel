@@ -9,6 +9,7 @@
 #import "ICLabelDrawService.h"
 #import "ICLabelAttachment.h"
 #import "ICLabel.h"
+#import <CoreText/CoreText.h>
 
 @implementation ICLabelDrawService
 
@@ -59,6 +60,8 @@
     
     //经调试该接口是会主动自己做相关的截断操作，我们仅仅需要将 truncationToken 添加到需要进行裁断处理的当前行字符中去即可，不需要自己做截断字符串的动作
     CTLineRef truncationedLine = CTLineCreateTruncatedLine(curCTLine, rect.size.width, truncationType, truncationToken);
+    
+    if (!truncationedLine) { truncationedLine = CFRetain(truncationToken); }
     
     CFArrayRef glyRunList = CTLineGetGlyphRuns(truncationedLine);
     CFIndex glyRunCount = CFArrayGetCount(glyRunList);
@@ -114,7 +117,11 @@
                 [label addSubview:attachmentView];
             }
         } else if ([attachment.content isKindOfClass:[CALayer class]]) { //处理 CALayer 的类型
-            //TODO: 支持 CALayer 的类型附件
+            CALayer *attachmentLayer = attachment.content;
+            attachmentLayer.frame = attachmentFrame;
+            if (attachmentLayer.superlayer == nil) { //防止重复添加
+                [label.layer addSublayer:attachmentLayer];
+            }
         }
         
         runXOffset += glyRunWidth;

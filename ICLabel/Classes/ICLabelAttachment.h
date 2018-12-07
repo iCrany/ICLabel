@@ -46,7 +46,7 @@ typedef enum : NSUInteger {
 
 /**
  构造方法
- @param content 仅支持 UIImage / UIView
+ @param content 支持 UIImage / UIView / CALayer
  @return ICLabelAttachment 对象
  */
 + (ICLabelAttachment *)attachmentWithContent:(id)content

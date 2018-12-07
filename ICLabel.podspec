@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ICLabel'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A short description of ICLabel.'
 
 # This description is used to generate tags and improve search results.
@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/crany1992@gmail.com/ICLabel'
+  s.homepage         = 'https://github.com/icrany/ICLabel'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'crany1992@gmail.com' => 'crany1992@gmail.com' }
-  s.source           = { :git => 'https://github.com/crany1992@gmail.com/ICLabel.git', :tag => s.version.to_s }
+  s.author           = { 'icrany' => 'crany1992@gmail.com' }
+  s.source           = { :git => 'https://github.com/icrany/ICLabel.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'

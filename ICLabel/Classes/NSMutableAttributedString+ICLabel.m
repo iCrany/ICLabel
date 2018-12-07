@@ -42,7 +42,7 @@
     [placeholderAttrStr setAttributes:attrDict range:NSMakeRange(0, placeholderAttrStr.length)];
     [placeholderAttrStr ic_setHightlight:highlight];
     
-    CFRelease(delegate);
+    if (delegate) { CFRelease(delegate); }
     
     if (index == self.length) {
         [self appendAttributedString:placeholderAttrStr];
@@ -183,6 +183,28 @@
 
 - (void)ic_setHightlight:(ICHighlight *)hightlight range:(NSRange)range {
     [self ic_setAttribute:ICTextHighlightAttributeName value:hightlight range:range];
+}
+
+#pragma mark - Other method
+- (void)ic_setParagraphStyle_linespacing:(CGFloat)lineSpacing maxWidth:(CGFloat)maxWidth withFont:(UIFont *)font {
+    BOOL isMoreThanOneLine = [self __isMoreThanOneLineWithMaxWidth:maxWidth withFont:font];
+    if (isMoreThanOneLine) {//超过一行才设置 lineSpacing 参数
+        [self ic_setParagraphStyle_linespacing:lineSpacing];
+    }
+}
+
+- (BOOL)__isMoreThanOneLineWithMaxWidth:(CGFloat)maxWidth withFont:(UIFont *)font {
+    if (self.length == 0) return NO;
+    
+    CGFloat lineHeight = font.lineHeight;//lineheight = |font.descent| + font.ascent + font.leading
+    CGRect rect = [self boundingRectWithSize:CGSizeMake(maxWidth, CGFLOAT_MAX)
+                                     options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                                     context: nil];
+    
+    if (rect.size.height - lineHeight > FLT_MIN) {
+        return YES;
+    }
+    return NO;
 }
 
 @end
