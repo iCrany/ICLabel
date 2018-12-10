@@ -49,7 +49,7 @@ class ICAttachmentLayerDemoVC: UIViewController {
 
         self.view.addSubview(self.icLabel)
         self.icLabel.backgroundColor = UIColor.lightGray
-        self.icLabel.attributedString = icAttrText.mutableCopy() as? NSMutableAttributedString
+        self.icLabel.attributedText = icAttrText.mutableCopy() as? NSMutableAttributedString
         let size: CGSize = self.icLabel.sizeThatFits(CGSize(width: kScreenWidth - Constant.kLabelInsets.left - Constant.kLabelInsets.right, height: CGFloat.greatestFiniteMagnitude))
         self.icLabel.snp.makeConstraints { (maker) in
             maker.top.equalToSuperview().offset(100)

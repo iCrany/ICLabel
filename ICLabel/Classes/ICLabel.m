@@ -8,11 +8,11 @@
 
 #import "ICLabel.h"
 #import <CoreText/CoreText.h>
-#import "ICLinkData.h"
 #import "NSMutableAttributedString+ICLabel.h"
 #import "ICLabelDrawService.h"
 #import "ICLabelMarco.h"
 #import "ICHighlight.h"
+#import "ICLabelAttachment.h"
 
 static BOOL kIsInDebugMode = NO;
 
@@ -146,7 +146,7 @@ static BOOL kIsInDebugMode = NO;
 
                 if (tapIndex != kCFNotFound) {
                     CFRange thisLineRange = CTLineGetStringRange(line);
-                    NSAttributedString *thisLineAttr = [_attributedString attributedSubstringFromRange:NSMakeRange(thisLineRange.location, thisLineRange.length)];
+                    NSAttributedString *thisLineAttr = [_attributedText attributedSubstringFromRange:NSMakeRange(thisLineRange.location, thisLineRange.length)];
                     NSAttributedString *tapAttr = nil;
                     if (tapIndex - thisLineRange.location >=0 && tapIndex - thisLineRange.location < thisLineAttr.length) {
                         tapAttr = [thisLineAttr attributedSubstringFromRange:NSMakeRange(tapIndex - thisLineRange.location, 1)];
@@ -295,7 +295,7 @@ static BOOL kIsInDebugMode = NO;
             BOOL isMoreThanNumberOfLineLimit = [self __isMoreThanNumberOfLineLimit];
             if (isMoreThanNumberOfLineLimit && i == numberOfLines - 1) {
                 CFRange curLineRange = CTLineGetStringRange(ctLine);
-                NSMutableAttributedString *curLineAttrStr = [[_attributedString attributedSubstringFromRange:NSMakeRange(curLineRange.location, curLineRange.length)] mutableCopy]; //这一行中需要进行裁剪的 str 位置
+                NSMutableAttributedString *curLineAttrStr = [[_attributedText attributedSubstringFromRange:NSMakeRange(curLineRange.location, curLineRange.length)] mutableCopy]; //这一行中需要进行裁剪的 str 位置
                 ICLabelAttachment *attachment = [ICLabelDrawService drawTrunctionTokenWithCTX:contextRef
                                                                                         label:self
                                                                                          rect:rect
@@ -408,7 +408,7 @@ static BOOL kIsInDebugMode = NO;
                     }
                 }
                 
-                NSMutableAttributedString *curLineAttrStr = [[_attributedString attributedSubstringFromRange:NSMakeRange(curLineRange.location, curLineRange.length)] mutableCopy]; //这一行中需要进行裁剪的 str 位置
+                NSMutableAttributedString *curLineAttrStr = [[_attributedText attributedSubstringFromRange:NSMakeRange(curLineRange.location, curLineRange.length)] mutableCopy]; //这一行中需要进行裁剪的 str 位置
                 [curLineAttrStr appendAttributedString:trunctionTokenAttrStr];
                 
                 CTLineRef curCTLine = CTLineCreateWithAttributedString((__bridge CFAttributedStringRef)curLineAttrStr);
@@ -449,10 +449,10 @@ static BOOL kIsInDebugMode = NO;
     CGContextTranslateCTM(context, 0, self.bounds.size.height);
     CGContextScaleCTM(context, 1.0, -1.0);
     
-    if (self.attributedString && self.attributedString.length > 0) {
-        [self __resetFrameWithString:self.attributedString rect:rect];//检测 CTFrame 参数是否已更新
+    if (self.attributedText && self.attributedText.length > 0) {
+        [self __resetFrameWithString:self.attributedText rect:rect];//检测 CTFrame 参数是否已更新
         [self __drawAttachmentsWithRect:rect];//绘制附件
-        [self __drawText:self.attributedString rect:rect context:context];//绘制文字
+        [self __drawText:self.attributedText rect:rect context:context];//绘制文字
     }
     
     CGContextRestoreGState(context);
@@ -476,7 +476,7 @@ static BOOL kIsInDebugMode = NO;
         if (self.curHightlight == nil) {
             CFIndex clostestIndex = [self __getClostestIndex:locationInView];
             if (clostestIndex != kCFNotFound) {
-                NSDictionary *dict = [self.attributedString attributesAtIndex:clostestIndex longestEffectiveRange:nil inRange:NSMakeRange(0, self.attributedString.length)];
+                NSDictionary *dict = [self.attributedText attributesAtIndex:clostestIndex longestEffectiveRange:nil inRange:NSMakeRange(0, self.attributedText.length)];
                 ICHighlight *hightlight = dict[ICTextHighlightAttributeName];
                 self.curHightlight = hightlight;
             }
@@ -500,7 +500,7 @@ static BOOL kIsInDebugMode = NO;
     
     CFIndex clostestIndex = [self __getClostestIndex:locationInView];
     if (clostestIndex != kCFNotFound) {
-        NSDictionary *dict = [self.attributedString attributesAtIndex:clostestIndex longestEffectiveRange:nil inRange:NSMakeRange(0, self.attributedString.length)];
+        NSDictionary *dict = [self.attributedText attributesAtIndex:clostestIndex longestEffectiveRange:nil inRange:NSMakeRange(0, self.attributedText.length)];
         ICHighlight *hightlight = dict[ICTextHighlightAttributeName];
         self.curHightlight = hightlight;
     } else {
@@ -537,8 +537,8 @@ static BOOL kIsInDebugMode = NO;
 #pragma mark - Public method
 - (CGSize)sizeThatFits:(CGSize)size {
     
-    if (_attributedString == nil || _attributedString.length <= 0) return CGSizeZero;
-    NSAttributedString *drawAttributedString = [_attributedString copy];
+    if (_attributedText == nil || _attributedText.length <= 0) return CGSizeZero;
+    NSAttributedString *drawAttributedString = [_attributedText copy];
     
     //该方法调用的时候 drawRect: 方法有可能还没有被调用，所以这里创建一个临时的局部变量
     CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)drawAttributedString);
@@ -581,9 +581,9 @@ static BOOL kIsInDebugMode = NO;
 }
 
 #pragma mark - Getter/setter
-- (void)setAttributedString:(NSMutableAttributedString *)attributedString {
-    if (![attributedString isEqualToAttributedString:_attributedString]) {
-        _attributedString = attributedString;
+- (void)setAttributedText:(NSMutableAttributedString *)attributedString {
+    if (![attributedString isEqualToAttributedString:_attributedText]) {
+        _attributedText = attributedString;
         [self relayoutText];
     }
 }
@@ -591,7 +591,7 @@ static BOOL kIsInDebugMode = NO;
 - (void)setLineSpacing:(CGFloat)lineSpacing {
     if (self.lineSpacing != lineSpacing) {
         _lineSpacing = lineSpacing;
-        [_attributedString ic_setParagraphStyle_linespacing:_lineSpacing];
+        [_attributedText ic_setParagraphStyle_linespacing:_lineSpacing];
         
         [self relayoutText];
     }
@@ -607,7 +607,7 @@ static BOOL kIsInDebugMode = NO;
 - (void)setFont:(UIFont *)font {
     if (self.font != font) {
         _font = font;
-        [_attributedString ic_setFont:_font];
+        [_attributedText ic_setFont:_font];
         [self relayoutText];
     }
 }
@@ -615,7 +615,7 @@ static BOOL kIsInDebugMode = NO;
 - (void)setTextColor:(UIColor *)textColor {
     if (self.textColor != textColor) {
         _textColor = textColor;
-        [_attributedString ic_setForegroundColor:self.textColor];
+        [_attributedText ic_setForegroundColor:self.textColor];
         [self relayoutText];
     }
 }

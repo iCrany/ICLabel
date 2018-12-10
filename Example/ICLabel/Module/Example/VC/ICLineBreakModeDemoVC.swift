@@ -61,8 +61,8 @@ class ICLineBreakModeDemoVC: UIViewController {
         descLabel2.attributedText = applyParagraphStyleAttr
 //        descLabel2.lineBreakMode = .byTruncatingTail //该参数一定要放置在 attributedText 之后才知道， 并且不能同时在 NSParagraphStyle.lineBreakMode = .byTruncatingTail
         
-        let size = descLabel2.sizeThatFits(CGSize(width: kScreenWidth - kContentInsets.left - kContentInsets.right,
-                                                  height: CGFloat.greatestFiniteMagnitude))
+//        let size = descLabel2.sizeThatFits(CGSize(width: kScreenWidth - kContentInsets.left - kContentInsets.right,
+//                                                  height: CGFloat.greatestFiniteMagnitude))
         
         let testSize = applyParagraphStyleAttr.boundingRect(with: CGSize(width: kScreenWidth - kContentInsets.left - kContentInsets.right,
                                                                          height: CGFloat.greatestFiniteMagnitude),
@@ -93,7 +93,7 @@ class ICLineBreakModeDemoVC: UIViewController {
         let icLabel = ICLabel()
         icLabel.numberOfLines = descLabel.numberOfLines
         icLabel.backgroundColor = UIColor.lightGray
-        icLabel.attributedString = applyParagraphStyleAttr
+        icLabel.attributedText = applyParagraphStyleAttr
         icLabel.font = UIFont.systemFont(ofSize: 20)
         let icLabelSize = icLabel.sizeThatFits(CGSize(width: kScreenWidth - kContentInsets.left - kContentInsets.right, height: CGFloat.greatestFiniteMagnitude))
         self.view.addSubview(icLabel)

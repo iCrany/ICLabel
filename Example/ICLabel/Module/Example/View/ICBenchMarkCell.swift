@@ -47,7 +47,7 @@ class ICBenchMarkCell: UITableViewCell {
     func update(str: String) {
         let attrStr = NSMutableAttributedString(string: str)
         attrStr.ic_setFont(Constant.kFont)
-        self.icLabel.attributedString = attrStr
+        self.icLabel.attributedText = attrStr
 
     }
 
@@ -55,7 +55,7 @@ class ICBenchMarkCell: UITableViewCell {
         let attrStr = NSMutableAttributedString(string: str)
         attrStr.ic_setFont(Constant.kFont)
         let icLabel: ICLabel = ICLabel()
-        icLabel.attributedString = attrStr
+        icLabel.attributedText = attrStr
         let size = icLabel.sizeThatFits(CGSize(width: kScreenWidth, height: CGFloat.greatestFiniteMagnitude))
         return CGSize(width: Constant.kContentInsets.left + size.width + Constant.kContentInsets.right, height: Constant.kContentInsets.top + size.height + Constant.kContentInsets.bottom)
     }

@@ -70,7 +70,7 @@ class ICAttachmentLabelDemoVC: UIViewController {
         let icLabel: ICLabel = ICLabel()
         icLabel.backgroundColor = UIColor.lightGray
         self.view.addSubview(icLabel)
-        icLabel.attributedString = testAttr
+        icLabel.attributedText = testAttr
         icLabel.lineSpacing = kLineSpacing
         let size = icLabel.sizeThatFits(CGSize(width: kScreenWidth - kLabelInsets.left - kLabelInsets.right, height: CGFloat.greatestFiniteMagnitude))
         icLabel.snp.makeConstraints { (maker) in
@@ -95,7 +95,7 @@ class ICAttachmentLabelDemoVC: UIViewController {
         self.view.addSubview(icLabel2)
         icLabel2.font = UIFont.systemFont(ofSize: 20)
         icLabel2.lineSpacing = kLineSpacing
-        icLabel2.attributedString = testAttr2
+        icLabel2.attributedText = testAttr2
         let size2: CGSize = icLabel2.sizeThatFits(CGSize(width: kScreenWidth - kLabelInsets.left - kLabelInsets.right, height: CGFloat.greatestFiniteMagnitude))
         icLabel2.snp.makeConstraints { (maker) in
             maker.top.equalTo(icLabel.snp.bottom).offset(20)
@@ -118,7 +118,7 @@ class ICAttachmentLabelDemoVC: UIViewController {
         self.view.addSubview(icLabel3)
         icLabel3.font = UIFont.systemFont(ofSize: 20)
         icLabel3.lineSpacing = kLineSpacing
-        icLabel3.attributedString = testAttr3
+        icLabel3.attributedText = testAttr3
         let size3: CGSize = icLabel3.sizeThatFits(CGSize(width: kScreenWidth - kLabelInsets.left - kLabelInsets.right, height: CGFloat.greatestFiniteMagnitude))
         icLabel3.snp.makeConstraints { (maker) in
             maker.top.equalTo(icLabel2.snp.bottom).offset(20)
@@ -141,7 +141,7 @@ class ICAttachmentLabelDemoVC: UIViewController {
         self.view.addSubview(icLabel4)
         icLabel4.font = UIFont.systemFont(ofSize: 20)
         icLabel4.lineSpacing = kLineSpacing
-        icLabel4.attributedString = testAttr4
+        icLabel4.attributedText = testAttr4
         let size4: CGSize = icLabel4.sizeThatFits(CGSize(width: kScreenWidth - kLabelInsets.left - kLabelInsets.right, height: CGFloat.greatestFiniteMagnitude))
         icLabel4.snp.makeConstraints { (maker) in
             maker.top.equalTo(icLabel3.snp.bottom).offset(20)
@@ -172,7 +172,7 @@ class ICAttachmentLabelDemoVC: UIViewController {
         self.view.addSubview(icLabel5)
         icLabel5.font = UIFont.systemFont(ofSize: 20)
         icLabel5.lineSpacing = kLineSpacing
-        icLabel5.attributedString = testAttr5
+        icLabel5.attributedText = testAttr5
         let size5: CGSize = icLabel5.sizeThatFits(CGSize(width: kScreenWidth - kLabelInsets.left - kLabelInsets.right, height: CGFloat.greatestFiniteMagnitude))
         icLabel5.snp.makeConstraints { (maker) in
             maker.top.equalTo(icLabel4.snp.bottom).offset(20)
@@ -225,7 +225,7 @@ class ICAttachmentLabelDemoVC: UIViewController {
 
         let expendLabel: ICLabel = ICLabel()
         expendLabel.font = kLabelFont
-        expendLabel.attributedString = seeMore //TODO: 考虑一下这里的这个接口设计的问题，字体、颜色竟然跟 attributedString 的设置先后有关系
+        expendLabel.attributedText = seeMore //TODO: 考虑一下这里的这个接口设计的问题，字体、颜色竟然跟 attributedString 的设置先后有关系
         expendLabel.backgroundColor = UIColor.clear
         seeMore.ic_setFont(kLabelFont)
         seeMore.ic_setForegroundColor(UIColor.blue, range: NSRange(location: kEllipsisCharacter.count, length: linkStr.count - kEllipsisCharacter.count))
@@ -250,7 +250,7 @@ class ICAttachmentLabelDemoVC: UIViewController {
         icLabel.lineSpacing = kLabelLineSpacing
         icLabel.numberOfLines = 2
         icLabel.truncationToken = truncationToken
-        icLabel.attributedString = tempAttrText.mutableCopy() as? NSMutableAttributedString
+        icLabel.attributedText = tempAttrText.mutableCopy() as? NSMutableAttributedString
         let size: CGSize = icLabel.sizeThatFits(maxSize)
         icLabel.snp.makeConstraints { (maker) in
             maker.top.equalToSuperview().offset(100)
@@ -289,7 +289,7 @@ class ICAttachmentLabelDemoVC: UIViewController {
         self.view.addSubview(icLabel2)
         icLabel2.font = kLabelFont
         icLabel2.lineSpacing = kLabelLineSpacing
-        icLabel2.attributedString = tempAttrText2.mutableCopy() as? NSMutableAttributedString
+        icLabel2.attributedText = tempAttrText2.mutableCopy() as? NSMutableAttributedString
         let size2: CGSize = icLabel2.sizeThatFits(maxSize)
         icLabel2.snp.makeConstraints { (maker) in
             maker.top.equalTo(icLabel.snp.bottom).offset(20)
@@ -316,7 +316,7 @@ class ICAttachmentLabelDemoVC: UIViewController {
         self.view.addSubview(icLabel3)
         icLabel3.font = kLabelFont
         icLabel3.lineSpacing = kLabelLineSpacing
-        icLabel3.attributedString = tempAttrText3.mutableCopy() as? NSMutableAttributedString
+        icLabel3.attributedText = tempAttrText3.mutableCopy() as? NSMutableAttributedString
         let size3: CGSize = icLabel3.sizeThatFits(maxSize)
         icLabel3.snp.makeConstraints { (maker) in
             maker.top.equalTo(icLabel2.snp.bottom).offset(20)
@@ -347,7 +347,7 @@ class ICAttachmentLabelDemoVC: UIViewController {
         icLabel.backgroundColor = UIColor.lightGray
         icLabel.lineSpacing = kLabelLineSpacing
         self.view.addSubview(icLabel)
-        icLabel.attributedString = testAttr
+        icLabel.attributedText = testAttr
         let size = icLabel.sizeThatFits(CGSize(width: kScreenWidth - kLabelInsets.left - kLabelInsets.right, height: CGFloat.greatestFiniteMagnitude))
         icLabel.snp.makeConstraints { (maker) in
             maker.top.equalToSuperview().offset(100)
@@ -367,7 +367,7 @@ class ICAttachmentLabelDemoVC: UIViewController {
         icLabel2.backgroundColor = UIColor.lightGray
         icLabel2.lineSpacing = kLabelLineSpacing
         self.view.addSubview(icLabel2)
-        icLabel2.attributedString = testAttr2
+        icLabel2.attributedText = testAttr2
         let size2 = icLabel.sizeThatFits(CGSize(width: kScreenWidth - kLabelInsets.left - kLabelInsets.right, height: CGFloat.greatestFiniteMagnitude))
         icLabel2.snp.makeConstraints { (maker) in
             maker.top.equalTo(icLabel.snp.bottom).offset(20)
@@ -387,7 +387,7 @@ class ICAttachmentLabelDemoVC: UIViewController {
         icLabel3.backgroundColor = UIColor.lightGray
         icLabel3.lineSpacing = kLabelLineSpacing
         self.view.addSubview(icLabel3)
-        icLabel3.attributedString = testAttr3
+        icLabel3.attributedText = testAttr3
         let size3 = icLabel.sizeThatFits(CGSize(width: kScreenWidth - kLabelInsets.left - kLabelInsets.right, height: CGFloat.greatestFiniteMagnitude))
         icLabel3.snp.makeConstraints { (maker) in
             maker.top.equalTo(icLabel2.snp.bottom).offset(20)

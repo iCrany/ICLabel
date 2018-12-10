@@ -31,7 +31,7 @@ class ICLineSpacingDemoVC: UIViewController {
 
         let attrText = NSMutableAttributedString(string: text)
         let icLabel: ICLabel = ICLabel()
-        icLabel.attributedString = attrText.mutableCopy() as? NSMutableAttributedString
+        icLabel.attributedText = attrText.mutableCopy() as? NSMutableAttributedString
         icLabel.font = kLabelFont
         icLabel.lineSpacing = 5
         icLabel.isUserInteractionEnabled = false
@@ -47,7 +47,7 @@ class ICLineSpacingDemoVC: UIViewController {
 
         let titleAttrText = NSMutableAttributedString(string: text)
         let titleLabel: ICLabel = ICLabel()
-        titleLabel.attributedString = titleAttrText
+        titleLabel.attributedText = titleAttrText
         titleLabel.font = kTitleLabelFont
         titleLabel.lineSpacing = 6//(6 - (kTitleLabelFont.lineHeight - kTitleLabelFont.pointSize))
         titleLabel.backgroundColor = UIColor.clear

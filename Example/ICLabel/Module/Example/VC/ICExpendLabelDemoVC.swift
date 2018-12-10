@@ -40,7 +40,7 @@ class ICExpendLabelDemoVC: UIViewController {
         let expendLabel: ICLabel = ICLabel()
         expendLabel.font = kLabelFont
         expendLabel.isUserInteractionEnabled = true
-        expendLabel.attributedString = seeMore
+        expendLabel.attributedText = seeMore
         expendLabel.backgroundColor = UIColor.clear
         seeMore.ic_setFont(kLabelFont)
         seeMore.ic_setForegroundColor(UIColor.blue,
@@ -61,7 +61,7 @@ class ICExpendLabelDemoVC: UIViewController {
         canClickLabel.numberOfLines = 4
         canClickLabel.lineSpacing = 0
         canClickLabel.font = kLabelFont
-        canClickLabel.attributedString = testAttrStr
+        canClickLabel.attributedText = testAttrStr
         let canClickLabelSize = canClickLabel.sizeThatFits(maxSize)
         self.view.addSubview(canClickLabel)
         canClickLabel.snp.makeConstraints { (maker) in

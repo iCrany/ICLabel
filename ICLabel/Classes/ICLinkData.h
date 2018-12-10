@@ -10,6 +10,8 @@
 
 @class ICLinkData;
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef void(^LinkTapActionBlock)(ICLinkData *data);
 
 /**
@@ -67,3 +69,5 @@ typedef void(^LinkTapActionBlock)(ICLinkData *data);
                       linkColor:(UIColor *)linkColor;
 
 @end
+
+NS_ASSUME_NONNULL_END

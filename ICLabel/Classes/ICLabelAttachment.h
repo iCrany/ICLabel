@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 CGFloat ic_ascentCallbacks(void *ref);
 CGFloat ic_descentCallbacks(void *ref);
 CGFloat ic_widthCallbacks(void *ref);
@@ -24,7 +26,7 @@ typedef enum : NSUInteger {
 /**
  暂时只支持 UIImage / UIView / CALayer 的子类，当为 UIView 时会主动将 userInteractionEnabled 设置为 NO 参数
  */
-@property (nonatomic, strong) id content;
+@property (nonatomic, strong, nullable) id content;
 
 @property (nonatomic, assign) CGFloat fontDescender;
 @property (nonatomic, assign) CGFloat fontAscender;
@@ -49,11 +51,11 @@ typedef enum : NSUInteger {
  @param content 支持 UIImage / UIView / CALayer
  @return ICLabelAttachment 对象
  */
-+ (ICLabelAttachment *)attachmentWithContent:(id)content
++ (ICLabelAttachment *)attachmentWithContent:(nullable id)content
                                    alignment:(ICAttachmentAlignment)alignment
                                referenceFont:(UIFont *)referenceFont;
 
-+ (ICLabelAttachment *)attachmentWithContent:(id)content
++ (ICLabelAttachment *)attachmentWithContent:(nullable id)content
                                 contentInset:(UIEdgeInsets)contentInset
                                    alignment:(ICAttachmentAlignment)alignment
                                referenceFont:(UIFont *)referenceFont;
@@ -69,3 +71,5 @@ typedef enum : NSUInteger {
 - (CGSize)contentSize;
 
 @end
+
+NS_ASSUME_NONNULL_END

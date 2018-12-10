@@ -42,7 +42,7 @@ class ICLabelDemoVC: UIViewController {
         testLabel.font = UIFont.systemFont(ofSize: 20)
 //        testLabel.font = UIFont.init(name: "DINCondensed-bold", size: 20)
         testLabel.lineSpacing = 20;//支持行间距的设置
-        testLabel.attributedString = hasParagraphStyleAttrStr
+        testLabel.attributedText = hasParagraphStyleAttrStr
         let testLabelSize = testLabel.sizeThatFits(CGSize(width: kScreenWidth - labelInsets.left - labelInsets.right,
                                                           height: CGFloat.greatestFiniteMagnitude))
         testLabel.snp.makeConstraints { (maker) in
@@ -52,7 +52,7 @@ class ICLabelDemoVC: UIViewController {
         }
 
         let judgeTestLabel = ICLabel()
-        judgeTestLabel.attributedString = testAttrStr
+        judgeTestLabel.attributedText = testAttrStr
         judgeTestLabel.backgroundColor = UIColor.lightGray
         let juedgeTestLabelSize = judgeTestLabel.sizeThatFits(CGSize(width: kScreenWidth - labelInsets.left - labelInsets.right, height: CGFloat.greatestFiniteMagnitude))
         self.view.addSubview(judgeTestLabel)
@@ -90,7 +90,7 @@ class ICLabelDemoVC: UIViewController {
         seeMore.ic_setFont(kLabelFont)
         seeMore.ic_setForegroundColor(UIColor.red, range: NSRange(location: kEllipsisCharacter.count, length: linkStr.count - kEllipsisCharacter.count))
         let expendLabel: ICLabel = ICLabel()
-        expendLabel.attributedString = seeMore
+        expendLabel.attributedText = seeMore
         expendLabel.textColor = UIColor.blue
         expendLabel.backgroundColor = UIColor.red
         let expendLabelSize: CGSize = expendLabel.sizeThatFits(CGSize(width: kScreenWidth - labelInsets.left - labelInsets.right, height: CGFloat.greatestFiniteMagnitude))
@@ -106,7 +106,7 @@ class ICLabelDemoVC: UIViewController {
         canClickLabel.truncationToken = truncationToken
         canClickLabel.backgroundColor = UIColor.lightGray
         canClickLabel.numberOfLines = 3
-        canClickLabel.attributedString = testAttrStr
+        canClickLabel.attributedText = testAttrStr
         let canClickLabelSize = canClickLabel.sizeThatFits(CGSize(width: kScreenWidth - labelInsets.left - labelInsets.right, height: CGFloat.greatestFiniteMagnitude))
         self.view.addSubview(canClickLabel)
         canClickLabel.snp.makeConstraints { (maker) in

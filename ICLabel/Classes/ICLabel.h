@@ -7,16 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ICLabelAttachment.h"
 
-@class ICLinkData;
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  支持收起，展开逻辑的控件
  */
 @interface ICLabel : UIView
 
-@property (nonatomic, strong) NSMutableAttributedString *attributedString;
+@property (nonatomic, strong, nullable) NSMutableAttributedString *attributedText;
 
 /**
  是否支持截断字符，默认值是单纯的省略号，若有需要则可更改该值来做特殊处理，例如支持【...展开】按钮
@@ -43,3 +42,6 @@
 - (void)relayoutText;
 
 @end
+
+
+NS_ASSUME_NONNULL_END
