@@ -11,5 +11,6 @@
 
 #import "ApplyingParagraphStyleView.h"
 #import "SimpleTextLabelView.h"
+#import <ICLabel/NSMutableAttributedString+ICLabel.h>
 
 #endif /* Bridging_Header_h */

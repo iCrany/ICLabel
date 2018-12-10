@@ -11,6 +11,8 @@
 #import "ICLabelMarco.h"
 #import <CoreText/CoreText.h>
 
+const CGSize ContainerMaxSize = (CGSize){0x100000, 0x100000};
+
 @implementation NSMutableAttributedString (ICLabel)
 
 - (void)ic_appendAttachment:(ICLabelAttachment *)attachment {
@@ -196,7 +198,7 @@
 - (BOOL)__isMoreThanOneLineWithMaxWidth:(CGFloat)maxWidth withFont:(UIFont *)font {
     if (self.length == 0) return NO;
     
-    CGFloat lineHeight = font.lineHeight;//lineheight = |font.descent| + font.ascent + font.leading
+    CGFloat lineHeight = font.lineHeight;
     CGRect rect = [self boundingRectWithSize:CGSizeMake(maxWidth, CGFLOAT_MAX)
                                      options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
                                      context: nil];
@@ -205,6 +207,56 @@
         return YES;
     }
     return NO;
+}
+
+- (CGRect)ic_boundRectWithSize:(CGSize)size numberOfLines:(NSInteger)numberOfLines {
+    if (self.string.length <= 0) return CGRectZero;
+    
+    //暂时只支持固定宽度算高度的计算, 方便坐标的做换工作，CoreText 的布局就是在 size 这个范围布局的，若高度很大的话运算容易出现溢出之类的问题
+    size.height = ContainerMaxSize.height;
+    
+    CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)self);
+    
+    if (framesetter) {
+        CGMutablePathRef path = CGPathCreateMutable();
+        CGPathAddRect(path, nil, CGRectMake(0, 0, size.width, size.height));
+        CTFrameRef ctFrame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), path, nil);
+        
+        CFArrayRef ctLines = CTFrameGetLines(ctFrame);
+        NSInteger lineCount = CFArrayGetCount(ctLines);
+        CGPoint lineOriginList[lineCount];
+        CTFrameGetLineOrigins(ctFrame, CFRangeMake(0, lineCount), lineOriginList); //获取baseline 原点坐标
+        
+        if (lineCount <= 0) { return CGRectZero; }
+        
+        NSInteger limitNumberOfLine = numberOfLines > 0 ? MIN(numberOfLines, lineCount): lineCount;
+        
+        CGRect boundRect = CGRectZero;
+        CGFloat heightWithBaseLine = 0.0; //使用最后一行 baseline + descender + leading 的方式来计算
+        CGFloat heightWithLineBounds = 0.0;//使用最后一行 lineBounds.origin.y + lineHeight 的方式计算
+        for (NSInteger index = 0; index < limitNumberOfLine; index++) {
+            CTLineRef ctLine = CFArrayGetValueAtIndex(ctLines, index);
+            
+            CGFloat ascender, descander;
+            CGFloat lineWidth = CTLineGetTypographicBounds(ctLine, &ascender, &descander, nil);
+            CGPoint baseLineOrigin = lineOriginList[index]; //CoreText 坐标系
+            baseLineOrigin.y = size.height - baseLineOrigin.y; //转换成 UIKit 坐标系
+            CGRect lineRect = CGRectMake(baseLineOrigin.x, baseLineOrigin.y - ascender, lineWidth, ascender + descander);
+            if (index == 0) {
+                boundRect = lineRect;
+            } else {
+                boundRect = CGRectUnion(lineRect, boundRect);
+            }
+        }
+        
+        CGPathRelease(path);
+        if (ctFrame) CFRelease(ctFrame);
+        if (framesetter) CFRelease(framesetter);
+
+        return CGRectMake(boundRect.origin.x, boundRect.origin.y, ceil(boundRect.size.width), ceil(boundRect.size.height));
+    }
+    
+    return CGRectZero;
 }
 
 @end

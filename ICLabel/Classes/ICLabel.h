@@ -15,7 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface ICLabel : UIView
 
-@property (nonatomic, strong, nullable) NSMutableAttributedString *attributedText;
+/**
+ 这里使用 copy 主要是为了 attributedText 主要的两个属性，lineBreakMode 以及 lineSpacing 交由 ICLabel 来管理，NSAttributedString / NSMutableAttributedString 设置中不包含 
+ */
+@property (nonatomic, copy, nullable) NSMutableAttributedString *attributedText;
 
 /**
  是否支持截断字符，默认值是单纯的省略号，若有需要则可更改该值来做特殊处理，例如支持【...展开】按钮

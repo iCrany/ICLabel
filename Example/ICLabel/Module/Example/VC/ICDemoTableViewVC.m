@@ -60,6 +60,12 @@
     
     DemoItemModel *lineBreakModeModel = [[DemoItemModel alloc] initWithTitle:@"LineBreakMode Demo" className:NSStringFromClass(ICLineBreakModeDemoVC.class)];
     [self.dataSourceList addObject:lineBreakModeModel];
+    
+    DemoItemModel *sizeThatFitBenchmarkModel = [[DemoItemModel alloc] initWithTitle:@"Calc method brenchmark Demo" className:NSStringFromClass(ICLabelSizeThatFitBenchmarkExampleVC.class)];
+    [self.dataSourceList addObject:sizeThatFitBenchmarkModel];
+    
+    DemoItemModel *sizeThatFitsModel = [[DemoItemModel alloc] initWithTitle:@"Calc method Demo" className:NSStringFromClass(SizeThatFitsExampleVC.class)];
+    [self.dataSourceList addObject:sizeThatFitsModel];
 }
 
 - (void)didReceiveMemoryWarning

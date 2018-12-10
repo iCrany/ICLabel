@@ -23,6 +23,8 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		87554070409C637EF0F6FCD8 /* Pods_ICLabel_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E9DCF3F8D271E013713CDD /* Pods_ICLabel_Example.framework */; };
 		A5B0F74164176F349C412064 /* Pods_ICLabel_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A8261370E10EAB14F80D70 /* Pods_ICLabel_Tests.framework */; };
+		EC45741521BE57620060C408 /* ICLabelSizeThatFitBenchmarkExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45741421BE57620060C408 /* ICLabelSizeThatFitBenchmarkExampleVC.swift */; };
+		EC45741B21BF75400060C408 /* SizeThatFitsExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45741A21BF75400060C408 /* SizeThatFitsExampleVC.swift */; };
 		ECA47D4521BA740000A1438C /* ICBenchMarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D2B21BA740000A1438C /* ICBenchMarkCell.swift */; };
 		ECA47D4621BA740000A1438C /* DisplayingTextInNonrectangularRegionView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D2E21BA740000A1438C /* DisplayingTextInNonrectangularRegionView.m */; };
 		ECA47D4721BA740000A1438C /* ApplyingParagraphStyleView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA47D2F21BA740000A1438C /* ApplyingParagraphStyleView.m */; };
@@ -85,6 +87,8 @@
 		B907BE2D0DAD28F18702BC5C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DC9D029D45596C921CFB9F98 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E1A8261370E10EAB14F80D70 /* Pods_ICLabel_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICLabel_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC45741421BE57620060C408 /* ICLabelSizeThatFitBenchmarkExampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICLabelSizeThatFitBenchmarkExampleVC.swift; sourceTree = "<group>"; };
+		EC45741A21BF75400060C408 /* SizeThatFitsExampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeThatFitsExampleVC.swift; sourceTree = "<group>"; };
 		ECA47D2821BA581300A1438C /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		ECA47D2B21BA740000A1438C /* ICBenchMarkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICBenchMarkCell.swift; sourceTree = "<group>"; };
 		ECA47D2C21BA740000A1438C /* ColumnarLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColumnarLayoutView.h; sourceTree = "<group>"; };
@@ -293,6 +297,8 @@
 				ECA47D4021BA740000A1438C /* ICAttachmentLayerDemoVC.swift */,
 				ECA47D4221BA740000A1438C /* ICLineBreakModeDemoVC.swift */,
 				ECA47D4421BA740000A1438C /* ICAttachmentLabelDemoVC.swift */,
+				EC45741421BE57620060C408 /* ICLabelSizeThatFitBenchmarkExampleVC.swift */,
+				EC45741A21BF75400060C408 /* SizeThatFitsExampleVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -371,7 +377,7 @@
 			attributes = {
 				CLASSPREFIX = IC;
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = "crany1992@gmail.com";
+				ORGANIZATIONNAME = iCrany;
 				TargetAttributes = {
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -526,6 +532,8 @@
 				ECA47D5621BA740000A1438C /* ICLineBreakModeDemoVC.swift in Sources */,
 				ECA47D4A21BA740000A1438C /* SimpleTextLabelView.m in Sources */,
 				ECA47D5221BA740000A1438C /* YYLabelTouchDemoVC.swift in Sources */,
+				EC45741B21BF75400060C408 /* SizeThatFitsExampleVC.swift in Sources */,
+				EC45741521BE57620060C408 /* ICLabelSizeThatFitBenchmarkExampleVC.swift in Sources */,
 				ECA47D5821BA740000A1438C /* ICAttachmentLabelDemoVC.swift in Sources */,
 				ECA47D5321BA740000A1438C /* ICLabelBenchmarkVC.swift in Sources */,
 				ECA47D4F21BA740000A1438C /* TTTAttributedLabelDemoVC.swift in Sources */,
