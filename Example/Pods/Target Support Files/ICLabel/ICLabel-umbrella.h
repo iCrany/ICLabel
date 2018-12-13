@@ -16,8 +16,8 @@
 #import "ICLabelDrawService.h"
 #import "ICLabelMarco.h"
 #import "ICLinkData.h"
-#import "NSMutableAttributedString+ICLabel.h"
 #import "NSAttributedString+ICLabel.h"
+#import "NSMutableAttributedString+ICLabel.h"
 
 FOUNDATION_EXPORT double ICLabelVersionNumber;
 FOUNDATION_EXPORT const unsigned char ICLabelVersionString[];

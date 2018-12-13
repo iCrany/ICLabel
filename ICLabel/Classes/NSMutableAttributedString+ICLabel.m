@@ -232,8 +232,6 @@ const CGSize ContainerMaxSize = (CGSize){0x100000, 0x100000};
         NSInteger limitNumberOfLine = numberOfLines > 0 ? MIN(numberOfLines, lineCount): lineCount;
         
         CGRect boundRect = CGRectZero;
-        CGFloat heightWithBaseLine = 0.0; //使用最后一行 baseline + descender + leading 的方式来计算
-        CGFloat heightWithLineBounds = 0.0;//使用最后一行 lineBounds.origin.y + lineHeight 的方式计算
         for (NSInteger index = 0; index < limitNumberOfLine; index++) {
             CTLineRef ctLine = CFArrayGetValueAtIndex(ctLines, index);
             
