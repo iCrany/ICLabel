@@ -15,4 +15,10 @@ static unichar kPlaceHolder = 0xFFFC;
 /////////////////////// Custom NSAttributedStringKey ///////////////////////
 static NSString *const ICTextHighlightAttributeName = @"ICTextHighlight";
 
+#ifdef DEBUG
+# define ICLog(format, ...) NSLog((@"" "[%s]" "[%d]" format), __FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+# define ICLog(...) do { } while (0)
+#endif
+
 #endif /* ICLabelMarco_h */

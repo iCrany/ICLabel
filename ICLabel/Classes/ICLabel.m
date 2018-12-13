@@ -15,6 +15,8 @@
 #import "ICLabelAttachment.h"
 
 static BOOL kIsInDebugMode = NO;
+#define kDefaultFont ([UIFont systemFontOfSize: 15])
+#define kDefaultTextColor ([UIColor blackColor])
 
 @interface ICLabel() {
     
@@ -60,8 +62,8 @@ static BOOL kIsInDebugMode = NO;
 #pragma mark - Private method
 - (void)__setupInit {
     
-    _font = [UIFont systemFontOfSize: 15];
-    _textColor = [UIColor blackColor];
+    _font = kDefaultFont;
+    _textColor = kDefaultTextColor;
     
     _isNeedRelayout = YES;
     self.userInteractionEnabled = NO; // default is NO
@@ -152,11 +154,11 @@ static BOOL kIsInDebugMode = NO;
                         tapAttr = [thisLineAttr attributedSubstringFromRange:NSMakeRange(tapIndex - thisLineRange.location, 1)];
                     }
                     
-                    NSLog(@"thisLineAttr: %@", thisLineAttr.string);
-                    NSLog(@"lineFrame- %@ touchPoint- %@", [NSValue valueWithCGRect:lineFrame], [NSValue valueWithCGPoint:touchPoint]);
-                    NSLog(@"lineIndex: %d tapIndex: %ld tapAttr: %@", i, tapIndex, tapAttr.string);
+                    ICLog(@"thisLineAttr: %@", thisLineAttr.string);
+                    ICLog(@"lineFrame- %@ touchPoint- %@", [NSValue valueWithCGRect:lineFrame], [NSValue valueWithCGPoint:touchPoint]);
+                    ICLog(@"lineIndex: %d tapIndex: %ld tapAttr: %@", i, tapIndex, tapAttr.string);
                     CGFloat xOffset = CTLineGetOffsetForStringIndex(line, tapIndex, NULL);
-                    NSLog(@"tapIndex str(%@) xOffset: %lf touchPoint.x: %lf", tapAttr.string, xOffset, touchPoint.x);
+                    ICLog(@"tapIndex str(%@) xOffset: %lf touchPoint.x: %lf", tapAttr.string, xOffset, touchPoint.x);
                     
                     CFIndex fixedIndex = tapIndex;
                     if (touchPoint.x - xOffset > FLT_MIN) {
@@ -165,7 +167,7 @@ static BOOL kIsInDebugMode = NO;
                         } else {
                             tapAttr = nil;
                         }
-                        NSLog(@"【fix】往右 + 1， newTapIndex: %ld tapAttr: %@", tapIndex + 1, tapAttr.string);
+                        ICLog(@"【fix】往右 + 1， newTapIndex: %ld tapAttr: %@", tapIndex + 1, tapAttr.string);
                         fixedIndex = tapIndex + 1;
                     } else {
                         if (tapIndex - thisLineRange.location - 1 >= 0) {
@@ -173,7 +175,7 @@ static BOOL kIsInDebugMode = NO;
                         } else {
                             tapAttr = nil;
                         }
-                        NSLog(@"【fix】往左 - 1， newTapIndex: %ld tapAttr: %@", tapIndex - 1, tapAttr.string);
+                        ICLog(@"【fix】往左 - 1， newTapIndex: %ld tapAttr: %@", tapIndex - 1, tapAttr.string);
                         fixedIndex = tapIndex - 1;
                     }
                     
@@ -181,7 +183,7 @@ static BOOL kIsInDebugMode = NO;
                     if (targetIndex >= 0 && targetIndex < thisLineAttr.length) {
                         tapAttr = [thisLineAttr attributedSubstringFromRange:NSMakeRange(targetIndex, 1)];
                     }
-                    NSLog(@"targetIndex: %ld 最后识别的文字：%@", targetIndex, tapAttr.string);
+                    ICLog(@"targetIndex: %ld 最后识别的文字：%@", targetIndex, tapAttr.string);
 #if DEBUG
                     if (kIsInDebugMode) { //这里是绘制 debug 的调试 UI
                         CGRect caretViewFrame = CGRectMake(xOffset + lineFrame.origin.x, lineFrame.origin.y, 1, lineFrame.size.height);
@@ -605,6 +607,7 @@ static BOOL kIsInDebugMode = NO;
 }
 
 - (void)setFont:(UIFont *)font {
+    if (font == nil) { font = kDefaultFont; } //set default font
     if (self.font != font) {
         _font = font;
         [_attributedText ic_setFont:_font];
@@ -613,6 +616,7 @@ static BOOL kIsInDebugMode = NO;
 }
 
 - (void)setTextColor:(UIColor *)textColor {
+    if (textColor == nil) { textColor = kDefaultTextColor; } //set default textColor
     if (self.textColor != textColor) {
         _textColor = textColor;
         [_attributedText ic_setForegroundColor:self.textColor];
