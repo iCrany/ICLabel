@@ -11,6 +11,8 @@
 
 @class ICHighlight;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  这里应该做的一些工作就是为调用者提供不需要自己额外的在 addAttraibuted 之前 remove 掉上一次添加的属性动作
  */
@@ -23,12 +25,12 @@
 - (void)ic_insertAttachment:(ICLabelAttachment *)attachment atIndex:(NSUInteger)index;
 - (void)ic_insertAttachment:(ICLabelAttachment *)attachment highlight:(ICHighlight *)highlight atIndex:(NSUInteger)index;
 
-- (void)ic_appendAttachmentContent:(id)content
+- (void)ic_appendAttachmentContent:(nullable id)content
                      contentInsets:(UIEdgeInsets)contentInsets
                          alignment:(ICAttachmentAlignment)alignment
                      referenceFont:(UIFont *)referenceFont;
 
-- (void)ic_insertAttachmentContent:(id)content
+- (void)ic_insertAttachmentContent:(nullable id)content
                      contentInsets:(UIEdgeInsets)contentInsets
                          alignment:(ICAttachmentAlignment)alignment
                      referenceFont:(UIFont *)referenceFont
@@ -36,21 +38,21 @@
 
 //################################## Normal attribute ##################################
 
-- (void)ic_setAttribute:(NSString *)attributedName value:(id)value range:(NSRange)range;
+- (void)ic_setAttribute:(NSString *)attributedName value:(nullable id)value range:(NSRange)range;
 
 /**
  更新字体，影响的是当前全局的 `attributedText`
  若 font 参数为 nil 则为 removeAttribute 操作
  @param font 字体
  */
-- (void)ic_setFont:(UIFont *)font;
-- (void)ic_setFont:(UIFont *)font range:(NSRange)range;
+- (void)ic_setFont:(nullable UIFont *)font;
+- (void)ic_setFont:(nullable UIFont *)font range:(NSRange)range;
 
-- (void)ic_setForegroundColor:(UIColor *)forgroundColor;
-- (void)ic_setForegroundColor:(UIColor *)forgroundColor range:(NSRange)range;
+- (void)ic_setForegroundColor:(nullable UIColor *)forgroundColor;
+- (void)ic_setForegroundColor:(nullable UIColor *)forgroundColor range:(NSRange)range;
 
-- (void)ic_setBackgroundColor:(UIColor *)backgroundColor;
-- (void)ic_setBackgroundColor:(UIColor *)backgroundColor range:(NSRange)range;
+- (void)ic_setBackgroundColor:(nullable UIColor *)backgroundColor;
+- (void)ic_setBackgroundColor:(nullable UIColor *)backgroundColor range:(NSRange)range;
 
 //################################## NSParagraphStyle ##################################
 /**
@@ -68,8 +70,8 @@
 - (void)ic_setParagraphStyle_maximumLineHeight:(CGFloat)maximumLineHeight;
 
 //################################## Custom attribute ##################################
-- (void)ic_setHightlight:(ICHighlight *)hightlight;
-- (void)ic_setHightlight:(ICHighlight *)hightlight range:(NSRange)range;
+- (void)ic_setHightlight:(nullable ICHighlight *)hightlight;
+- (void)ic_setHightlight:(nullable ICHighlight *)hightlight range:(NSRange)range;
 
 //################################## Other helper method ##################################
 
@@ -93,3 +95,5 @@
 - (CGRect)ic_boundRectWithSize:(CGSize)size numberOfLines:(NSInteger)numberOfLines;
 
 @end
+
+NS_ASSUME_NONNULL_END
