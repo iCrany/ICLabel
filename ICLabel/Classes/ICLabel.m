@@ -184,7 +184,7 @@ static BOOL kIsInDebugMode = NO;
                         tapAttr = [thisLineAttr attributedSubstringFromRange:NSMakeRange(targetIndex, 1)];
                     }
                     ICLog(@"targetIndex: %ld 最后识别的文字：%@", targetIndex, tapAttr.string);
-#if DEBUG
+                #if DEBUG
                     if (kIsInDebugMode) { //这里是绘制 debug 的调试 UI
                         CGRect caretViewFrame = CGRectMake(xOffset + lineFrame.origin.x, lineFrame.origin.y, 1, lineFrame.size.height);
                         if (!self.caretView) {
@@ -195,8 +195,8 @@ static BOOL kIsInDebugMode = NO;
                         self.caretView.frame = caretViewFrame;
                         self.caretView.hidden = NO;
                     }
+                #endif
                 }
-#endif
                 return targetIndex;
             }
         }
