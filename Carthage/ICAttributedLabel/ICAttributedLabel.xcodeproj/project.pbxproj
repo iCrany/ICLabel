@@ -1,0 +1,389 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ECCF6E0521C9134F00562799 /* ICAttributedLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E0321C9134F00562799 /* ICAttributedLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECCF6E1A21C9138F00562799 /* NSAttributedString+ICLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6E0B21C9138E00562799 /* NSAttributedString+ICLabel.m */; };
+		ECCF6E1B21C9138F00562799 /* ICHighlight.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6E0C21C9138E00562799 /* ICHighlight.m */; };
+		ECCF6E1C21C9138F00562799 /* ICLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E0D21C9138E00562799 /* ICLabel.h */; };
+		ECCF6E1D21C9138F00562799 /* ICLabelAttachment.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E0E21C9138E00562799 /* ICLabelAttachment.h */; };
+		ECCF6E1E21C9138F00562799 /* ICLabelDrawService.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6E0F21C9138E00562799 /* ICLabelDrawService.m */; };
+		ECCF6E1F21C9138F00562799 /* NSMutableAttributedString+ICLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E1021C9138E00562799 /* NSMutableAttributedString+ICLabel.h */; };
+		ECCF6E2021C9138F00562799 /* ICLabelAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6E1121C9138E00562799 /* ICLabelAttachment.m */; };
+		ECCF6E2121C9138F00562799 /* ICHighlight.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E1221C9138E00562799 /* ICHighlight.h */; };
+		ECCF6E2221C9138F00562799 /* NSAttributedString+ICLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E1321C9138E00562799 /* NSAttributedString+ICLabel.h */; };
+		ECCF6E2321C9138F00562799 /* ICLabelMarco.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E1421C9138E00562799 /* ICLabelMarco.h */; };
+		ECCF6E2421C9138F00562799 /* ICLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6E1521C9138F00562799 /* ICLabel.m */; };
+		ECCF6E2521C9138F00562799 /* ICLabelDrawService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E1621C9138F00562799 /* ICLabelDrawService.h */; };
+		ECCF6E2621C9138F00562799 /* ICLinkData.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E1721C9138F00562799 /* ICLinkData.h */; };
+		ECCF6E2721C9138F00562799 /* NSMutableAttributedString+ICLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6E1821C9138F00562799 /* NSMutableAttributedString+ICLabel.m */; };
+		ECCF6E2821C9138F00562799 /* ICLinkData.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6E1921C9138F00562799 /* ICLinkData.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		ECCF6E0021C9134F00562799 /* ICAttributedLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ICAttributedLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECCF6E0321C9134F00562799 /* ICAttributedLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICAttributedLabel.h; sourceTree = "<group>"; };
+		ECCF6E0421C9134F00562799 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECCF6E0B21C9138E00562799 /* NSAttributedString+ICLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+ICLabel.m"; path = "../../../ICLabel/Classes/NSAttributedString+ICLabel.m"; sourceTree = "<group>"; };
+		ECCF6E0C21C9138E00562799 /* ICHighlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICHighlight.m; path = ../../../ICLabel/Classes/ICHighlight.m; sourceTree = "<group>"; };
+		ECCF6E0D21C9138E00562799 /* ICLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICLabel.h; path = ../../../ICLabel/Classes/ICLabel.h; sourceTree = "<group>"; };
+		ECCF6E0E21C9138E00562799 /* ICLabelAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICLabelAttachment.h; path = ../../../ICLabel/Classes/ICLabelAttachment.h; sourceTree = "<group>"; };
+		ECCF6E0F21C9138E00562799 /* ICLabelDrawService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICLabelDrawService.m; path = ../../../ICLabel/Classes/ICLabelDrawService.m; sourceTree = "<group>"; };
+		ECCF6E1021C9138E00562799 /* NSMutableAttributedString+ICLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableAttributedString+ICLabel.h"; path = "../../../ICLabel/Classes/NSMutableAttributedString+ICLabel.h"; sourceTree = "<group>"; };
+		ECCF6E1121C9138E00562799 /* ICLabelAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICLabelAttachment.m; path = ../../../ICLabel/Classes/ICLabelAttachment.m; sourceTree = "<group>"; };
+		ECCF6E1221C9138E00562799 /* ICHighlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICHighlight.h; path = ../../../ICLabel/Classes/ICHighlight.h; sourceTree = "<group>"; };
+		ECCF6E1321C9138E00562799 /* NSAttributedString+ICLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSAttributedString+ICLabel.h"; path = "../../../ICLabel/Classes/NSAttributedString+ICLabel.h"; sourceTree = "<group>"; };
+		ECCF6E1421C9138E00562799 /* ICLabelMarco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICLabelMarco.h; path = ../../../ICLabel/Classes/ICLabelMarco.h; sourceTree = "<group>"; };
+		ECCF6E1521C9138F00562799 /* ICLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICLabel.m; path = ../../../ICLabel/Classes/ICLabel.m; sourceTree = "<group>"; };
+		ECCF6E1621C9138F00562799 /* ICLabelDrawService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICLabelDrawService.h; path = ../../../ICLabel/Classes/ICLabelDrawService.h; sourceTree = "<group>"; };
+		ECCF6E1721C9138F00562799 /* ICLinkData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICLinkData.h; path = ../../../ICLabel/Classes/ICLinkData.h; sourceTree = "<group>"; };
+		ECCF6E1821C9138F00562799 /* NSMutableAttributedString+ICLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableAttributedString+ICLabel.m"; path = "../../../ICLabel/Classes/NSMutableAttributedString+ICLabel.m"; sourceTree = "<group>"; };
+		ECCF6E1921C9138F00562799 /* ICLinkData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICLinkData.m; path = ../../../ICLabel/Classes/ICLinkData.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ECCF6DFD21C9134F00562799 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ECCF6DF621C9134F00562799 = {
+			isa = PBXGroup;
+			children = (
+				ECCF6E0221C9134F00562799 /* ICAttributedLabel */,
+				ECCF6E0121C9134F00562799 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ECCF6E0121C9134F00562799 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ECCF6E0021C9134F00562799 /* ICAttributedLabel.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ECCF6E0221C9134F00562799 /* ICAttributedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				ECCF6E1221C9138E00562799 /* ICHighlight.h */,
+				ECCF6E0C21C9138E00562799 /* ICHighlight.m */,
+				ECCF6E0D21C9138E00562799 /* ICLabel.h */,
+				ECCF6E1521C9138F00562799 /* ICLabel.m */,
+				ECCF6E0E21C9138E00562799 /* ICLabelAttachment.h */,
+				ECCF6E1121C9138E00562799 /* ICLabelAttachment.m */,
+				ECCF6E1621C9138F00562799 /* ICLabelDrawService.h */,
+				ECCF6E0F21C9138E00562799 /* ICLabelDrawService.m */,
+				ECCF6E1421C9138E00562799 /* ICLabelMarco.h */,
+				ECCF6E1721C9138F00562799 /* ICLinkData.h */,
+				ECCF6E1921C9138F00562799 /* ICLinkData.m */,
+				ECCF6E1321C9138E00562799 /* NSAttributedString+ICLabel.h */,
+				ECCF6E0B21C9138E00562799 /* NSAttributedString+ICLabel.m */,
+				ECCF6E1021C9138E00562799 /* NSMutableAttributedString+ICLabel.h */,
+				ECCF6E1821C9138F00562799 /* NSMutableAttributedString+ICLabel.m */,
+				ECCF6E0321C9134F00562799 /* ICAttributedLabel.h */,
+				ECCF6E0421C9134F00562799 /* Info.plist */,
+			);
+			path = ICAttributedLabel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		ECCF6DFB21C9134F00562799 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECCF6E2321C9138F00562799 /* ICLabelMarco.h in Headers */,
+				ECCF6E2621C9138F00562799 /* ICLinkData.h in Headers */,
+				ECCF6E0521C9134F00562799 /* ICAttributedLabel.h in Headers */,
+				ECCF6E2221C9138F00562799 /* NSAttributedString+ICLabel.h in Headers */,
+				ECCF6E1C21C9138F00562799 /* ICLabel.h in Headers */,
+				ECCF6E1F21C9138F00562799 /* NSMutableAttributedString+ICLabel.h in Headers */,
+				ECCF6E2521C9138F00562799 /* ICLabelDrawService.h in Headers */,
+				ECCF6E2121C9138F00562799 /* ICHighlight.h in Headers */,
+				ECCF6E1D21C9138F00562799 /* ICLabelAttachment.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		ECCF6DFF21C9134F00562799 /* ICAttributedLabel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECCF6E0821C9134F00562799 /* Build configuration list for PBXNativeTarget "ICAttributedLabel" */;
+			buildPhases = (
+				ECCF6DFB21C9134F00562799 /* Headers */,
+				ECCF6DFC21C9134F00562799 /* Sources */,
+				ECCF6DFD21C9134F00562799 /* Frameworks */,
+				ECCF6DFE21C9134F00562799 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ICAttributedLabel;
+			productName = ICAttributedLabel;
+			productReference = ECCF6E0021C9134F00562799 /* ICAttributedLabel.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ECCF6DF721C9134F00562799 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = iCrany;
+				TargetAttributes = {
+					ECCF6DFF21C9134F00562799 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = ECCF6DFA21C9134F00562799 /* Build configuration list for PBXProject "ICAttributedLabel" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = ECCF6DF621C9134F00562799;
+			productRefGroup = ECCF6E0121C9134F00562799 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ECCF6DFF21C9134F00562799 /* ICAttributedLabel */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ECCF6DFE21C9134F00562799 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ECCF6DFC21C9134F00562799 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECCF6E1E21C9138F00562799 /* ICLabelDrawService.m in Sources */,
+				ECCF6E2721C9138F00562799 /* NSMutableAttributedString+ICLabel.m in Sources */,
+				ECCF6E1B21C9138F00562799 /* ICHighlight.m in Sources */,
+				ECCF6E1A21C9138F00562799 /* NSAttributedString+ICLabel.m in Sources */,
+				ECCF6E2021C9138F00562799 /* ICLabelAttachment.m in Sources */,
+				ECCF6E2821C9138F00562799 /* ICLinkData.m in Sources */,
+				ECCF6E2421C9138F00562799 /* ICLabel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		ECCF6E0621C9134F00562799 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ECCF6E0721C9134F00562799 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ECCF6E0921C9134F00562799 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ICAttributedLabel/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.iCrany..ICAttributedLabel;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ECCF6E0A21C9134F00562799 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ICAttributedLabel/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.iCrany..ICAttributedLabel;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ECCF6DFA21C9134F00562799 /* Build configuration list for PBXProject "ICAttributedLabel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECCF6E0621C9134F00562799 /* Debug */,
+				ECCF6E0721C9134F00562799 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECCF6E0821C9134F00562799 /* Build configuration list for PBXNativeTarget "ICAttributedLabel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECCF6E0921C9134F00562799 /* Debug */,
+				ECCF6E0A21C9134F00562799 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ECCF6DF721C9134F00562799 /* Project object */;
+}
