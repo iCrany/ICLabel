@@ -677,7 +677,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3812FE2D1BA594EFDD693D6E /* Pods-ICLabel_Example.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ICLabel/ICLabel-Prefix.pch";
@@ -695,7 +694,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 01EF531FB8D470EC40E1CEE0 /* Pods-ICLabel_Example.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ICLabel/ICLabel-Prefix.pch";

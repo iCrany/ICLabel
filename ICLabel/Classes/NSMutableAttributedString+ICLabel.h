@@ -21,9 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 //################################## Attachment ##################################
 
 - (void)ic_appendAttachment:(ICLabelAttachment *)attachment;
-- (void)ic_appendAttachment:(ICLabelAttachment *)attachment hightlight:(ICHighlight *)hightlight;
+- (void)ic_appendAttachment:(ICLabelAttachment *)attachment hightlight:(nullable ICHighlight *)hightlight;
 - (void)ic_insertAttachment:(ICLabelAttachment *)attachment atIndex:(NSUInteger)index;
-- (void)ic_insertAttachment:(ICLabelAttachment *)attachment highlight:(ICHighlight *)highlight atIndex:(NSUInteger)index;
+- (void)ic_insertAttachment:(ICLabelAttachment *)attachment highlight:(nullable ICHighlight *)highlight atIndex:(NSUInteger)index;
 
 - (void)ic_appendAttachmentContent:(nullable id)content
                      contentInsets:(UIEdgeInsets)contentInsets

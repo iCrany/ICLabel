@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^ICHighlight_TapAction)();
+typedef void(^ICHighlight_TapAction)(void);
 
 NS_ASSUME_NONNULL_BEGIN
 
