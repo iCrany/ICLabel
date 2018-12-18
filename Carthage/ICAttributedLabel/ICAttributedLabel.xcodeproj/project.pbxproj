@@ -10,17 +10,17 @@
 		ECCF6E0521C9134F00562799 /* ICAttributedLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E0321C9134F00562799 /* ICAttributedLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECCF6E1A21C9138F00562799 /* NSAttributedString+ICLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6E0B21C9138E00562799 /* NSAttributedString+ICLabel.m */; };
 		ECCF6E1B21C9138F00562799 /* ICHighlight.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6E0C21C9138E00562799 /* ICHighlight.m */; };
-		ECCF6E1C21C9138F00562799 /* ICLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E0D21C9138E00562799 /* ICLabel.h */; };
-		ECCF6E1D21C9138F00562799 /* ICLabelAttachment.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E0E21C9138E00562799 /* ICLabelAttachment.h */; };
+		ECCF6E1C21C9138F00562799 /* ICLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E0D21C9138E00562799 /* ICLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECCF6E1D21C9138F00562799 /* ICLabelAttachment.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E0E21C9138E00562799 /* ICLabelAttachment.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECCF6E1E21C9138F00562799 /* ICLabelDrawService.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6E0F21C9138E00562799 /* ICLabelDrawService.m */; };
-		ECCF6E1F21C9138F00562799 /* NSMutableAttributedString+ICLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E1021C9138E00562799 /* NSMutableAttributedString+ICLabel.h */; };
+		ECCF6E1F21C9138F00562799 /* NSMutableAttributedString+ICLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E1021C9138E00562799 /* NSMutableAttributedString+ICLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECCF6E2021C9138F00562799 /* ICLabelAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6E1121C9138E00562799 /* ICLabelAttachment.m */; };
-		ECCF6E2121C9138F00562799 /* ICHighlight.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E1221C9138E00562799 /* ICHighlight.h */; };
-		ECCF6E2221C9138F00562799 /* NSAttributedString+ICLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E1321C9138E00562799 /* NSAttributedString+ICLabel.h */; };
-		ECCF6E2321C9138F00562799 /* ICLabelMarco.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E1421C9138E00562799 /* ICLabelMarco.h */; };
+		ECCF6E2121C9138F00562799 /* ICHighlight.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E1221C9138E00562799 /* ICHighlight.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECCF6E2221C9138F00562799 /* NSAttributedString+ICLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E1321C9138E00562799 /* NSAttributedString+ICLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECCF6E2321C9138F00562799 /* ICLabelMarco.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E1421C9138E00562799 /* ICLabelMarco.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECCF6E2421C9138F00562799 /* ICLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6E1521C9138F00562799 /* ICLabel.m */; };
-		ECCF6E2521C9138F00562799 /* ICLabelDrawService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E1621C9138F00562799 /* ICLabelDrawService.h */; };
-		ECCF6E2621C9138F00562799 /* ICLinkData.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E1721C9138F00562799 /* ICLinkData.h */; };
+		ECCF6E2521C9138F00562799 /* ICLabelDrawService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E1621C9138F00562799 /* ICLabelDrawService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECCF6E2621C9138F00562799 /* ICLinkData.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCF6E1721C9138F00562799 /* ICLinkData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECCF6E2721C9138F00562799 /* NSMutableAttributedString+ICLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6E1821C9138F00562799 /* NSMutableAttributedString+ICLabel.m */; };
 		ECCF6E2821C9138F00562799 /* ICLinkData.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6E1921C9138F00562799 /* ICLinkData.m */; };
 /* End PBXBuildFile section */
