@@ -250,6 +250,14 @@ const CGSize ContainerMaxSize = (CGSize){0x100000, 0x100000};
         CGPathRelease(path);
         if (ctFrame) CFRelease(ctFrame);
         if (framesetter) CFRelease(framesetter);
+        
+        if (@available(iOS 10, *)) {
+            if (@available(iOS 11, *)) { //取不了非。。。恶心
+                
+            } else {
+                boundRect.size.height += 1.5; //iOS 10 系统的 bug, 暂时解决方案是添加 1.5pt
+            }
+        }
 
         return CGRectMake(boundRect.origin.x, boundRect.origin.y, ceil(boundRect.size.width), ceil(boundRect.size.height));
     }
