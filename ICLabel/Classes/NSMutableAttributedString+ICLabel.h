@@ -1,6 +1,6 @@
 //
 //  NSMutableAttributedString+ICLabel.h
-//  iOSExample
+//  ICLabel
 //
 //  Created by iCrany on 2018/9/12.
 //  Copyright © 2018年 iCrany. All rights reserved.

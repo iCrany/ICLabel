@@ -1,6 +1,6 @@
 //
 //  ICLabel.h
-//  iOSExample
+//  ICLabel
 //
 //  Created by iCrany on 2018/8/14.
 //  Copyright © 2018年 iCrany. All rights reserved.

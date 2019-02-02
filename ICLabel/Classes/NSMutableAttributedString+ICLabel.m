@@ -1,6 +1,6 @@
 //
 //  NSMutableAttributedString+ICLabel.m
-//  iOSExample
+//  ICLabel
 //
 //  Created by iCrany on 2018/9/12.
 //  Copyright © 2018年 iCrany. All rights reserved.
@@ -251,13 +251,13 @@ const CGSize ContainerMaxSize = (CGSize){0x100000, 0x100000};
         if (ctFrame) CFRelease(ctFrame);
         if (framesetter) CFRelease(framesetter);
         
-        if (@available(iOS 10, *)) {
-            if (@available(iOS 11, *)) { //取不了非。。。恶心
-                
-            } else {
-                boundRect.size.height += 1.5; //iOS 10 系统的 bug, 暂时解决方案是添加 1.5pt
-            }
-        }
+//        if (@available(iOS 10, *)) { //TODO: 这里的代码在 demo 中是没有问题的，所以这里先暂时注释掉
+//            if (@available(iOS 11, *)) { //取不了非。。。恶心
+//
+//            } else {
+//                boundRect.size.height += 2.5; //iOS 10 系统的 bug, 暂时解决方案是添加 2.5pt
+//            }
+//        }
 
         return CGRectMake(boundRect.origin.x, boundRect.origin.y, ceil(boundRect.size.width), ceil(boundRect.size.height));
     }

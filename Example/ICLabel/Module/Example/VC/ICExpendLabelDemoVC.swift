@@ -29,10 +29,12 @@ class ICExpendLabelDemoVC: UIViewController {
         self.view.backgroundColor = UIColor.white
 
         let testAttrStr = NSMutableAttributedString(string: "哈中test中文强势进入😁😁😁😁😁😁😀😀😀😀😀🧀🧀🧀🧀🥔🥔🥔🥔🥔🥔🥔🥔🥔🥔🥔🍑🍑🍑🍎🍎🍎🍎🍎🍏🍏🍏🍏🍏（￣︶￣）↗（￣︶￣）↗（￣︶￣）↗（￣︶￣）↗[]~(￣▽￣)~*[]~(￣▽￣)~*[]~(￣▽￣)~*ｂ╭╮(￣▽￣)╭╮(￣▽￣)╭╮(￣▽￣)╭╮(￣▽￣)╭(￣.￣)(￣.￣)(￣.￣)(￣.￣)🀏🀏🀏🀏🀏🀡🀡🀡🀡🀡🀞🀞🀔🀊🀀速度快回复肯定会开发可来得及分类的空间烂大街法律框架爱离开对方就流口水的了肯定是解放路口就冻死了卡减肥了空间了空间大浪费空间了空间撒蝶恋蜂狂氪金大佬开房记录卡机了看见对方立刻据了解")
+//        let testAttrStr = NSMutableAttributedString(string: "暂无介绍")
 
         let labelInsets: UIEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        let kLabelFont: UIFont = UIFont.systemFont(ofSize: 15)
+        let kLabelFont: UIFont = UIFont.systemFont(ofSize: 13)
         let maxSize: CGSize = CGSize(width: kScreenWidth - labelInsets.left - labelInsets.right, height: CGFloat.greatestFiniteMagnitude)
+        testAttrStr.ic_setFont(kLabelFont)
 
         let linkStr: String = "\(kEllipsisCharacter)全文"
         let seeMore: NSMutableAttributedString = NSMutableAttributedString(string: linkStr)
@@ -60,14 +62,13 @@ class ICExpendLabelDemoVC: UIViewController {
         canClickLabel.backgroundColor = UIColor.lightGray
         canClickLabel.numberOfLines = 4
         canClickLabel.lineSpacing = 0
-        canClickLabel.font = kLabelFont
         canClickLabel.attributedText = testAttrStr
-        let canClickLabelSize = canClickLabel.sizeThatFits(maxSize)
+        let canClickLabelSize = testAttrStr.ic_boundRect(with: maxSize, numberOfLines: 4).size
         self.view.addSubview(canClickLabel)
         canClickLabel.snp.makeConstraints { (maker) in
             maker.top.equalTo(self.view.snp.top).offset(100)
             maker.leading.equalTo(self.view.snp.leading).offset(labelInsets.left)
-            maker.size.equalTo(canClickLabelSize)
+            maker.size.equalTo(CGSize(width: canClickLabelSize.width, height: canClickLabelSize.height))
         }
 
         let hightlight: ICHighlight = ICHighlight()

@@ -1,6 +1,6 @@
 //
 //  NSAttributedString+ICLabel.h
-//  DTCoreText
+//  ICLabel
 //
 //  Created by iCrany on 2018/12/12.
 //
