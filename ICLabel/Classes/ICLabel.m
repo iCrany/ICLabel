@@ -75,7 +75,6 @@ static BOOL kIsInDebugMode = NO;
     self.userInteractionEnabled = NO; // default is NO
     
     _truncationToken = [[NSAttributedString alloc] initWithString:kEllipsisCharacter];
-    _lineBreakMode = NSLineBreakByTruncatingTail;
 
 #if kIS_SUPPORT_TOUCH
     _curHightlight = nil;
@@ -140,6 +139,7 @@ static BOOL kIsInDebugMode = NO;
     return YES;
 }
 
+#if kIS_SUPPORT_TOUCH
 - (CFIndex)__getClostestIndex:(CGPoint)touchPoint {
     CFIndex retIndex = kCFNotFound;
     if (!_ctLines) return retIndex;
@@ -229,6 +229,8 @@ static BOOL kIsInDebugMode = NO;
                                   ascender + fabs(descender));
     return lineFrame;
 }
+
+#endif
 
 #if kIS_SUPPORT_ATTACHMENT
 - (void)__drawAttachmentsWithRect:(CGRect)rect {
@@ -408,21 +410,6 @@ static BOOL kIsInDebugMode = NO;
                 CFRange curLineRange = CTLineGetStringRange(line);
                 NSAttributedString *trunctionTokenAttrStr = [self.truncationToken mutableCopy];
                 CTLineTruncationType truncationType = kCTLineTruncationEnd;
-                switch (self.lineBreakMode) {
-                    case NSLineBreakByTruncatingHead: {
-                        truncationType = kCTLineTruncationStart;
-                        break;
-                    }
-                    case NSLineBreakByTruncatingMiddle: {
-                        truncationType = kCTLineTruncationMiddle;
-                        break;
-                    }
-                    default: {
-                        truncationType = kCTLineTruncationEnd;
-                        break;
-                    }
-                }
-                
                 NSMutableAttributedString *curLineAttrStr = [[_attributedText attributedSubstringFromRange:NSMakeRange(curLineRange.location, curLineRange.length)] mutableCopy]; //这一行中需要进行裁剪的 str 位置
                 [curLineAttrStr appendAttributedString:trunctionTokenAttrStr];
                 

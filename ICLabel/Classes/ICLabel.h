@@ -24,7 +24,6 @@ NS_ASSUME_NONNULL_BEGIN
  是否支持截断字符，默认值是单纯的省略号，若有需要则可更改该值来做特殊处理，例如支持【...展开】按钮
  */
 @property (nonatomic, strong) NSAttributedString *truncationToken;//默认支持的裁断字符
-@property (nonatomic, assign) NSLineBreakMode lineBreakMode; //截断类型，默认是 Truncate at tail of line: "abcd..."
 
 @property (nonatomic, assign) NSInteger numberOfLines; //是否限制行数，默认值为 0 即不限制行数
 
