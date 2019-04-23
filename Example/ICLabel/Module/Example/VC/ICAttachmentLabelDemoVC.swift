@@ -60,11 +60,11 @@ class ICAttachmentLabelDemoVC: UIViewController {
         let kLineSpacing: CGFloat = 10
 
         let image = UIImage(named: "jucat.jpeg")
-        let attachment: ICLabelAttachment = ICLabelAttachment(content: image, contentInset: kContentInset, alignment: ICAttachmentAlignment_CenterY, referenceFont: UIFont.systemFont(ofSize: 15))
-        attachment.limitSize = CGSize(width: 50, height: 50)
+//        let attachment: ICLabelAttachment = ICLabelAttachment(content: image, contentInset: kContentInset, alignment: ICAttachmentAlignment_CenterY, referenceFont: UIFont.systemFont(ofSize: 15))
+//        attachment.limitSize = CGSize(width: 50, height: 50)
 
         let testAttr: NSMutableAttributedString = attrText.mutableCopy() as! NSMutableAttributedString
-        testAttr.ic_append(attachment)
+//        testAttr.ic_append(attachment)
         testAttr.append(appendAttrText)
 
         let icLabel: ICLabel = ICLabel()
@@ -81,13 +81,13 @@ class ICAttachmentLabelDemoVC: UIViewController {
 
         let customView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: kCustomViewSize.width, height: kCustomViewSize.height))
         customView.backgroundColor = UIColor.blue
-        let viewAttachment: ICLabelAttachment = ICLabelAttachment(content: customView,
-                                                             contentInset: kContentInset,
-                                                                alignment: ICAttachmentAlignment_Top,
-                                                                referenceFont: UIFont.systemFont(ofSize: 15))
+//        let viewAttachment: ICLabelAttachment = ICLabelAttachment(content: customView,
+//                                                             contentInset: kContentInset,
+//                                                                alignment: ICAttachmentAlignment_Top,
+//                                                                referenceFont: UIFont.systemFont(ofSize: 15))
 
         let testAttr2: NSMutableAttributedString = attrText.mutableCopy() as! NSMutableAttributedString
-        testAttr2.ic_append(viewAttachment)
+//        testAttr2.ic_append(viewAttachment)
         testAttr2.append(appendAttrText)
 
         let icLabel2: ICLabel = ICLabel()
@@ -105,12 +105,12 @@ class ICAttachmentLabelDemoVC: UIViewController {
 
         let customView2: UIView = UIView(frame: CGRect(x: 0, y: 0, width: kCustomViewSize.width, height: kCustomViewSize.height))
         customView2.backgroundColor = UIColor.blue
-        let viewAttachment2: ICLabelAttachment = ICLabelAttachment(content: customView2,
-                                                                  contentInset: kContentInset,
-                                                                  alignment: ICAttachmentAlignment_CenterY,
-                                                                  referenceFont: UIFont.systemFont(ofSize: 20))
+//        let viewAttachment2: ICLabelAttachment = ICLabelAttachment(content: customView2,
+//                                                                  contentInset: kContentInset,
+//                                                                  alignment: ICAttachmentAlignment_CenterY,
+//                                                                  referenceFont: UIFont.systemFont(ofSize: 20))
         let testAttr3: NSMutableAttributedString = attrText.mutableCopy() as! NSMutableAttributedString
-        testAttr3.ic_append(viewAttachment2)
+//        testAttr3.ic_append(viewAttachment2)
         testAttr3.append(appendAttrText)
 
         let icLabel3: ICLabel = ICLabel()
@@ -128,12 +128,12 @@ class ICAttachmentLabelDemoVC: UIViewController {
 
         let customView3: UIView = UIView(frame: CGRect(x: 0, y: 0, width: kCustomViewSize.width, height: kCustomViewSize.height))
         customView3.backgroundColor = UIColor.blue
-        let viewAttachment3: ICLabelAttachment = ICLabelAttachment(content: customView3,
-                                                                   contentInset: kContentInset,
-                                                                   alignment: ICAttachmentAlignment_Bottom,
-                                                                   referenceFont: UIFont.systemFont(ofSize: 20))
+//        let viewAttachment3: ICLabelAttachment = ICLabelAttachment(content: customView3,
+//                                                                   contentInset: kContentInset,
+//                                                                   alignment: ICAttachmentAlignment_Bottom,
+//                                                                   referenceFont: UIFont.systemFont(ofSize: 20))
         let testAttr4: NSMutableAttributedString = attrText.mutableCopy() as! NSMutableAttributedString
-        testAttr4.ic_append(viewAttachment3)
+//        testAttr4.ic_append(viewAttachment3)
         testAttr4.append(appendAttrText)
 
         let icLabel4: ICLabel = ICLabel()
@@ -158,13 +158,13 @@ class ICAttachmentLabelDemoVC: UIViewController {
             maker.size.equalTo(CGSize(width: 20, height: 20))
         }
         customView4.backgroundColor = UIColor.blue
-        let viewAttachment4: ICLabelAttachment = ICLabelAttachment(content: customView4,
-                                                                   contentInset: kContentInset,
-                                                                   alignment: ICAttachmentAlignment_CenterY,
-                                                                   referenceFont: UIFont.systemFont(ofSize: 20))
+//        let viewAttachment4: ICLabelAttachment = ICLabelAttachment(content: customView4,
+//                                                                   contentInset: kContentInset,
+//                                                                   alignment: ICAttachmentAlignment_CenterY,
+//                                                                   referenceFont: UIFont.systemFont(ofSize: 20))
 
         let testAttr5: NSMutableAttributedString = attrText.mutableCopy() as! NSMutableAttributedString
-        testAttr5.ic_append(viewAttachment4)
+//        testAttr5.ic_append(viewAttachment4)
         testAttr5.append(appendAttrText)
 
         let icLabel5: ICLabel = ICLabel()
@@ -202,10 +202,10 @@ class ICAttachmentLabelDemoVC: UIViewController {
             maker.size.equalTo(kCustomViewSize)
         }
 
-        let viewAttachment: ICLabelAttachment = ICLabelAttachment(content: customView,
-                                                                  contentInset: kContentInset,
-                                                                  alignment: ICAttachmentAlignment_Top,
-                                                                  referenceFont: kLabelFont)
+//        let viewAttachment: ICLabelAttachment = ICLabelAttachment(content: customView,
+//                                                                  contentInset: kContentInset,
+//                                                                  alignment: ICAttachmentAlignment_Top,
+//                                                                  referenceFont: kLabelFont)
         let tempAttrText: NSMutableAttributedString = attrText.mutableCopy() as! NSMutableAttributedString
         let attachmentHighlight: ICHighlight = ICHighlight()
 //        attachmentHighlight.tapAction = { [weak self] in
@@ -217,7 +217,7 @@ class ICAttachmentLabelDemoVC: UIViewController {
 //            vc.addAction(confirmAction)
 //            sSelf.present(vc, animated: true, completion: nil)
 //        }
-        tempAttrText.ic_insert(viewAttachment, highlight: attachmentHighlight, at: 0)
+//        tempAttrText.ic_insert(viewAttachment, highlight: attachmentHighlight, at: 0)
 
         let linkStr: String = "\(kEllipsisCharacter)全文"
 
@@ -238,10 +238,10 @@ class ICAttachmentLabelDemoVC: UIViewController {
 
         print("expendLabelSize: \(expendLabelSize) expendLabelRect: \(expendLabelRect)")
         let truncationToken: NSMutableAttributedString = NSMutableAttributedString()
-        truncationToken.ic_appendAttachmentContent(expendLabel,
-                                                   contentInsets: UIEdgeInsets(top: 4, left: 0, bottom: 0, right: 0), //这里做一下微调，因为 ICLabel 的 sizeThatFits: 函数计算出来的大小并不是 sizeThatFits 的那种，所以这里需要进行微调
-            alignment: ICAttachmentAlignment_CenterY,
-            referenceFont: expendLabel.font)
+//        truncationToken.ic_appendAttachmentContent(expendLabel,
+//                                                   contentInsets: UIEdgeInsets(top: 4, left: 0, bottom: 0, right: 0), //这里做一下微调，因为 ICLabel 的 sizeThatFits: 函数计算出来的大小并不是 sizeThatFits 的那种，所以这里需要进行微调
+//            alignment: ICAttachmentAlignment_CenterY,
+//            referenceFont: expendLabel.font)
 
         let icLabel: ICLabel = ICLabel()
         icLabel.backgroundColor = UIColor.lightGray
@@ -277,12 +277,12 @@ class ICAttachmentLabelDemoVC: UIViewController {
             maker.size.equalTo(kCustomViewSize)
         }
 
-        let viewAttachment2: ICLabelAttachment = ICLabelAttachment(content: customView2,
-                                                                   contentInset: kContentInset,
-                                                                   alignment: ICAttachmentAlignment_CenterY,
-                                                                   referenceFont: kLabelFont)
+//        let viewAttachment2: ICLabelAttachment = ICLabelAttachment(content: customView2,
+//                                                                   contentInset: kContentInset,
+//                                                                   alignment: ICAttachmentAlignment_CenterY,
+//                                                                   referenceFont: kLabelFont)
         let tempAttrText2: NSMutableAttributedString = attrText.mutableCopy() as! NSMutableAttributedString
-        tempAttrText2.ic_insert(viewAttachment2, at: 0)
+//        tempAttrText2.ic_insert(viewAttachment2, at: 0)
 
         let icLabel2: ICLabel = ICLabel()
         icLabel2.backgroundColor = UIColor.lightGray
@@ -307,9 +307,9 @@ class ICAttachmentLabelDemoVC: UIViewController {
             maker.size.equalTo(kCustomViewSize)
         }
 
-        let viewAttachment3: ICLabelAttachment = ICLabelAttachment(content: customView3, contentInset: kContentInset, alignment: ICAttachmentAlignment_Bottom, referenceFont: kLabelFont)
+//        let viewAttachment3: ICLabelAttachment = ICLabelAttachment(content: customView3, contentInset: kContentInset, alignment: ICAttachmentAlignment_Bottom, referenceFont: kLabelFont)
         let tempAttrText3: NSMutableAttributedString = attrText.mutableCopy() as! NSMutableAttributedString
-        tempAttrText3.ic_insert(viewAttachment3, at: 0)
+//        tempAttrText3.ic_insert(viewAttachment3, at: 0)
 
         let icLabel3: ICLabel = ICLabel()
         icLabel3.backgroundColor = UIColor.lightGray
@@ -336,10 +336,10 @@ class ICAttachmentLabelDemoVC: UIViewController {
 
         let testAttr: NSMutableAttributedString = attrText.mutableCopy() as! NSMutableAttributedString
         let image = UIImage(named: "jucat.jpeg")
-        let attachment: ICLabelAttachment = ICLabelAttachment(content: image, contentInset: kContentInset, alignment: ICAttachmentAlignment_Top, referenceFont: kFont)
-        attachment.limitSize = CGSize(width: 50, height: 50)
-
-        testAttr.ic_insert(attachment, at: 0)
+//        let attachment: ICLabelAttachment = ICLabelAttachment(content: image, contentInset: kContentInset, alignment: ICAttachmentAlignment_Top, referenceFont: kFont)
+//        attachment.limitSize = CGSize(width: 50, height: 50)
+//
+//        testAttr.ic_insert(attachment, at: 0)
         let appendAttrText: NSAttributedString = NSAttributedString(string: "--last line change")
         testAttr.append(appendAttrText.mutableCopy() as! NSMutableAttributedString)
 
@@ -357,10 +357,10 @@ class ICAttachmentLabelDemoVC: UIViewController {
 
         let testAttr2: NSMutableAttributedString = attrText.mutableCopy() as! NSMutableAttributedString
         let image2 = UIImage(named: "jucat.jpeg")
-        let attachment2: ICLabelAttachment = ICLabelAttachment(content: image2, contentInset: kContentInset, alignment: ICAttachmentAlignment_CenterY, referenceFont: kFont)
-        attachment2.limitSize = CGSize(width: 50, height: 50)
-
-        testAttr2.ic_insert(attachment2, at: 0)
+//        let attachment2: ICLabelAttachment = ICLabelAttachment(content: image2, contentInset: kContentInset, alignment: ICAttachmentAlignment_CenterY, referenceFont: kFont)
+//        attachment2.limitSize = CGSize(width: 50, height: 50)
+//
+//        testAttr2.ic_insert(attachment2, at: 0)
         testAttr2.append(appendAttrText.mutableCopy() as! NSMutableAttributedString)
 
         let icLabel2: ICLabel = ICLabel()
@@ -377,10 +377,10 @@ class ICAttachmentLabelDemoVC: UIViewController {
 
         let testAttr3: NSMutableAttributedString = attrText.mutableCopy() as! NSMutableAttributedString
         let image3 = UIImage(named: "jucat.jpeg")
-        let attachment3: ICLabelAttachment = ICLabelAttachment(content: image3, contentInset: kContentInset, alignment: ICAttachmentAlignment_Bottom, referenceFont: kFont)
-        attachment3.limitSize = CGSize(width: 50, height: 50)
-
-        testAttr3.ic_insert(attachment3, at: 0)
+//        let attachment3: ICLabelAttachment = ICLabelAttachment(content: image3, contentInset: kContentInset, alignment: ICAttachmentAlignment_Bottom, referenceFont: kFont)
+//        attachment3.limitSize = CGSize(width: 50, height: 50)
+//
+//        testAttr3.ic_insert(attachment3, at: 0)
         testAttr3.append(appendAttrText.mutableCopy() as! NSMutableAttributedString)
 
         let icLabel3: ICLabel = ICLabel()

@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "ICLabelMarco.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+#if kIS_SUPPORT_ATTACHMENT
 CGFloat ic_ascentCallbacks(void *ref);
 CGFloat ic_descentCallbacks(void *ref);
 CGFloat ic_widthCallbacks(void *ref);
@@ -22,8 +24,11 @@ typedef enum : NSUInteger {
     ICAttachmentAlignment_Bottom, //底部对齐
 } ICAttachmentAlignment;
 
+#endif
+
 @interface ICLabelAttachment : NSObject
 
+#if kIS_SUPPORT_ATTACHMENT
 /**
  暂时只支持 UIImage / UIView / CALayer 的子类，当为 UIView 时会主动将 userInteractionEnabled 设置为 NO 参数
  */
@@ -70,6 +75,8 @@ typedef enum : NSUInteger {
 - (CGSize)attachmentSize;
 
 - (CGSize)contentSize;
+
+#endif
 
 @end
 

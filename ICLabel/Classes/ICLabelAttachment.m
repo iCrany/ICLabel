@@ -7,7 +7,7 @@
 //
 
 #import "ICLabelAttachment.h"
-
+#if kIS_SUPPORT_ATTACHMENT
 CGFloat ic_ascentCallbacks(void *ref) {
     ICLabelAttachment *attachment = (__bridge ICLabelAttachment *)ref;
     CGSize attachmentSize = attachment.attachmentSize;
@@ -79,8 +79,11 @@ void ic_deallocCallbacks(void *ref) {
     ICLabelAttachment *attachment = (__bridge_transfer ICLabelAttachment *)ref;
     attachment = nil;
 }
+#endif
 
 @implementation ICLabelAttachment
+
+#if kIS_SUPPORT_ATTACHMENT
 
 #pragma mark - Public method
 + (ICLabelAttachment *)attachmentWithContent:(id)content
@@ -140,5 +143,6 @@ void ic_deallocCallbacks(void *ref) {
     }
     return contentSize;
 }
+#endif
 
 @end

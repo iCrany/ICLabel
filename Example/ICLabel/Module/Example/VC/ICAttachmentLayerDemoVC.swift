@@ -45,7 +45,7 @@ class ICAttachmentLayerDemoVC: UIViewController {
         layer.backgroundColor = UIColor.blue.cgColor
         layer.frame = CGRect(origin: .zero, size: CGSize(width: 20, height: 20))
         let icAttrText: NSMutableAttributedString = attrText.mutableCopy() as! NSMutableAttributedString
-        icAttrText.ic_insertAttachmentContent(layer, contentInsets: .zero, alignment: ICAttachmentAlignment_CenterY, referenceFont: Constant.kLabelFont, at: 0)
+//        icAttrText.ic_insertAttachmentContent(layer, contentInsets: .zero, alignment: ICAttachmentAlignment_CenterY, referenceFont: Constant.kLabelFont, at: 0)
 
         self.view.addSubview(self.icLabel)
         self.icLabel.backgroundColor = UIColor.lightGray

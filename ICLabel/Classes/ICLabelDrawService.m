@@ -24,7 +24,7 @@
      ctLineOriginPoint:(CGPoint)ctLineOriginPoint {
     
 }
-
+#if kIS_SUPPORT_ATTACHMENT
 + (ICLabelAttachment *)drawTrunctionTokenWithCTX:(CGContextRef)contextRef
                             label:(ICLabel *)label
                              rect:(CGRect)rect
@@ -132,5 +132,6 @@
     CFRelease(truncationedLine);
     return attachment;
 }
+#endif
 
 @end

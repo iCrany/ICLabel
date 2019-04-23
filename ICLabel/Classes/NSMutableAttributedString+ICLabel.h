@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ICLabelAttachment.h"
+#import "ICLabelMarco.h"
 
 @class ICHighlight;
 
@@ -19,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSMutableAttributedString (ICLabel)
 
 //################################## Attachment ##################################
-
+#if kIS_SUPPORT_ATTACHMENT
 - (void)ic_appendAttachment:(ICLabelAttachment *)attachment;
 - (void)ic_appendAttachment:(ICLabelAttachment *)attachment hightlight:(nullable ICHighlight *)hightlight;
 - (void)ic_insertAttachment:(ICLabelAttachment *)attachment atIndex:(NSUInteger)index;
@@ -35,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
                          alignment:(ICAttachmentAlignment)alignment
                      referenceFont:(UIFont *)referenceFont
                            atIndex:(NSUInteger)index;
-
+#endif
 //################################## Normal attribute ##################################
 
 - (void)ic_setAttribute:(NSString *)attributedName value:(nullable id)value range:(NSRange)range;

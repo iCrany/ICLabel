@@ -14,7 +14,7 @@
 const CGSize ContainerMaxSize = (CGSize){0x100000, 0x100000};
 
 @implementation NSMutableAttributedString (ICLabel)
-
+#if kIS_SUPPORT_ATTACHMENT
 - (void)ic_appendAttachment:(ICLabelAttachment *)attachment {
     [self ic_insertAttachment:attachment atIndex:self.length];
 }
@@ -76,6 +76,7 @@ const CGSize ContainerMaxSize = (CGSize){0x100000, 0x100000};
     }
     return;
 }
+#endif
 
 #pragma mark - Normal attribtue
 - (void)ic_setFont:(UIFont *)font {

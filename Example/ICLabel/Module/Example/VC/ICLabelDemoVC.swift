@@ -97,10 +97,10 @@ class ICLabelDemoVC: UIViewController {
         expendLabel.frame = CGRect(origin: .zero, size: expendLabelSize)
 
         let truncationToken: NSMutableAttributedString = NSMutableAttributedString()
-        truncationToken.ic_appendAttachmentContent(expendLabel,
-                                                   contentInsets: .zero,
-                                                   alignment: ICAttachmentAlignment_CenterY,
-                                                   referenceFont: expendLabel.font)
+//        truncationToken.ic_appendAttachmentContent(expendLabel,
+//                                                   contentInsets: .zero,
+//                                                   alignment: ICAttachmentAlignment_CenterY,
+//                                                   referenceFont: expendLabel.font)
 
         let canClickLabel = ICLabel()
         canClickLabel.truncationToken = truncationToken

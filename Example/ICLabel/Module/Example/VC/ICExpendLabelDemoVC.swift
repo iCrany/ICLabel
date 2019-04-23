@@ -51,10 +51,10 @@ class ICExpendLabelDemoVC: UIViewController {
         let expendLabelSize: CGSize = expendLabel.sizeThatFits(maxSize)
         expendLabel.frame = CGRect(origin: .zero, size: expendLabelSize)
         let truncationToken: NSMutableAttributedString = NSMutableAttributedString()
-        truncationToken.ic_appendAttachmentContent(expendLabel,
-                                                   contentInsets: UIEdgeInsets(top: 4, left: 0, bottom: 0, right: 0),
-                                                   alignment: ICAttachmentAlignment_CenterY,
-                                                   referenceFont: expendLabel.font)
+//        truncationToken.ic_appendAttachmentContent(expendLabel,
+//                                                   contentInsets: UIEdgeInsets(top: 4, left: 0, bottom: 0, right: 0),
+//                                                   alignment: ICAttachmentAlignment_CenterY,
+//                                                   referenceFont: expendLabel.font)
 
         let canClickLabel = ICLabel()
         canClickLabel.isUserInteractionEnabled = true

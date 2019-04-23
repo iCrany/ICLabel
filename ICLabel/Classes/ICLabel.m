@@ -224,6 +224,7 @@ static BOOL kIsInDebugMode = NO;
     return lineFrame;
 }
 
+#if kIS_SUPPORT_ATTACHMENT
 - (void)__drawAttachmentsWithRect:(CGRect)rect {
     
     [_attachmentList enumerateObjectsUsingBlock:^(ICLabelAttachment * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -380,6 +381,7 @@ static BOOL kIsInDebugMode = NO;
     }
     UIGraphicsEndImageContext();
 }
+#endif
 
 - (void)__drawText:(NSAttributedString *)attrString rect:(CGRect)rect context:(CGContextRef)context {
     if (_ctFrame == nil) return;
@@ -458,7 +460,9 @@ static BOOL kIsInDebugMode = NO;
     
     if (self.attributedText && self.attributedText.length > 0) {
         [self __resetFrameWithString:self.attributedText rect:rect];//检测 CTFrame 参数是否已更新
+#if kIS_SUPPORT_ATTACHMENT
         [self __drawAttachmentsWithRect:rect];//绘制附件
+#endif
         [self __drawText:self.attributedText rect:rect context:context];//绘制文字
     }
     
