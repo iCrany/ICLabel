@@ -30,7 +30,9 @@ static BOOL kIsInDebugMode = NO;
     BOOL _isNeedRelayout; //是否需要重新绘制
 }
 
+#if kIS_SUPPORT_TOUCH
 @property (nonatomic, strong) ICHighlight *curHightlight; //当前正在响应的位置
+#endif
 
 @property (nonatomic, strong) NSMutableArray<ICLabelAttachment *> *attachmentList;//存储附件的数组
 
@@ -70,7 +72,10 @@ static BOOL kIsInDebugMode = NO;
     
     _truncationToken = [[NSAttributedString alloc] initWithString:kEllipsisCharacter];
     _lineBreakMode = NSLineBreakByTruncatingTail;
+
+#if kIS_SUPPORT_TOUCH
     _curHightlight = nil;
+#endif
     
     _attachmentList = [[NSMutableArray alloc] init];
     
@@ -468,6 +473,7 @@ static BOOL kIsInDebugMode = NO;
 }
 
 #pragma mark - Event handler
+#if kIS_SUPPORT_TOUCH
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     if (self.curHightlight == nil) {
         UITouch *touch = [[event allTouches] anyObject];
@@ -535,6 +541,7 @@ static BOOL kIsInDebugMode = NO;
     
     [super touchesCancelled:touches withEvent:event];
 }
+#endif
 
 #pragma mark - Public method
 - (CGSize)sizeThatFits:(CGSize)size {

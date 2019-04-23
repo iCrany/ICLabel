@@ -72,13 +72,13 @@ class ICExpendLabelDemoVC: UIViewController {
         }
 
         let hightlight: ICHighlight = ICHighlight()
-        hightlight.tapAction = {
-            canClickLabel.numberOfLines = 0
-            let canClickLabelSize = canClickLabel.sizeThatFits(maxSize)
-            canClickLabel.snp.updateConstraints { (maker) in
-                maker.size.equalTo(canClickLabelSize)
-            }
-        }
+//        hightlight.tapAction = {
+//            canClickLabel.numberOfLines = 0
+//            let canClickLabelSize = canClickLabel.sizeThatFits(maxSize)
+//            canClickLabel.snp.updateConstraints { (maker) in
+//                maker.size.equalTo(canClickLabelSize)
+//            }
+//        }
         seeMore.ic_setHightlight(hightlight, range: NSRange(location: kEllipsisCharacter.count, length: seeMore.length - kEllipsisCharacter.count))
         
 

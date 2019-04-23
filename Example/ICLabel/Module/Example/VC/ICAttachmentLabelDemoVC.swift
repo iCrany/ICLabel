@@ -208,15 +208,15 @@ class ICAttachmentLabelDemoVC: UIViewController {
                                                                   referenceFont: kLabelFont)
         let tempAttrText: NSMutableAttributedString = attrText.mutableCopy() as! NSMutableAttributedString
         let attachmentHighlight: ICHighlight = ICHighlight()
-        attachmentHighlight.tapAction = { [weak self] in
-            guard let sSelf = self else { return }
-            let vc = UIAlertController(title: "You click attachment view", message: nil, preferredStyle: .alert)
-            let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default, handler: { (_) in
-                vc.dismiss(animated: true, completion: nil)
-            })
-            vc.addAction(confirmAction)
-            sSelf.present(vc, animated: true, completion: nil)
-        }
+//        attachmentHighlight.tapAction = { [weak self] in
+//            guard let sSelf = self else { return }
+//            let vc = UIAlertController(title: "You click attachment view", message: nil, preferredStyle: .alert)
+//            let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default, handler: { (_) in
+//                vc.dismiss(animated: true, completion: nil)
+//            })
+//            vc.addAction(confirmAction)
+//            sSelf.present(vc, animated: true, completion: nil)
+//        }
         tempAttrText.ic_insert(viewAttachment, highlight: attachmentHighlight, at: 0)
 
         let linkStr: String = "\(kEllipsisCharacter)全文"
@@ -258,15 +258,15 @@ class ICAttachmentLabelDemoVC: UIViewController {
             maker.size.equalTo(size)
         }
 
-        let hightlight: ICHighlight = ICHighlight()
-        hightlight.tapAction = {
-            icLabel.numberOfLines = 0
-            let canClickLabelSize = icLabel.sizeThatFits(maxSize)
-            icLabel.snp.updateConstraints { (maker) in
-                maker.size.equalTo(canClickLabelSize)
-            }
-        }
-        seeMore.ic_setHightlight(hightlight, range: NSRange(location: kEllipsisCharacter.count, length: seeMore.length - kEllipsisCharacter.count))
+//        let hightlight: ICHighlight = ICHighlight()
+//        hightlight.tapAction = {
+//            icLabel.numberOfLines = 0
+//            let canClickLabelSize = icLabel.sizeThatFits(maxSize)
+//            icLabel.snp.updateConstraints { (maker) in
+//                maker.size.equalTo(canClickLabelSize)
+//            }
+//        }
+//        seeMore.ic_setHightlight(hightlight, range: NSRange(location: kEllipsisCharacter.count, length: seeMore.length - kEllipsisCharacter.count))
 
         let customView2: UIView = UIView(frame: CGRect(x: 0, y: 0, width: kCustomViewSize.width, height: kCustomViewSize.height))
         let customImgView2: UIImageView = UIImageView(image: UIImage(named: "jucat.jpeg"))

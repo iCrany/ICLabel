@@ -21,4 +21,10 @@ static NSString *const ICTextHighlightAttributeName = @"ICTextHighlight";
 # define ICLog(...) do { } while (0)
 #endif
 
+// 是否支持附件的形式，可以用于减包
+#define kIS_SUPPORT_ATTACHMENT 0
+
+// 是否支持点击事件，可以用于减包
+#define kIS_SUPPORT_TOUCH 0
+
 #endif /* ICLabelMarco_h */
