@@ -486,6 +486,16 @@
 		EA888CABD6B2305C25A210B94AC52B45 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AD00D54FB5CDD4A7ECE0314C8B810B /* MASCompositeConstraint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EB7C033FE9AF001D628A3DC896C21599 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F6802B87D99017B4FF526837C047E /* ConstraintMaker.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EC064E0C2FA12DC7A47100E0FA5BD335 /* YYTextInput.h in Headers */ = {isa = PBXBuildFile; fileRef = 737CB6A128F65002150CFFE162DD73D3 /* YYTextInput.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC224CB4226F436100C92B4E /* ICLayoutFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = EC224CB2226F436100C92B4E /* ICLayoutFrame.h */; };
+		EC224CB5226F436100C92B4E /* ICLayoutFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = EC224CB3226F436100C92B4E /* ICLayoutFrame.m */; };
+		EC224CB8226F438400C92B4E /* ICGlyphRun.h in Headers */ = {isa = PBXBuildFile; fileRef = EC224CB6226F438400C92B4E /* ICGlyphRun.h */; };
+		EC224CB9226F438400C92B4E /* ICGlyphRun.m in Sources */ = {isa = PBXBuildFile; fileRef = EC224CB7226F438400C92B4E /* ICGlyphRun.m */; };
+		EC224CBC226F43C300C92B4E /* ICLayoutLine.h in Headers */ = {isa = PBXBuildFile; fileRef = EC224CBA226F43C200C92B4E /* ICLayoutLine.h */; };
+		EC224CBD226F43C300C92B4E /* ICLayoutLine.m in Sources */ = {isa = PBXBuildFile; fileRef = EC224CBB226F43C300C92B4E /* ICLayoutLine.m */; };
+		EC224CC0226F45DD00C92B4E /* ICLabel+Cursor.h in Headers */ = {isa = PBXBuildFile; fileRef = EC224CBE226F45DD00C92B4E /* ICLabel+Cursor.h */; };
+		EC224CC1226F45DD00C92B4E /* ICLabel+Cursor.m in Sources */ = {isa = PBXBuildFile; fileRef = EC224CBF226F45DD00C92B4E /* ICLabel+Cursor.m */; };
+		EC224CC4226F4BAF00C92B4E /* ICLayouter.h in Headers */ = {isa = PBXBuildFile; fileRef = EC224CC2226F4BAF00C92B4E /* ICLayouter.h */; };
+		EC224CC5226F4BAF00C92B4E /* ICLayouter.m in Sources */ = {isa = PBXBuildFile; fileRef = EC224CC3226F4BAF00C92B4E /* ICLayouter.m */; };
 		ECA66D95E6B2611AFC8EA0D84772FE43 /* DTFoundationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE25F4EEBD43C1BCEDC333ACEB28267 /* DTFoundationConstants.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EDA66B13A1FA5453DBE17D579B5B1102 /* DTHTMLParserNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 95F848EE5E12CC2378719F5B24B62405 /* DTHTMLParserNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EDDD1F415CFC6ACB05BB0E16F5964F2A /* EXPMatchers+postNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 8342EB34BFEEB025E988B5773F22AB73 /* EXPMatchers+postNotification.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -1169,6 +1179,16 @@
 		EA9147F9558D238A152E89E7A533B90C /* SPTCompiledExample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTCompiledExample.h; path = Specta/Specta/SPTCompiledExample.h; sourceTree = "<group>"; };
 		EBFBBEB2EB0FB5980809D8D9257516C2 /* DTCoreGraphicsUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTCoreGraphicsUtils.h; path = Core/Source/DTCoreGraphicsUtils.h; sourceTree = "<group>"; };
 		EC02EB676D88BE31E3CF094A23FF4C2E /* EXPFloatTuple.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPFloatTuple.h; path = Expecta/EXPFloatTuple.h; sourceTree = "<group>"; };
+		EC224CB2226F436100C92B4E /* ICLayoutFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ICLayoutFrame.h; path = ICLabel/Classes/ICLayoutFrame.h; sourceTree = "<group>"; };
+		EC224CB3226F436100C92B4E /* ICLayoutFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ICLayoutFrame.m; path = ICLabel/Classes/ICLayoutFrame.m; sourceTree = "<group>"; };
+		EC224CB6226F438400C92B4E /* ICGlyphRun.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ICGlyphRun.h; path = ICLabel/Classes/ICGlyphRun.h; sourceTree = "<group>"; };
+		EC224CB7226F438400C92B4E /* ICGlyphRun.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ICGlyphRun.m; path = ICLabel/Classes/ICGlyphRun.m; sourceTree = "<group>"; };
+		EC224CBA226F43C200C92B4E /* ICLayoutLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICLayoutLine.h; path = ICLabel/Classes/ICLayoutLine.h; sourceTree = "<group>"; };
+		EC224CBB226F43C300C92B4E /* ICLayoutLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICLayoutLine.m; path = ICLabel/Classes/ICLayoutLine.m; sourceTree = "<group>"; };
+		EC224CBE226F45DD00C92B4E /* ICLabel+Cursor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ICLabel+Cursor.h"; path = "ICLabel/Classes/ICLabel+Cursor.h"; sourceTree = "<group>"; };
+		EC224CBF226F45DD00C92B4E /* ICLabel+Cursor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ICLabel+Cursor.m"; path = "ICLabel/Classes/ICLabel+Cursor.m"; sourceTree = "<group>"; };
+		EC224CC2226F4BAF00C92B4E /* ICLayouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICLayouter.h; sourceTree = "<group>"; };
+		EC224CC3226F4BAF00C92B4E /* ICLayouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICLayouter.m; sourceTree = "<group>"; };
 		EC36D424ED4DCE34512DF51979F871BB /* EXPMatchers+beInstanceOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beInstanceOf.m"; path = "Expecta/Matchers/EXPMatchers+beInstanceOf.m"; sourceTree = "<group>"; };
 		ED60AE3F91EC2915BC456B1F39255279 /* Specta.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Specta.modulemap; sourceTree = "<group>"; };
 		EE4D955AE2935D07DA0AF1D724B61AA7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -2054,6 +2074,16 @@
 		E385608373BFB03769202529DB472863 /* ICLabel */ = {
 			isa = PBXGroup;
 			children = (
+				EC224CC2226F4BAF00C92B4E /* ICLayouter.h */,
+				EC224CC3226F4BAF00C92B4E /* ICLayouter.m */,
+				EC224CBE226F45DD00C92B4E /* ICLabel+Cursor.h */,
+				EC224CBF226F45DD00C92B4E /* ICLabel+Cursor.m */,
+				EC224CBA226F43C200C92B4E /* ICLayoutLine.h */,
+				EC224CBB226F43C300C92B4E /* ICLayoutLine.m */,
+				EC224CB6226F438400C92B4E /* ICGlyphRun.h */,
+				EC224CB7226F438400C92B4E /* ICGlyphRun.m */,
+				EC224CB2226F436100C92B4E /* ICLayoutFrame.h */,
+				EC224CB3226F436100C92B4E /* ICLayoutFrame.m */,
 				5A8F1723AF9D260303BF3365A8267352 /* ICHighlight.h */,
 				55D76D62868E5FF481C2C67939E36C06 /* ICHighlight.m */,
 				45F5F8593A8320523046157752FBE9D1 /* ICLabel.h */,
@@ -2418,13 +2448,18 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC224CB4226F436100C92B4E /* ICLayoutFrame.h in Headers */,
+				EC224CB8226F438400C92B4E /* ICGlyphRun.h in Headers */,
 				4FD40D5E42A8F916669B10939A4BEBC7 /* ICHighlight.h in Headers */,
 				47DBCAF1823C929E6149191AB324D83A /* ICLabel-umbrella.h in Headers */,
 				D1BD63C7B7459611C93BF54B3352961B /* ICLabel.h in Headers */,
 				56150ECC890708C5B51D2930641ED147 /* ICLabelAttachment.h in Headers */,
+				EC224CBC226F43C300C92B4E /* ICLayoutLine.h in Headers */,
+				EC224CC4226F4BAF00C92B4E /* ICLayouter.h in Headers */,
 				468BAE97F9542A45FE8EF0A3FA4A5E67 /* ICLabelDrawService.h in Headers */,
 				685CE385B5B928728EB8D7C318796E86 /* ICLabelMarco.h in Headers */,
 				AF9F5CDDF289C1638D2E0BDA67E8E269 /* NSMutableAttributedString+ICLabel.h in Headers */,
+				EC224CC0226F45DD00C92B4E /* ICLabel+Cursor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3022,12 +3057,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC224CC1226F45DD00C92B4E /* ICLabel+Cursor.m in Sources */,
+				EC224CC5226F4BAF00C92B4E /* ICLayouter.m in Sources */,
 				853F6146584C0AC9AC0FCEE0F397CE1E /* ICHighlight.m in Sources */,
+				EC224CBD226F43C300C92B4E /* ICLayoutLine.m in Sources */,
 				F61FF2F6D18873B86CD6194267955F98 /* ICLabel-dummy.m in Sources */,
 				DD099D293E43A333E62E3D3548537026 /* ICLabel.m in Sources */,
 				07AE80ECA401BE3E25A4EDF5CB8445BA /* ICLabelAttachment.m in Sources */,
 				CF00C6824A4495B5A9291681B036A2ED /* ICLabelDrawService.m in Sources */,
+				EC224CB9226F438400C92B4E /* ICGlyphRun.m in Sources */,
 				5A10C0E6F109B60B8F1DBF27DA94E339 /* NSMutableAttributedString+ICLabel.m in Sources */,
+				EC224CB5226F436100C92B4E /* ICLayoutFrame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

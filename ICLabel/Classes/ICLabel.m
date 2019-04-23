@@ -13,10 +13,12 @@
 #import "ICLabelMarco.h"
 #import "ICHighlight.h"
 #import "ICLabelAttachment.h"
+#import "ICLayoutLine.h"
+#import "ICLayoutFrame.h"
 
+#if DEBUG
 static BOOL kIsInDebugMode = NO;
-#define kDefaultFont ([UIFont systemFontOfSize: 15])
-#define kDefaultTextColor ([UIColor blackColor])
+#endif
 
 @interface ICLabel() {
     
@@ -28,6 +30,8 @@ static BOOL kIsInDebugMode = NO;
     CFIndex __innerNumberOfLines; //实际需要的行数
     
     BOOL _isNeedRelayout; //是否需要重新绘制
+    
+    ICLayoutFrame *_layoutFrame;
 }
 
 #if kIS_SUPPORT_TOUCH
@@ -36,11 +40,6 @@ static BOOL kIsInDebugMode = NO;
 
 #if kIS_SUPPORT_ATTACHMENT
 @property (nonatomic, strong) NSMutableArray<ICLabelAttachment *> *attachmentList;//存储附件的数组
-#endif
-
-#if DEBUG
-@property (nonatomic, strong) UIView *touchedPointView; //被点击的的点的视图区域
-@property (nonatomic, strong) UIView *caretView; //光标位置
 #endif
 
 @end
@@ -79,25 +78,7 @@ static BOOL kIsInDebugMode = NO;
     _attachmentList = [[NSMutableArray alloc] init];
 #endif
     
-#if DEBUG
-    self.touchedPointView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 4, 4)];
-    self.touchedPointView.backgroundColor = [UIColor redColor];
-    self.touchedPointView.userInteractionEnabled = NO;
-    [self addSubview:self.touchedPointView];
-    [self bringSubviewToFront:self.touchedPointView];
-    self.touchedPointView.hidden = YES; //default is hidden
-#endif
 }
-
-#if DEBUG
-- (void)__touchPointView:(BOOL)hidden centerPoint:(CGPoint)centerPoint {
-    if (kIsInDebugMode) {
-        self.touchedPointView.hidden = hidden;
-        self.touchedPointView.center = centerPoint;
-        [self bringSubviewToFront:self.touchedPointView];
-    }
-}
-#endif
 
 - (void)__resetFrameWithString:(NSAttributedString *)attrString rect:(CGRect)rect {
     if (_ctFrame == nil || _isNeedRelayout) {
@@ -190,18 +171,6 @@ static BOOL kIsInDebugMode = NO;
                         tapAttr = [thisLineAttr attributedSubstringFromRange:NSMakeRange(targetIndex, 1)];
                     }
                     ICLog(@"targetIndex: %ld 最后识别的文字：%@", targetIndex, tapAttr.string);
-                #if DEBUG
-                    if (kIsInDebugMode) { //这里是绘制 debug 的调试 UI
-                        CGRect caretViewFrame = CGRectMake(xOffset + lineFrame.origin.x, lineFrame.origin.y, 1, lineFrame.size.height);
-                        if (!self.caretView) {
-                            self.caretView = [[UIView alloc] init];
-                            [self addSubview:self.caretView];
-                            self.caretView.backgroundColor = [UIColor redColor];
-                        }
-                        self.caretView.frame = caretViewFrame;
-                        self.caretView.hidden = NO;
-                    }
-                #endif
                 }
                 return targetIndex;
             }
