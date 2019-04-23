@@ -79,6 +79,8 @@ const CGSize ContainerMaxSize = (CGSize){0x100000, 0x100000};
 #endif
 
 #pragma mark - Normal attribtue
+#if kIS_NEED_UTIL_METHOD
+
 - (void)ic_setFont:(UIFont *)font {
     [self ic_setAttribute:NSFontAttributeName value:font range:NSMakeRange(0, self.length)];
 }
@@ -95,7 +97,6 @@ const CGSize ContainerMaxSize = (CGSize){0x100000, 0x100000};
     [self ic_setAttribute:NSForegroundColorAttributeName value:forgroundColor range:range];
 }
 
-#if kIS_NEED_UTIL_METHOD
 - (void)ic_setBackgroundColor:(UIColor *)backgroundColor {
     [self ic_setAttribute:NSBackgroundColorAttributeName value:backgroundColor range:NSMakeRange(0, self.length)];
 }

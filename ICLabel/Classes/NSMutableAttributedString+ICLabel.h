@@ -38,6 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
                            atIndex:(NSUInteger)index;
 #endif
 //################################## Normal attribute ##################################
+#if kIS_NEED_UTIL_METHOD
 
 - (void)ic_setAttribute:(NSString *)attributedName value:(nullable id)value range:(NSRange)range;
 
@@ -52,7 +53,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)ic_setForegroundColor:(nullable UIColor *)forgroundColor;
 - (void)ic_setForegroundColor:(nullable UIColor *)forgroundColor range:(NSRange)range;
 
-#if kIS_NEED_UTIL_METHOD
+
 - (void)ic_setBackgroundColor:(nullable UIColor *)backgroundColor;
 - (void)ic_setBackgroundColor:(nullable UIColor *)backgroundColor range:(NSRange)range;
 

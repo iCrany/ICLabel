@@ -18,15 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ICLabelDrawService : NSObject
 
-
-+ (void)drawLine; //绘制每一行
-
-+ (void)drawRunWithCTX:(CGContextRef)contextRef
-                 label:(ICLabel *)label
-                  rect:(CGRect)rect
-                ctLine:(CTLineRef)ctLine
-     ctLineOriginPoint:(CGPoint)ctLineOriginPoint; //绘制具体的每一个 run, 主要是绘制附件
-
 #if kIS_SUPPORT_ATTACHMENT
 + (ICLabelAttachment *)drawTrunctionTokenWithCTX:(CGContextRef)contextRef
                                         label:(ICLabel *)label

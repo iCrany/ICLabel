@@ -39,7 +39,7 @@ class ICLabelDemoVC: UIViewController {
         self.view.addSubview(testLabel)
         testLabel.numberOfLines = 3 //测试行数的限制逻辑
         testLabel.backgroundColor = UIColor.lightGray
-        testLabel.font = UIFont.systemFont(ofSize: 20)
+//        testLabel.font = UIFont.systemFont(ofSize: 20)
 //        testLabel.font = UIFont.init(name: "DINCondensed-bold", size: 20)
 //        testLabel.lineSpacing = 20;//支持行间距的设置
         testLabel.attributedText = hasParagraphStyleAttrStr
@@ -65,15 +65,15 @@ class ICLabelDemoVC: UIViewController {
         let anotherTestAttrStr: NSMutableAttributedString = testAttrStr.mutableCopy() as! NSMutableAttributedString
         let paragraphStyle: NSMutableParagraphStyle = NSMutableParagraphStyle()
 //        paragraphStyle.lineSpacing = testLabel.lineSpacing //设置行间距的测试
-        anotherTestAttrStr.addAttributes([NSAttributedString.Key.font: testLabel.font,
-                                          NSAttributedString.Key.foregroundColor: testLabel.textColor,
+        anotherTestAttrStr.addAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20),
+                                          NSAttributedString.Key.foregroundColor: UIColor.black,
                                           NSAttributedString.Key.paragraphStyle: paragraphStyle
             ],
                                          range: NSRange(location: 0, length: anotherTestAttrStr.length))
         //貌似是系统的一个 bug, numberOfLines = 3 ， lineSpacing = 20, 这个时候文字中就不会显示 ... 出来了。。。
         let anotherTestLabel = UILabel()
         anotherTestLabel.attributedText = anotherTestAttrStr
-        anotherTestLabel.textColor = testLabel.textColor
+//        anotherTestLabel.textColor = testLabel.textColor
         anotherTestLabel.numberOfLines = testLabel.numberOfLines
         anotherTestLabel.backgroundColor = UIColor.groupTableViewBackground
         let anotherTestLabelSize = anotherTestLabel.sizeThatFits(CGSize(width: kScreenWidth - labelInsets.left - labelInsets.right, height: CGFloat.greatestFiniteMagnitude))
@@ -87,11 +87,11 @@ class ICLabelDemoVC: UIViewController {
         let linkStr: String = "\(kEllipsisCharacter)全文"
 
         let seeMore: NSMutableAttributedString = NSMutableAttributedString(string: linkStr)
-        seeMore.ic_setFont(kLabelFont)
-        seeMore.ic_setForegroundColor(UIColor.red, range: NSRange(location: kEllipsisCharacter.count, length: linkStr.count - kEllipsisCharacter.count))
+//        seeMore.ic_setFont(kLabelFont)
+//        seeMore.ic_setForegroundColor(UIColor.red, range: NSRange(location: kEllipsisCharacter.count, length: linkStr.count - kEllipsisCharacter.count))
         let expendLabel: ICLabel = ICLabel()
         expendLabel.attributedText = seeMore
-        expendLabel.textColor = UIColor.blue
+//        expendLabel.textColor = UIColor.blue
         expendLabel.backgroundColor = UIColor.red
         let expendLabelSize: CGSize = expendLabel.sizeThatFits(CGSize(width: kScreenWidth - labelInsets.left - labelInsets.right, height: CGFloat.greatestFiniteMagnitude))
         expendLabel.frame = CGRect(origin: .zero, size: expendLabelSize)

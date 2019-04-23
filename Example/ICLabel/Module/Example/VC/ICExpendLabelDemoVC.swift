@@ -34,20 +34,20 @@ class ICExpendLabelDemoVC: UIViewController {
         let labelInsets: UIEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         let kLabelFont: UIFont = UIFont.systemFont(ofSize: 13)
         let maxSize: CGSize = CGSize(width: kScreenWidth - labelInsets.left - labelInsets.right, height: CGFloat.greatestFiniteMagnitude)
-        testAttrStr.ic_setFont(kLabelFont)
+//        testAttrStr.ic_setFont(kLabelFont)
 
         let linkStr: String = "\(kEllipsisCharacter)全文"
         let seeMore: NSMutableAttributedString = NSMutableAttributedString(string: linkStr)
 
         let expendLabel: ICLabel = ICLabel()
-        expendLabel.font = kLabelFont
+//        expendLabel.font = kLabelFont
         expendLabel.isUserInteractionEnabled = true
         expendLabel.attributedText = seeMore
         expendLabel.backgroundColor = UIColor.clear
-        seeMore.ic_setFont(kLabelFont)
-        seeMore.ic_setForegroundColor(UIColor.blue,
-                                      range: NSRange(location: kEllipsisCharacter.count,
-                                                     length: linkStr.count - kEllipsisCharacter.count))
+//        seeMore.ic_setFont(kLabelFont)
+//        seeMore.ic_setForegroundColor(UIColor.blue,
+//                                      range: NSRange(location: kEllipsisCharacter.count,
+//                                                     length: linkStr.count - kEllipsisCharacter.count))
         let expendLabelSize: CGSize = expendLabel.sizeThatFits(maxSize)
         expendLabel.frame = CGRect(origin: .zero, size: expendLabelSize)
         let truncationToken: NSMutableAttributedString = NSMutableAttributedString()

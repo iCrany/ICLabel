@@ -94,7 +94,7 @@ class ICLineBreakModeDemoVC: UIViewController {
         icLabel.numberOfLines = descLabel.numberOfLines
         icLabel.backgroundColor = UIColor.lightGray
         icLabel.attributedText = applyParagraphStyleAttr
-        icLabel.font = UIFont.systemFont(ofSize: 20)
+//        icLabel.font = UIFont.systemFont(ofSize: 20)
         let icLabelSize = icLabel.sizeThatFits(CGSize(width: kScreenWidth - kContentInsets.left - kContentInsets.right, height: CGFloat.greatestFiniteMagnitude))
         self.view.addSubview(icLabel)
         icLabel.snp.makeConstraints { (maker) in

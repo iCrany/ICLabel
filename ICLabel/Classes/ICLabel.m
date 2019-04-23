@@ -34,7 +34,9 @@ static BOOL kIsInDebugMode = NO;
 @property (nonatomic, strong) ICHighlight *curHightlight; //当前正在响应的位置
 #endif
 
+#if kIS_SUPPORT_ATTACHMENT
 @property (nonatomic, strong) NSMutableArray<ICLabelAttachment *> *attachmentList;//存储附件的数组
+#endif
 
 #if DEBUG
 @property (nonatomic, strong) UIView *touchedPointView; //被点击的的点的视图区域
@@ -64,8 +66,10 @@ static BOOL kIsInDebugMode = NO;
 #pragma mark - Private method
 - (void)__setupInit {
     
+#if kIS_NEED_UTIL_METHOD
     _font = kDefaultFont;
     _textColor = kDefaultTextColor;
+#endif
     
     _isNeedRelayout = YES;
     self.userInteractionEnabled = NO; // default is NO
@@ -77,7 +81,9 @@ static BOOL kIsInDebugMode = NO;
     _curHightlight = nil;
 #endif
     
+#if kIS_SUPPORT_ATTACHMENT
     _attachmentList = [[NSMutableArray alloc] init];
+#endif
     
 #if DEBUG
     self.touchedPointView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 4, 4)];
@@ -608,6 +614,7 @@ static BOOL kIsInDebugMode = NO;
     }
 }
 
+#if kIS_NEED_UTIL_METHOD
 - (void)setFont:(UIFont *)font {
     if (font == nil) { font = kDefaultFont; } //set default font
     if (self.font != font) {
@@ -625,6 +632,7 @@ static BOOL kIsInDebugMode = NO;
         [self relayoutText];
     }
 }
+#endif
 
 - (void)setTruncationToken:(NSAttributedString *)truncationToken {
     _truncationToken = truncationToken;

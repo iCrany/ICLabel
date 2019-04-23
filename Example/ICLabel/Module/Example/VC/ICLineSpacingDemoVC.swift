@@ -32,7 +32,7 @@ class ICLineSpacingDemoVC: UIViewController {
         let attrText = NSMutableAttributedString(string: text)
         let icLabel: ICLabel = ICLabel()
         icLabel.attributedText = attrText.mutableCopy() as? NSMutableAttributedString
-        icLabel.font = kLabelFont
+//        icLabel.font = kLabelFont
 //        icLabel.lineSpacing = 5
         icLabel.isUserInteractionEnabled = false
         icLabel.backgroundColor = UIColor.lightGray
@@ -48,7 +48,7 @@ class ICLineSpacingDemoVC: UIViewController {
         let titleAttrText = NSMutableAttributedString(string: text)
         let titleLabel: ICLabel = ICLabel()
         titleLabel.attributedText = titleAttrText
-        titleLabel.font = kTitleLabelFont
+//        titleLabel.font = kTitleLabelFont
 //        titleLabel.lineSpacing = 6//(6 - (kTitleLabelFont.lineHeight - kTitleLabelFont.pointSize))
         titleLabel.backgroundColor = UIColor.clear
         self.view.addSubview(titleLabel)
@@ -62,7 +62,7 @@ class ICLineSpacingDemoVC: UIViewController {
 
         let newText: String = "ABCD哈哈" //使用 systemAttrText.ic_setParagraphStyle_linespacing(50)， 会有多余的间隔出来
         let systemAttrText = NSMutableAttributedString(string: newText)
-        systemAttrText.ic_setFont(kLabelFont)
+//        systemAttrText.ic_setFont(kLabelFont)
 //        systemAttrText.ic_setParagraphStyle_linespacing(50, maxWidth: kScreenWidth - kLabelInsets.left - kLabelInsets.right, with: kLabelFont) //修复系统 lineSpacing 问题
         let systemLabel: UILabel = UILabel()
         systemLabel.attributedText = systemAttrText

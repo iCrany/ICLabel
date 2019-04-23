@@ -37,7 +37,7 @@ class SizeThatFitsExampleVC: UIViewController {
     
     private var defaultText: NSMutableAttributedString = {
         let defaultText: NSMutableAttributedString = NSMutableAttributedString(string: "哈中test中文强势进入😁😁😁😁😁😁😀😀😀😀😀🧀🧀🧀🧀🥔🥔🥔🥔🥔🥔🥔🥔🥔🥔🥔🍑🍑🍑🍎🍎🍎🍎🍎🍏🍏🍏🍏🍏（￣︶￣）↗（￣︶￣）↗（￣︶￣）↗（￣︶￣）↗[]~(￣▽￣)~*[]~(￣▽￣)~*[]空间的划分空间哈空间和开发的沙发空间撒谎卢卡尔积分卡了咖啡计算的909r90lkjdlfkjlkadsf大方尽快哈房贷卡")
-        defaultText.ic_setFont(UIFont.systemFont(ofSize: 15))
+//        defaultText.ic_setFont(UIFont.systemFont(ofSize: 15))
 //        defaultText.ic_setParagraphStyle_linespacing(10)
         return defaultText
     }()
