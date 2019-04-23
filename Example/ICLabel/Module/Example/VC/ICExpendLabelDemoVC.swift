@@ -61,9 +61,9 @@ class ICExpendLabelDemoVC: UIViewController {
         canClickLabel.truncationToken = truncationToken
         canClickLabel.backgroundColor = UIColor.lightGray
         canClickLabel.numberOfLines = 4
-        canClickLabel.lineSpacing = 0
+//        canClickLabel.lineSpacing = 0
         canClickLabel.attributedText = testAttrStr
-        let canClickLabelSize = testAttrStr.ic_boundRect(with: maxSize, numberOfLines: 4).size
+        let canClickLabelSize = CGRect.zero//testAttrStr.ic_boundRect(with: maxSize, numberOfLines: 4).size
         self.view.addSubview(canClickLabel)
         canClickLabel.snp.makeConstraints { (maker) in
             maker.top.equalTo(self.view.snp.top).offset(100)
@@ -79,12 +79,12 @@ class ICExpendLabelDemoVC: UIViewController {
 //                maker.size.equalTo(canClickLabelSize)
 //            }
 //        }
-        seeMore.ic_setHightlight(hightlight, range: NSRange(location: kEllipsisCharacter.count, length: seeMore.length - kEllipsisCharacter.count))
+//        seeMore.ic_setHightlight(hightlight, range: NSRange(location: kEllipsisCharacter.count, length: seeMore.length - kEllipsisCharacter.count))
         
 
         let m80Label: M80AttributedLabel = M80AttributedLabel()
         m80Label.numberOfLines = canClickLabel.numberOfLines
-        m80Label.lineSpacing = canClickLabel.lineSpacing
+//        m80Label.lineSpacing = canClickLabel.lineSpacing
         m80Label.backgroundColor = UIColor.lightGray
         m80Label.attributedText = testAttrStr
         m80Label.font = kLabelFont

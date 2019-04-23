@@ -20,7 +20,7 @@ class ICBenchMarkCell: UITableViewCell {
     private var icLabel: ICLabel = {
         let v = ICLabel()
         v.font = Constant.kFont
-        v.lineSpacing = 10
+//        v.lineSpacing = 10
         v.backgroundColor = UIColor.lightGray
         return v
     }()

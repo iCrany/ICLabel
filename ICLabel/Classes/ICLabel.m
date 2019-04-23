@@ -601,15 +601,6 @@ static BOOL kIsInDebugMode = NO;
     }
 }
 
-- (void)setLineSpacing:(CGFloat)lineSpacing {
-    if (self.lineSpacing != lineSpacing) {
-        _lineSpacing = lineSpacing;
-        [_attributedText ic_setParagraphStyle_linespacing:_lineSpacing];
-        
-        [self relayoutText];
-    }
-}
-
 - (void)setNumberOfLines:(NSInteger)numberOfLines {
     if (_numberOfLines != numberOfLines) {
         _numberOfLines = numberOfLines;

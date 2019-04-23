@@ -111,7 +111,7 @@ class ICLabelSizeThatFitBenchmarkExampleVC: UIViewController {
         
         var startTime: Double = CFAbsoluteTimeGetCurrent()
         for index in 0..<count {
-            let rect = testAttrStr.ic_boundRect(with: size, numberOfLines: 0)
+            let rect = CGRect.zero//testAttrStr.ic_boundRect(with: size, numberOfLines: 0)
             if index == 0 {
                 print("[xxx0] rect: \(rect)")
             }

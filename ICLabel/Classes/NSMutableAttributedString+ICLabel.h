@@ -52,6 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)ic_setForegroundColor:(nullable UIColor *)forgroundColor;
 - (void)ic_setForegroundColor:(nullable UIColor *)forgroundColor range:(NSRange)range;
 
+#if kIS_NEED_UTIL_METHOD
 - (void)ic_setBackgroundColor:(nullable UIColor *)backgroundColor;
 - (void)ic_setBackgroundColor:(nullable UIColor *)backgroundColor range:(NSRange)range;
 
@@ -69,13 +70,15 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)ic_setParagraphStyle_firstLineHeadIndent:(CGFloat)firstLineHeadIndent;
 - (void)ic_setParagraphStyle_minimumLineHeight:(CGFloat)minimumLineHeight;
 - (void)ic_setParagraphStyle_maximumLineHeight:(CGFloat)maximumLineHeight;
+#endif
 
 //################################## Custom attribute ##################################
+#if kIS_SUPPORT_TOUCH
 - (void)ic_setHightlight:(nullable ICHighlight *)hightlight;
 - (void)ic_setHightlight:(nullable ICHighlight *)hightlight range:(NSRange)range;
-
+#endif
 //################################## Other helper method ##################################
-
+#if kIS_NEED_UTIL_METHOD
 /**
  该方法会根据 maxWith / font 参数来判断是否需要添加 lineSpacing 参数，因为 UILabel 在支持 lineSpacing 的前提下，若文本只显示一行，UILabel 会将 lineSpacing 一起统计到计算的高度中去，
  所以该方法会动态监测若只有一行就不添加 lineSpacing 参数了
@@ -94,6 +97,8 @@ NS_ASSUME_NONNULL_BEGIN
  @return 对应所需要的实际视图大小
  */
 - (CGRect)ic_boundRectWithSize:(CGSize)size numberOfLines:(NSInteger)numberOfLines;
+
+#endif
 
 @end
 

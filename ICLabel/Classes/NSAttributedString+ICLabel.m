@@ -8,6 +8,7 @@
 #import "NSAttributedString+ICLabel.h"
 #import "NSMutableAttributedString+ICLabel.h"
 
+#if kIS_NEED_UTIL_METHOD
 @implementation NSAttributedString (ICLabel)
 
 - (CGRect)ic_boundRectWithSize:(CGSize)size numberOfLines:(NSInteger)numberOfLines {
@@ -16,3 +17,4 @@
 }
 
 @end
+#endif

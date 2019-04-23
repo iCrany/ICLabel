@@ -95,6 +95,7 @@ const CGSize ContainerMaxSize = (CGSize){0x100000, 0x100000};
     [self ic_setAttribute:NSForegroundColorAttributeName value:forgroundColor range:range];
 }
 
+#if kIS_NEED_UTIL_METHOD
 - (void)ic_setBackgroundColor:(UIColor *)backgroundColor {
     [self ic_setAttribute:NSBackgroundColorAttributeName value:backgroundColor range:NSMakeRange(0, self.length)];
 }
@@ -178,6 +179,9 @@ const CGSize ContainerMaxSize = (CGSize){0x100000, 0x100000};
     paragraphStyle.maximumLineHeight = maximumLineHeight;
     [self ic_setAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, self.length)];
 }
+#endif
+
+#if kIS_SUPPORT_TOUCH
 
 #pragma mark - Custom attribute
 - (void)ic_setHightlight:(ICHighlight *)hightlight {
@@ -188,7 +192,10 @@ const CGSize ContainerMaxSize = (CGSize){0x100000, 0x100000};
     [self ic_setAttribute:ICTextHighlightAttributeName value:hightlight range:range];
 }
 
+#endif
+
 #pragma mark - Other method
+#if kIS_NEED_UTIL_METHOD
 - (void)ic_setParagraphStyle_linespacing:(CGFloat)lineSpacing maxWidth:(CGFloat)maxWidth withFont:(UIFont *)font {
     BOOL isMoreThanOneLine = [self __isMoreThanOneLineWithMaxWidth:maxWidth withFont:font];
     if (isMoreThanOneLine) {//超过一行才设置 lineSpacing 参数
@@ -265,5 +272,5 @@ const CGSize ContainerMaxSize = (CGSize){0x100000, 0x100000};
     
     return CGRectZero;
 }
-
+#endif
 @end

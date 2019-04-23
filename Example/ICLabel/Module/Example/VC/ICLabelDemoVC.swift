@@ -41,7 +41,7 @@ class ICLabelDemoVC: UIViewController {
         testLabel.backgroundColor = UIColor.lightGray
         testLabel.font = UIFont.systemFont(ofSize: 20)
 //        testLabel.font = UIFont.init(name: "DINCondensed-bold", size: 20)
-        testLabel.lineSpacing = 20;//支持行间距的设置
+//        testLabel.lineSpacing = 20;//支持行间距的设置
         testLabel.attributedText = hasParagraphStyleAttrStr
         let testLabelSize = testLabel.sizeThatFits(CGSize(width: kScreenWidth - labelInsets.left - labelInsets.right,
                                                           height: CGFloat.greatestFiniteMagnitude))
@@ -64,7 +64,7 @@ class ICLabelDemoVC: UIViewController {
 
         let anotherTestAttrStr: NSMutableAttributedString = testAttrStr.mutableCopy() as! NSMutableAttributedString
         let paragraphStyle: NSMutableParagraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = testLabel.lineSpacing //设置行间距的测试
+//        paragraphStyle.lineSpacing = testLabel.lineSpacing //设置行间距的测试
         anotherTestAttrStr.addAttributes([NSAttributedString.Key.font: testLabel.font,
                                           NSAttributedString.Key.foregroundColor: testLabel.textColor,
                                           NSAttributedString.Key.paragraphStyle: paragraphStyle

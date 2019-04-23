@@ -38,7 +38,7 @@ class SizeThatFitsExampleVC: UIViewController {
     private var defaultText: NSMutableAttributedString = {
         let defaultText: NSMutableAttributedString = NSMutableAttributedString(string: "哈中test中文强势进入😁😁😁😁😁😁😀😀😀😀😀🧀🧀🧀🧀🥔🥔🥔🥔🥔🥔🥔🥔🥔🥔🥔🍑🍑🍑🍎🍎🍎🍎🍎🍏🍏🍏🍏🍏（￣︶￣）↗（￣︶￣）↗（￣︶￣）↗（￣︶￣）↗[]~(￣▽￣)~*[]~(￣▽￣)~*[]空间的划分空间哈空间和开发的沙发空间撒谎卢卡尔积分卡了咖啡计算的909r90lkjdlfkjlkadsf大方尽快哈房贷卡")
         defaultText.ic_setFont(UIFont.systemFont(ofSize: 15))
-        defaultText.ic_setParagraphStyle_linespacing(10)
+//        defaultText.ic_setParagraphStyle_linespacing(10)
         return defaultText
     }()
     
@@ -71,7 +71,7 @@ class SizeThatFitsExampleVC: UIViewController {
         }
         
         self.testLabel2.attributedText = self.defaultText.copy() as? NSAttributedString
-        let testLabel2Rect: CGRect = self.defaultText.ic_boundRect(with: maxSize, numberOfLines: 0)
+        let testLabel2Rect: CGRect = CGRect.zero//self.defaultText.ic_boundRect(with: maxSize, numberOfLines: 0)
         self.view.addSubview(self.testLabel2)
         self.testLabel2.snp.makeConstraints { (make) in
             make.top.equalTo(self.testLabel1.snp.bottom).offset(20)
@@ -82,7 +82,7 @@ class SizeThatFitsExampleVC: UIViewController {
         
         //备注： ic_boundRect: 方法计算出来的宽度以及高度只能用在 ICLabel 控件上
         self.testLabel3.attributedText = self.defaultText.mutableCopy()as? NSMutableAttributedString
-        let testLabel3Rect: CGRect = self.defaultText.ic_boundRect(with: maxSize, numberOfLines: 0)
+        let testLabel3Rect: CGRect = CGRect.zero//self.defaultText.ic_boundRect(with: maxSize, numberOfLines: 0)
         self.view.addSubview(self.testLabel3)
         self.testLabel3.snp.makeConstraints { (make) in
             make.top.equalTo(self.testLabel2.snp.bottom).offset(20)
