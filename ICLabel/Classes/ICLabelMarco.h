@@ -27,7 +27,4 @@ static NSString *const ICTextHighlightAttributeName = @"ICTextHighlight";
 // 是否支持点击事件，可以用于减包
 #define kIS_SUPPORT_TOUCH 0
 
-// 是否需要 Category 中的一些便捷方法，可以用于减包
-#define kIS_NEED_UTIL_METHOD 0
-
 #endif /* ICLabelMarco_h */

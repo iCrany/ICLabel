@@ -66,11 +66,6 @@ static BOOL kIsInDebugMode = NO;
 #pragma mark - Private method
 - (void)__setupInit {
     
-#if kIS_NEED_UTIL_METHOD
-    _font = kDefaultFont;
-    _textColor = kDefaultTextColor;
-#endif
-    
     _isNeedRelayout = YES;
     self.userInteractionEnabled = NO; // default is NO
     
@@ -600,26 +595,6 @@ static BOOL kIsInDebugMode = NO;
         [self relayoutText];
     }
 }
-
-#if kIS_NEED_UTIL_METHOD
-- (void)setFont:(UIFont *)font {
-    if (font == nil) { font = kDefaultFont; } //set default font
-    if (self.font != font) {
-        _font = font;
-        [_attributedText ic_setFont:_font];
-        [self relayoutText];
-    }
-}
-
-- (void)setTextColor:(UIColor *)textColor {
-    if (textColor == nil) { textColor = kDefaultTextColor; } //set default textColor
-    if (self.textColor != textColor) {
-        _textColor = textColor;
-        [_attributedText ic_setForegroundColor:self.textColor];
-        [self relayoutText];
-    }
-}
-#endif
 
 - (void)setTruncationToken:(NSAttributedString *)truncationToken {
     _truncationToken = truncationToken;

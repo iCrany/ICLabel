@@ -27,11 +27,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) NSInteger numberOfLines; //是否限制行数，默认值为 0 即不限制行数
 
-#if kIS_NEED_UTIL_METHOD
-@property (nonatomic, strong, null_resettable) UIFont *font; //字体大小, 默认值为 systemFont 15.0pt
-@property (nonatomic, strong, null_resettable) UIColor *textColor; //字体颜色，默认值为 [UIColor blackColor]
-#endif
-
 /**
  计算在给定宽高的基础上计算相应合适的 label 大小
 

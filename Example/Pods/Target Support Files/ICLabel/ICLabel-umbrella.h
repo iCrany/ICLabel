@@ -15,7 +15,6 @@
 #import "ICLabelAttachment.h"
 #import "ICLabelDrawService.h"
 #import "ICLabelMarco.h"
-#import "NSAttributedString+ICLabel.h"
 #import "NSMutableAttributedString+ICLabel.h"
 
 FOUNDATION_EXPORT double ICLabelVersionNumber;
