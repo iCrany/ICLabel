@@ -160,8 +160,7 @@
 - (ICLayoutLine *)lineContainingIndex:(NSUInteger)index {
     for (int i = 0; i < self.lines.count; i++) {
         ICLayoutLine *line = self.lines[i];
-        if (index >= line.stringRange.location
-            && index <= line.stringRange.location + line.stringRange.length) {
+        if (NSLocationInRange(index, NSMakeRange(line.stringRange.location, line.stringRange.length))) {
             return line;
         }
     }
