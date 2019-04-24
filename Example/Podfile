@@ -17,9 +17,9 @@ target 'ICLabel_Example' do
   target 'ICLabel_Tests' do
     inherit! :search_paths
 
-    pod 'Specta'
-    pod 'Expecta'
-    pod 'FBSnapshotTestCase'
-    pod 'Expecta+Snapshots'
+#    pod 'Specta'
+#    pod 'Expecta'
+#    pod 'FBSnapshotTestCase'
+#    pod 'Expecta+Snapshots'
   end
 end

@@ -16,37 +16,22 @@ PODS:
     - DTFoundation/Core
   - DTFoundation/UIKit (1.7.13):
     - DTFoundation/Core
-  - Expecta (1.0.6)
-  - "Expecta+Snapshots (3.1.1)":
-    - Expecta (~> 1.0)
-    - FBSnapshotTestCase/Core (~> 2.0)
-    - Specta (~> 1.0)
-  - FBSnapshotTestCase (2.1.4):
-    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
-  - FBSnapshotTestCase/Core (2.1.4)
-  - FBSnapshotTestCase/SwiftSupport (2.1.4):
-    - FBSnapshotTestCase/Core
   - ICLabel (0.1.2)
   - M80AttributedLabel (1.8.1)
   - Masonry (0.6.4)
   - Reveal-SDK (4)
   - SnapKit (4.2.0)
-  - Specta (1.0.7)
   - SwiftLint (0.29.1)
   - TTTAttributedLabel (2.0.0)
   - YYText (1.0.7)
 
 DEPENDENCIES:
   - DTCoreText
-  - Expecta
-  - "Expecta+Snapshots"
-  - FBSnapshotTestCase
   - ICLabel (from `../`)
   - M80AttributedLabel
   - Masonry (~> 0.6)
   - Reveal-SDK (~> 4.0.0)
   - SnapKit (~> 4.0)
-  - Specta
   - SwiftLint
   - TTTAttributedLabel
   - YYText
@@ -55,14 +40,10 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - DTCoreText
     - DTFoundation
-    - Expecta
-    - "Expecta+Snapshots"
-    - FBSnapshotTestCase
     - M80AttributedLabel
     - Masonry
     - Reveal-SDK
     - SnapKit
-    - Specta
     - SwiftLint
     - TTTAttributedLabel
     - YYText
@@ -74,19 +55,15 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   DTCoreText: e5d688cffc9f6a61eddd1a4f94e2046851230de3
   DTFoundation: f03be9fd786f11e505bb8fc44e2a3732bf0917df
-  Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
-  "Expecta+Snapshots": dcff217eef506dabd6dfdc7864ea2da321fafbb8
-  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  ICLabel: 54dccfe8bd32b2f0f612805c1f573c654f0e02ec
+  ICLabel: 39e740ffadf44c9b70d8abafe67ff80dbc04d4ff
   M80AttributedLabel: 56905e0d2cf50d4550ba181dd15f992f7f4e21e8
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   Reveal-SDK: 178c927f1a3230648d3a92b96f6e730a35b2750a
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
   SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 4d5208aac12b0002655c37218525080f58ff3ef2
+PODFILE CHECKSUM: 816000a5fa0f14aebcfca5b0cb40d093ec1d6513
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

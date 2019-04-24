@@ -10,11 +10,16 @@
 #endif
 #endif
 
+#import "ICGlyphRun.h"
 #import "ICHighlight.h"
+#import "ICLabel+Cursor.h"
 #import "ICLabel.h"
 #import "ICLabelAttachment.h"
 #import "ICLabelDrawService.h"
 #import "ICLabelMarco.h"
+#import "ICLayouter.h"
+#import "ICLayoutFrame.h"
+#import "ICLayoutLine.h"
 #import "NSMutableAttributedString+ICLabel.h"
 
 FOUNDATION_EXPORT double ICLabelVersionNumber;

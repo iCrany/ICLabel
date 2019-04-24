@@ -2,7 +2,7 @@
   "name": "ICLabel",
   "version": "0.1.2",
   "summary": "A short description of ICLabel.",
-  "description": "TODO: Add long description of the pod here.",
+  "description": "超简洁的 CoreText 布局的实现",
   "homepage": "https://github.com/icrany/ICLabel",
   "license": {
     "type": "MIT",
