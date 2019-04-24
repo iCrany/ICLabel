@@ -12,9 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ICLayoutFrame : NSObject
 
+@property (nonatomic, strong) NSAttributedString *attributedText;
+
 - (instancetype)initWithFrame:(CGRect)frame
                      layouter:(ICLayouter *)layouter
                         range:(NSRange)range;
+
+- (void)drawInContext:(CGContextRef)context rect:(CGRect)rect;
 
 @end
 

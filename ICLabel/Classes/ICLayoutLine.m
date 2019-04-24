@@ -7,7 +7,6 @@
 
 #import "ICLayoutLine.h"
 #import "ICGlyphRun.h"
-#import <CoreText/CoreText.h>
 
 @interface ICLayoutLine() {
     CTLineRef _line;
@@ -23,23 +22,29 @@
     if (self) {
         _line = ctLine;
         
-        //TODO: 构造出 ctRuns 的列表
         CFArrayRef glyRunList = CTLineGetGlyphRuns(ctLine);
         CFIndex glyRunCount = CFArrayGetCount(glyRunList);
         NSMutableArray *glyhRunList = [[NSMutableArray alloc] init];
         for (NSInteger index = 0; index < glyRunCount; index++) {
-            ICGlyphRun *run = [[ICGlyphRun alloc] init];
+            CTRunRef glyphRun = CFArrayGetValueAtIndex(glyRunList, index);
+            ICGlyphRun *run = [[ICGlyphRun alloc] initWithRun:glyphRun];
             [glyhRunList addObject:run];
         }
+        _stringRange = CTLineGetStringRange(_line);
         _glyphRuns = [glyhRunList copy];
     }
     return self;
+}
+
+- (void)dealloc {
+    if (_line) {
+        CFRelease(_line);
+    }
 }
 
 #pragma mark - Drawing
 - (void)drawInContext:(CGContextRef)context {
     CTLineDraw(_line, context);
 }
-
 
 @end
