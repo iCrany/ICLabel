@@ -31,6 +31,7 @@
     self = [super init];
     if (self) {
         _frame = frame;
+        _attributedText = [[layouter attributedString] copy];
         
         _layouter = layouter;
         CGMutablePathRef path = CGPathCreateMutable();
@@ -124,6 +125,8 @@
 - (NSArray *)paragraphRanges {
     if (!_paragraphRanges) {
         NSString *str = [[self attributedText] string];
+        if (str.length <= 0) return nil;
+        
         NSRange paragraphRange = [self _rangeOfParagraphsContainingRange:NSMakeRange(0, 0) plainString:str];
         NSUInteger length = [str length];
         
