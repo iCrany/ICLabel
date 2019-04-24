@@ -7,9 +7,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class ICLayouter;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ICLayoutFrame : NSObject
+
+- (instancetype)initWithFrame:(CGRect)frame
+                     layouter:(ICLayouter *)layouter
+                        range:(NSRange)range;
 
 @end
 

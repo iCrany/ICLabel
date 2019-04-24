@@ -494,8 +494,8 @@
 		EC224CBD226F43C300C92B4E /* ICLayoutLine.m in Sources */ = {isa = PBXBuildFile; fileRef = EC224CBB226F43C300C92B4E /* ICLayoutLine.m */; };
 		EC224CC0226F45DD00C92B4E /* ICLabel+Cursor.h in Headers */ = {isa = PBXBuildFile; fileRef = EC224CBE226F45DD00C92B4E /* ICLabel+Cursor.h */; };
 		EC224CC1226F45DD00C92B4E /* ICLabel+Cursor.m in Sources */ = {isa = PBXBuildFile; fileRef = EC224CBF226F45DD00C92B4E /* ICLabel+Cursor.m */; };
-		EC224CC4226F4BAF00C92B4E /* ICLayouter.h in Headers */ = {isa = PBXBuildFile; fileRef = EC224CC2226F4BAF00C92B4E /* ICLayouter.h */; };
-		EC224CC5226F4BAF00C92B4E /* ICLayouter.m in Sources */ = {isa = PBXBuildFile; fileRef = EC224CC3226F4BAF00C92B4E /* ICLayouter.m */; };
+		EC4C91FE226F67C000B94823 /* ICLayouter.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4C91FC226F67C000B94823 /* ICLayouter.m */; };
+		EC4C91FF226F67C000B94823 /* ICLayouter.h in Headers */ = {isa = PBXBuildFile; fileRef = EC4C91FD226F67C000B94823 /* ICLayouter.h */; };
 		ECA66D95E6B2611AFC8EA0D84772FE43 /* DTFoundationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE25F4EEBD43C1BCEDC333ACEB28267 /* DTFoundationConstants.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EDA66B13A1FA5453DBE17D579B5B1102 /* DTHTMLParserNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 95F848EE5E12CC2378719F5B24B62405 /* DTHTMLParserNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EDDD1F415CFC6ACB05BB0E16F5964F2A /* EXPMatchers+postNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 8342EB34BFEEB025E988B5773F22AB73 /* EXPMatchers+postNotification.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -1187,9 +1187,9 @@
 		EC224CBB226F43C300C92B4E /* ICLayoutLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICLayoutLine.m; path = ICLabel/Classes/ICLayoutLine.m; sourceTree = "<group>"; };
 		EC224CBE226F45DD00C92B4E /* ICLabel+Cursor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ICLabel+Cursor.h"; path = "ICLabel/Classes/ICLabel+Cursor.h"; sourceTree = "<group>"; };
 		EC224CBF226F45DD00C92B4E /* ICLabel+Cursor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ICLabel+Cursor.m"; path = "ICLabel/Classes/ICLabel+Cursor.m"; sourceTree = "<group>"; };
-		EC224CC2226F4BAF00C92B4E /* ICLayouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICLayouter.h; sourceTree = "<group>"; };
-		EC224CC3226F4BAF00C92B4E /* ICLayouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICLayouter.m; sourceTree = "<group>"; };
 		EC36D424ED4DCE34512DF51979F871BB /* EXPMatchers+beInstanceOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beInstanceOf.m"; path = "Expecta/Matchers/EXPMatchers+beInstanceOf.m"; sourceTree = "<group>"; };
+		EC4C91FC226F67C000B94823 /* ICLayouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICLayouter.m; path = ICLabel/Classes/ICLayouter.m; sourceTree = "<group>"; };
+		EC4C91FD226F67C000B94823 /* ICLayouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICLayouter.h; path = ICLabel/Classes/ICLayouter.h; sourceTree = "<group>"; };
 		ED60AE3F91EC2915BC456B1F39255279 /* Specta.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Specta.modulemap; sourceTree = "<group>"; };
 		EE4D955AE2935D07DA0AF1D724B61AA7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEE6446082FD1FF8BE88EDAD88BCEB16 /* UIView+DTFoundation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+DTFoundation.h"; path = "Core/Source/iOS/UIView+DTFoundation.h"; sourceTree = "<group>"; };
@@ -2074,8 +2074,8 @@
 		E385608373BFB03769202529DB472863 /* ICLabel */ = {
 			isa = PBXGroup;
 			children = (
-				EC224CC2226F4BAF00C92B4E /* ICLayouter.h */,
-				EC224CC3226F4BAF00C92B4E /* ICLayouter.m */,
+				EC4C91FD226F67C000B94823 /* ICLayouter.h */,
+				EC4C91FC226F67C000B94823 /* ICLayouter.m */,
 				EC224CBE226F45DD00C92B4E /* ICLabel+Cursor.h */,
 				EC224CBF226F45DD00C92B4E /* ICLabel+Cursor.m */,
 				EC224CBA226F43C200C92B4E /* ICLayoutLine.h */,
@@ -2455,7 +2455,7 @@
 				D1BD63C7B7459611C93BF54B3352961B /* ICLabel.h in Headers */,
 				56150ECC890708C5B51D2930641ED147 /* ICLabelAttachment.h in Headers */,
 				EC224CBC226F43C300C92B4E /* ICLayoutLine.h in Headers */,
-				EC224CC4226F4BAF00C92B4E /* ICLayouter.h in Headers */,
+				EC4C91FF226F67C000B94823 /* ICLayouter.h in Headers */,
 				468BAE97F9542A45FE8EF0A3FA4A5E67 /* ICLabelDrawService.h in Headers */,
 				685CE385B5B928728EB8D7C318796E86 /* ICLabelMarco.h in Headers */,
 				AF9F5CDDF289C1638D2E0BDA67E8E269 /* NSMutableAttributedString+ICLabel.h in Headers */,
@@ -3058,7 +3058,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC224CC1226F45DD00C92B4E /* ICLabel+Cursor.m in Sources */,
-				EC224CC5226F4BAF00C92B4E /* ICLayouter.m in Sources */,
+				EC4C91FE226F67C000B94823 /* ICLayouter.m in Sources */,
 				853F6146584C0AC9AC0FCEE0F397CE1E /* ICHighlight.m in Sources */,
 				EC224CBD226F43C300C92B4E /* ICLayoutLine.m in Sources */,
 				F61FF2F6D18873B86CD6194267955F98 /* ICLabel-dummy.m in Sources */,

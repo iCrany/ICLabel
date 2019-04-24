@@ -6,7 +6,7 @@
 //
 
 #import "ICLayouter.h"
-#import <CoreText/CoreText.h>
+#import "ICLayoutFrame.h"
 
 @interface ICLayouter() {
     CTFramesetterRef _framesetter;
@@ -28,6 +28,12 @@
     if (_framesetter) {
         CFRelease(_framesetter);
     }
+    _framesetter = nil;
+}
+
+- (ICLayoutFrame *)layoutFrameWithRect:(CGRect)frame range:(NSRange)range {
+    ICLayoutFrame *newFrame = [[ICLayoutFrame alloc] initWithFrame:frame layouter:self range:range];
+    return newFrame;
 }
 
 - (void)setAttributedString:(NSAttributedString *)attributedString {
@@ -35,6 +41,13 @@
         self.attributedString = attributedString;
         [self __destoryFramesetter];
     }
+}
+
+- (CTFramesetterRef)framesetter {
+    if (!_framesetter) {
+        _framesetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)self.attributedString);
+    }
+    return _framesetter;
 }
 
 @end

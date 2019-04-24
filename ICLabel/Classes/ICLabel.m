@@ -13,7 +13,6 @@
 #import "ICLabelMarco.h"
 #import "ICHighlight.h"
 #import "ICLabelAttachment.h"
-#import "ICLayoutLine.h"
 #import "ICLayoutFrame.h"
 
 #if DEBUG
