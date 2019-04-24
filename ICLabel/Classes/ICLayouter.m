@@ -10,6 +10,7 @@
 
 @interface ICLayouter() {
     CTFramesetterRef _framesetter;
+    NSCache *_cache;
 }
 
 @end

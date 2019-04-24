@@ -14,24 +14,18 @@
 #import "ICHighlight.h"
 #import "ICLabelAttachment.h"
 #import "ICLayoutFrame.h"
+#import "ICLayouter.h"
 
 #if DEBUG
 static BOOL kIsInDebugMode = NO;
 #endif
 
 @interface ICLabel() {
-    
-    CTFrameRef _ctFrame;
-    CFArrayRef _ctLines;
-    CTFramesetterRef _framesetter;
-    
-    CTFrameRef __innerUseCTFrame; //该数组用于计算文本的实际的需要的 lines 等参数，而并不是在计算出 sizeThatFits 的宽度之后再去绘制的
-    CFIndex __innerNumberOfLines; //实际需要的行数
-    
     BOOL _isNeedRelayout; //是否需要重新绘制
-    
-    ICLayoutFrame *_layoutFrame;
 }
+
+@property (nonatomic, strong) ICLayouter *layouter;
+@property (nonatomic, strong) ICLayoutFrame *layoutFrame;
 
 #if kIS_SUPPORT_TOUCH
 @property (nonatomic, strong) ICHighlight *curHightlight; //当前正在响应的位置
@@ -68,7 +62,8 @@ static BOOL kIsInDebugMode = NO;
     self.userInteractionEnabled = NO; // default is NO
     
     _truncationToken = [[NSAttributedString alloc] initWithString:kEllipsisCharacter];
-
+    _layouter = [[ICLayouter alloc] init];
+    
 #if kIS_SUPPORT_TOUCH
     _curHightlight = nil;
 #endif
@@ -80,38 +75,10 @@ static BOOL kIsInDebugMode = NO;
 }
 
 - (void)__resetFrameWithString:(NSAttributedString *)attrString rect:(CGRect)rect {
-    if (_ctFrame == nil || _isNeedRelayout) {
-        _framesetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)attrString);
-        CGMutablePathRef path = CGPathCreateMutable();
-        CGPathAddRect(path, nil, rect);
-        _ctFrame = CTFramesetterCreateFrame(_framesetter, CFRangeMake(0, 0), path, NULL);
-        _ctLines = CTFrameGetLines(_ctFrame);
-        
-        //begin - 主要是为了解决 sizeThatFits: 计算出最适合的宽度的时候，_ctLines 的数量恒等于 _numberOfLines 的情况，导致判断不了【展开】按钮是否需要显示
-        CGMutablePathRef innerPath = CGPathCreateMutable();
-        CGPathAddRect(innerPath, nil, CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, CGFLOAT_MAX)); //暂时只支持宽度固定，计算高度的情景
-        __innerUseCTFrame = CTFramesetterCreateFrame(_framesetter, CFRangeMake(0, 0), innerPath, NULL);
-        CFArrayRef __innerCTLines = CTFrameGetLines(__innerUseCTFrame);
-        __innerNumberOfLines = CFArrayGetCount(__innerCTLines); // 计算出实际需要的行数
-        //end
-        
-        CGPathRelease(path);
-        CGPathRelease(innerPath);
-        
+    if (_layoutFrame || _isNeedRelayout) {
+        _layoutFrame = [_layouter layoutFrameWithRect:rect range:NSMakeRange(0, 0)];
         _isNeedRelayout = NO;
     }
-}
-
-- (NSInteger)__calcNumberOfLine {
-    NSInteger numberOfLines = CFArrayGetCount(_ctLines);
-    numberOfLines = _numberOfLines > 0 ? MIN(_numberOfLines, numberOfLines) : numberOfLines;
-    return numberOfLines;
-}
-
-- (BOOL)__isMoreThanNumberOfLineLimit {
-    if (_numberOfLines == 0) return NO;
-    if (_numberOfLines >= __innerNumberOfLines) return NO;
-    return YES;
 }
 
 #if kIS_SUPPORT_TOUCH
@@ -355,51 +322,8 @@ static BOOL kIsInDebugMode = NO;
 #endif
 
 - (void)__drawText:(NSAttributedString *)attrString rect:(CGRect)rect context:(CGContextRef)context {
-    if (_ctFrame == nil) return;
-    
-    if (_numberOfLines > 0) {
-        NSInteger numberOfLines = [self __calcNumberOfLine];
-        CGPoint lineOriginPoints[numberOfLines];
-        CTFrameGetLineOrigins(_ctFrame, CFRangeMake(0, numberOfLines), lineOriginPoints);
-        BOOL isMoreThanNumberOfLineLimit = [self __isMoreThanNumberOfLineLimit];
-        
-        for (CFIndex lineIndex = 0; lineIndex < numberOfLines; lineIndex++) {
-            CTLineRef line = CFArrayGetValueAtIndex(_ctLines, lineIndex);
-            CGPoint lineOrigins = lineOriginPoints[lineIndex];
-            
-            CGContextSetTextPosition(context, lineOrigins.x, lineOrigins.y);//更新一下 context 中的起始坐标，若该行坐标出现了问题就会导致出错行的位置错乱
-
-            if (isMoreThanNumberOfLineLimit && lineIndex == numberOfLines - 1) {
-                CFRange curLineRange = CTLineGetStringRange(line);
-                NSAttributedString *trunctionTokenAttrStr = [self.truncationToken mutableCopy];
-                CTLineTruncationType truncationType = kCTLineTruncationEnd;
-                NSMutableAttributedString *curLineAttrStr = [[_attributedText attributedSubstringFromRange:NSMakeRange(curLineRange.location, curLineRange.length)] mutableCopy]; //这一行中需要进行裁剪的 str 位置
-                [curLineAttrStr appendAttributedString:trunctionTokenAttrStr];
-                
-                CTLineRef curCTLine = CTLineCreateWithAttributedString((__bridge CFAttributedStringRef)curLineAttrStr);
-                CTLineRef truncationToken = CTLineCreateWithAttributedString((__bridge CFAttributedStringRef)trunctionTokenAttrStr);
-                
-                //经调试该接口是会主动自己做相关的截断操作，我们仅仅需要将 truncationToken 添加到需要进行裁断处理的当前行字符中去即可，不需要自己做截断字符串的动作
-                CTLineRef truncationedLine = CTLineCreateTruncatedLine(curCTLine, rect.size.width, truncationType, truncationToken);
-                
-                //If the width of the line specified in truncationToken is greater, this function will return NULL if truncation is needed
-                if (!truncationedLine) {
-                    truncationedLine = CFRetain(truncationToken);
-                }
-                CTLineDraw(truncationedLine, context); //单独绘制做裁断的这一行的数据
-                
-                CFRelease(curCTLine);
-                CFRelease(truncationToken);
-                CFRelease(truncationedLine);
-                
-            } else {
-                CTLineDraw(line, context);
-            }
-        }
-    } else {
-        //粗粒度的进行绘制操作
-        CTFrameDraw(_ctFrame, context);
-    }
+    if (_layoutFrame == nil) return;
+    [_layoutFrame drawInContext:context rect:rect];
 }
 
 #pragma mark - Override method
@@ -427,9 +351,8 @@ static BOOL kIsInDebugMode = NO;
 }
 
 - (void)dealloc {
-    if (_ctFrame) { CFRelease(_ctFrame); }
-    if (__innerUseCTFrame) { CFRelease(__innerUseCTFrame); }
-    if (_framesetter) { CFRelease(_framesetter); }
+    _layoutFrame = nil;
+    _layouter = nil;
 }
 
 #pragma mark - Event handler
@@ -553,6 +476,7 @@ static BOOL kIsInDebugMode = NO;
 - (void)setAttributedText:(NSMutableAttributedString *)attributedString {
     if (![attributedString isEqualToAttributedString:_attributedText]) {
         _attributedText = attributedString;
+        _layouter.attributedString = attributedString;
         [self relayoutText];
     }
 }
@@ -565,8 +489,11 @@ static BOOL kIsInDebugMode = NO;
 }
 
 - (void)setTruncationToken:(NSAttributedString *)truncationToken {
-    _truncationToken = truncationToken;
-    [self relayoutText];
+    if (_truncationToken != truncationToken) {
+        _truncationToken = truncationToken;
+        _layoutFrame.truncationToken = truncationToken;
+        [self relayoutText];
+    }
 }
 
 @end

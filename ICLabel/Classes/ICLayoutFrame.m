@@ -13,14 +13,12 @@
 @interface ICLayoutFrame() {
     CGRect _frame;
     CTFrameRef _ctFrame;
-    ICLayouter *_layouter;
     NSArray *_lines;
-    
+    ICLayouter *_layouter;
     NSInteger _numberOfLines;//这个是用户设置的 numberOfLines, 而不是布局后的 _lines 数组的个数
-    NSAttributedString *_truncationToken;
     
     CTFrameRef _ctInnerFrame; //用于计算最后一行是否需要进行截断处理的
-    NSInteger _innerNumberOfLines; //实际需要多少行才能够排版好
+    NSInteger _innerNumberOfLines; //实际需要多少行才能够排版好, 例如给定的 AttributedString 后，在高度不限制的情况下的排版函数
 }
 @end
 
