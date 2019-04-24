@@ -157,4 +157,15 @@
     return NSMakeRange(beginIndex, endIndex - beginIndex);
 }
 
+- (ICLayoutLine *)lineContainingIndex:(NSUInteger)index {
+    for (int i = 0; i < self.lines.count; i++) {
+        ICLayoutLine *line = self.lines[i];
+        if (index >= line.stringRange.location
+            && index <= line.stringRange.location + line.stringRange.length) {
+            return line;
+        }
+    }
+    return nil;
+}
+
 @end

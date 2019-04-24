@@ -26,6 +26,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSArray *)paragraphRanges;
 
+/**
+ 根据 index 返回包含该下标的行
+
+ @param index 下标
+ @return 如有则返回对应的 ICLayoutLine, 否则返回 nil
+ */
+- (ICLayoutLine *)lineContainingIndex:(NSUInteger)index;
+
 @end
 
 NS_ASSUME_NONNULL_END
