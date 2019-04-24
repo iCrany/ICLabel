@@ -38,8 +38,8 @@
 }
 
 - (void)setAttributedString:(NSAttributedString *)attributedString {
-    if (self.attributedString != attributedString) {
-        self.attributedString = attributedString;
+    if (_attributedString != attributedString) {
+        _attributedString = attributedString;
         [self __destoryFramesetter];
     }
 }
