@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class ICLayouter;
+@class ICLayoutFrame;
+
 NS_ASSUME_NONNULL_BEGIN
 
 /**
@@ -26,6 +29,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSAttributedString *truncationToken;//默认支持的裁断字符
 
 @property (nonatomic, assign) NSInteger numberOfLines; //是否限制行数，默认值为 0 即不限制行数
+
+@property (nonatomic, strong, readonly) ICLayouter *layouter;
+@property (nonatomic, strong, readonly) ICLayoutFrame *layoutFrame;
 
 /**
  计算在给定宽高的基础上计算相应合适的 label 大小

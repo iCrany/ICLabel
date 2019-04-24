@@ -16,6 +16,7 @@
     NSArray *_lines;
     ICLayouter *_layouter;
     NSInteger _numberOfLines;//这个是用户设置的 numberOfLines, 而不是布局后的 _lines 数组的个数
+    NSArray *_paragraphRanges;//拆分成不同段落的数组
     
     CTFrameRef _ctInnerFrame; //用于计算最后一行是否需要进行截断处理的
     NSInteger _innerNumberOfLines; //实际需要多少行才能够排版好, 例如给定的 AttributedString 后，在高度不限制的情况下的排版函数
@@ -42,9 +43,14 @@
         CFArrayRef ctLines = CTFrameGetLines(_ctFrame);
         CFIndex numberOfLines = CFArrayGetCount(ctLines);
         NSMutableArray *icLayoutLines = [[NSMutableArray alloc] initWithCapacity:numberOfLines];
+        
+        //获取 Line 的 baseLine origin 坐标
+        CGPoint origins[numberOfLines];
+        CTFrameGetLineOrigins(_ctFrame, CFRangeMake(0, 0), origins);
+        
         for (NSInteger index = 0; index < numberOfLines; index++) {
             CTLineRef ctLine = CFArrayGetValueAtIndex(ctLines, index);
-            ICLayoutLine *line = [[ICLayoutLine alloc] initWithLine:ctLine];
+            ICLayoutLine *line = [[ICLayoutLine alloc] initWithLine:ctLine lineOrigin:origins[index] drawRect:frame];
             [icLayoutLines addObject:line];
         }
         _lines = [icLayoutLines copy];
@@ -113,6 +119,39 @@
             [line drawInContext:context];
         }
     }
+}
+
+- (NSArray *)paragraphRanges {
+    if (!_paragraphRanges) {
+        NSString *str = [[self attributedText] string];
+        NSRange paragraphRange = [self _rangeOfParagraphsContainingRange:NSMakeRange(0, 0) plainString:str];
+        NSUInteger length = [str length];
+        
+        NSMutableArray *tmpArray = [NSMutableArray array];
+        while (paragraphRange.length) {
+            [tmpArray addObject:[NSValue valueWithRange:paragraphRange]];
+            NSUInteger nextParagraphBegin = NSMaxRange(paragraphRange);
+
+            if (nextParagraphBegin >= length) {
+                break;
+            }
+
+            // next paragraph
+            paragraphRange = [self _rangeOfParagraphsContainingRange:NSMakeRange(nextParagraphBegin, 0) plainString:str];
+        }
+        _paragraphRanges = tmpArray;
+    }
+    return _paragraphRanges;
+}
+
+- (NSRange)_rangeOfParagraphsContainingRange:(NSRange)range plainString:(NSString *)plainString {
+    CFIndex beginIndex;
+    CFIndex endIndex;
+    
+    CFStringGetParagraphBounds((__bridge CFStringRef)plainString, CFRangeMake(range.location, range.length), &beginIndex, &endIndex, NULL);
+    
+    // endIndex is the first character of the following paragraph, so we don't need to add 1
+    return NSMakeRange(beginIndex, endIndex - beginIndex);
 }
 
 @end
