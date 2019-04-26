@@ -323,7 +323,9 @@ static BOOL kIsInDebugMode = NO;
 
 - (void)__drawText:(NSAttributedString *)attrString rect:(CGRect)rect context:(CGContextRef)context {
     if (_layoutFrame == nil) return;
-    [_layoutFrame drawInContext:context rect:rect];
+    //这里需要判断一下 _edgeInsets 的问题
+    CGRect contentRect = UIEdgeInsetsInsetRect(rect, _edgeInsets);
+    [_layoutFrame drawInContext:context rect:contentRect];
 }
 
 #pragma mark - Override method
@@ -492,6 +494,13 @@ static BOOL kIsInDebugMode = NO;
     if (_truncationToken != truncationToken) {
         _truncationToken = truncationToken;
         _layoutFrame.truncationToken = truncationToken;
+        [self relayoutText];
+    }
+}
+
+- (void)setEdgeInsets:(UIEdgeInsets)edgeInsets {
+    if (UIEdgeInsetsEqualToEdgeInsets(_edgeInsets, edgeInsets)) {
+        _edgeInsets = edgeInsets;
         [self relayoutText];
     }
 }

@@ -33,6 +33,10 @@
         _lineOrigin = lineOrigin;
         _drawRect = drawRect;
         
+        //做一个特殊处理，lineOrigin 的 x, y 偏移量加上一个值，相当于支持内间距的设置
+        _lineOrigin.x += _drawRect.origin.x;
+        _lineOrigin.y += _drawRect.origin.y;
+        
         CFArrayRef glyRunList = CTLineGetGlyphRuns(ctLine);
         CFIndex glyRunCount = CFArrayGetCount(glyRunList);
         NSMutableArray *glyhRunList = [[NSMutableArray alloc] init];

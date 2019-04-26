@@ -30,6 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) NSInteger numberOfLines; //是否限制行数，默认值为 0 即不限制行数
 
+@property (nonatomic, assign) UIEdgeInsets edgeInsets; //绘制的内间距，默认为 Zero
+
 @property (nonatomic, strong, readonly) ICLayouter *layouter;
 @property (nonatomic, strong, readonly) ICLayoutFrame *layoutFrame;
 
