@@ -71,7 +71,7 @@
 }
 
 - (CGFloat)getOffsetForStringIndex:(CFIndex)index {
-    return CTLineGetOffsetForStringIndex(_line, index, NULL);
+    return CTLineGetOffsetForStringIndex(_line, index, NULL) + _drawRect.origin.x;
 }
 
 #pragma mark - Drawing
