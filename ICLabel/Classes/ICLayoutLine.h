@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
  该行在整个渲染文本的[location, length]信息
  */
 @property (nonatomic, readonly, assign) CFRange stringRange;
-@property (nonatomic, readonly, assign) CGPoint lineOrigin; //baseline 坐标
+@property (nonatomic, readonly, assign) CGPoint lineOrigin;
 
 @property (nonatomic, readonly, assign) CGFloat descender;
 @property (nonatomic, readonly, assign) CGFloat ascender;
@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @return <#return value description#>
  */
-- (CGRect)getLineBounds;
+- (CGRect)getLineFrame;
 
 /**
  通过位置拿到点击的文字的下标

@@ -325,7 +325,6 @@ static BOOL kIsInDebugMode = NO;
 
 - (void)__drawText:(NSAttributedString *)attrString rect:(CGRect)rect context:(CGContextRef)context {
     if (_layoutFrame == nil) return;
-    //这里需要判断一下 _edgeInsets 的问题
     [_layoutFrame drawInContext:context rect:rect];
 }
 

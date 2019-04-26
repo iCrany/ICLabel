@@ -22,7 +22,7 @@
     NSInteger lineCount = self.layoutFrame.lines.count;
     for (int i = 0; i < lineCount; i++) {
         ICLayoutLine *line = self.layoutFrame.lines[i];
-        CGRect lineFrame = [line getLineBounds];
+        CGRect lineFrame = [line getLineFrame];
         if (CGRectContainsPoint(lineFrame, point)) { //这里确定点击的行数，然后对应的找到该行被点击的文字在该行中的位置
             CFIndex tapIndex = [line getStringIndexForPosition:point];
             if (tapIndex != kCFNotFound) {

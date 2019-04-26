@@ -11,7 +11,7 @@
 #import "ICLayoutLine.h"
 
 @interface ICLayoutFrame() {
-    CGRect _frame;
+    CGRect _frame; //实际的绘制范围，例如有可能会添加一些内边距，就是从这个 _frame 参数中体现
     CTFrameRef _ctFrame;
     NSArray *_lines;
     ICLayouter *_layouter;
@@ -90,8 +90,8 @@
         CGPoint lineOrigins = line.lineOrigin;
         
         CGContextSetTextPosition(context,
-                                 lineOrigins.x,
-                                 lineOrigins.y);//更新一下 context 中的起始坐标，若该行坐标出现了问题就会导致出错行的位置错乱
+                                 lineOrigins.x + _frame.origin.x,
+                                 lineOrigins.y + _frame.origin.y);//更新一下 context 中的起始坐标，若该行坐标出现了问题就会导致出错行的位置错乱
         
         if (isMoreThanNumberOfLineLimit && lineIndex == numberOfLines - 1) {
             CFRange curLineRange = line.stringRange;

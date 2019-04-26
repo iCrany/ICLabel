@@ -33,16 +33,12 @@
         _lineOrigin = lineOrigin;
         _drawRect = drawRect;
         
-        //做一个特殊处理，lineOrigin 的 x, y 偏移量加上一个值，相当于支持内间距的设置
-        _lineOrigin.x += _drawRect.origin.x;
-        _lineOrigin.y += _drawRect.origin.y;
-        
         CFArrayRef glyRunList = CTLineGetGlyphRuns(ctLine);
         CFIndex glyRunCount = CFArrayGetCount(glyRunList);
         NSMutableArray *glyhRunList = [[NSMutableArray alloc] init];
         for (NSInteger index = 0; index < glyRunCount; index++) {
             CTRunRef glyphRun = CFArrayGetValueAtIndex(glyRunList, index);
-            ICGlyphRun *run = [[ICGlyphRun alloc] initWithRun:glyphRun];
+            ICGlyphRun *run = [[ICGlyphRun alloc] initWithRun:glyphRun drawRect:_drawRect];
             [glyhRunList addObject:run];
         }
         _lineWidth = CTLineGetTypographicBounds(_line,
@@ -61,10 +57,10 @@
     }
 }
 
-- (CGRect)getLineBounds {
+- (CGRect)getLineFrame {
     //坐标系的问题，坐标原点是左下角的，所以这里需要将坐标转换成 UIKit 坐标系
-    CGRect lineFrame = CGRectMake(_lineOrigin.x,
-                                  CGRectGetHeight(_drawRect) - _lineOrigin.y - _ascender,
+    CGRect lineFrame = CGRectMake(_lineOrigin.x + _drawRect.origin.x,
+                                  CGRectGetHeight(_drawRect) - _lineOrigin.y - _ascender + _drawRect.origin.y,
                                   _lineWidth,
                                   _ascender + fabs(_descender));
     return lineFrame;

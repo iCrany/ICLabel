@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ICGlyphRun : NSObject
 
-- (instancetype)initWithRun:(CTRunRef)run;
+- (instancetype)initWithRun:(CTRunRef)run drawRect:(CGRect)drawRect;
 
 @end
 

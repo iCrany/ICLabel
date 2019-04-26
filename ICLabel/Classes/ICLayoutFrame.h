@@ -22,6 +22,13 @@ NS_ASSUME_NONNULL_BEGIN
                      layouter:(ICLayouter *)layouter
                         range:(NSRange)range;
 
+
+/**
+ 开始渲染调用
+
+ @param context 画布
+ @param rect 实际的画布大小（可以理解成 drawRect:(CGRect)rect 中的 rect, 是没有内间距的）
+ */
 - (void)drawInContext:(CGContextRef)context rect:(CGRect)rect;
 
 - (NSArray *)paragraphRanges;
