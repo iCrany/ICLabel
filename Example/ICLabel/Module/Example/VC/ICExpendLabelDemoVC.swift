@@ -49,9 +49,10 @@ class ICExpendLabelDemoVC: UIViewController {
         canClickLabel.isUserInteractionEnabled = true
         canClickLabel.truncationToken = truncationToken
         canClickLabel.backgroundColor = UIColor.lightGray
+        canClickLabel.edgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 10)
         canClickLabel.numberOfLines = 4
         canClickLabel.attributedText = testAttrStr
-        canClickLabel.edgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 10)
+//        canClickLabel.backgroundColor = UIColor.red
         let canClickLabelSize = canClickLabel.sizeThatFits(CGSize(width: kScreenWidth - labelInsets.left - labelInsets.right,
                                                                   height:  kScreenHeight))
         self.view.addSubview(canClickLabel)

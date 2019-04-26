@@ -63,6 +63,7 @@ static BOOL kIsInDebugMode = NO;
     
     _truncationToken = [[NSAttributedString alloc] initWithString:kEllipsisCharacter];
     _layouter = [[ICLayouter alloc] init];
+    _edgeInsets = UIEdgeInsetsZero;
     
 #if kIS_SUPPORT_TOUCH
     _curHightlight = nil;
@@ -76,7 +77,8 @@ static BOOL kIsInDebugMode = NO;
 
 - (void)__resetFrameWithString:(NSAttributedString *)attrString rect:(CGRect)rect {
     if (_layoutFrame || _isNeedRelayout) {
-        _layoutFrame = [_layouter layoutFrameWithRect:rect range:NSMakeRange(0, 0)];
+        CGRect contentRect = UIEdgeInsetsInsetRect(rect, _edgeInsets);
+        _layoutFrame = [_layouter layoutFrameWithRect:contentRect range:NSMakeRange(0, 0)];
         _isNeedRelayout = NO;
     }
 }
@@ -324,8 +326,7 @@ static BOOL kIsInDebugMode = NO;
 - (void)__drawText:(NSAttributedString *)attrString rect:(CGRect)rect context:(CGContextRef)context {
     if (_layoutFrame == nil) return;
     //这里需要判断一下 _edgeInsets 的问题
-    CGRect contentRect = UIEdgeInsetsInsetRect(rect, _edgeInsets);
-    [_layoutFrame drawInContext:context rect:contentRect];
+    [_layoutFrame drawInContext:context rect:rect];
 }
 
 #pragma mark - Override method
@@ -499,7 +500,7 @@ static BOOL kIsInDebugMode = NO;
 }
 
 - (void)setEdgeInsets:(UIEdgeInsets)edgeInsets {
-    if (UIEdgeInsetsEqualToEdgeInsets(_edgeInsets, edgeInsets)) {
+    if (!UIEdgeInsetsEqualToEdgeInsets(_edgeInsets, edgeInsets)) {
         _edgeInsets = edgeInsets;
         [self relayoutText];
     }

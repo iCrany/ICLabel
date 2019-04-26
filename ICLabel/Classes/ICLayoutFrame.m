@@ -83,15 +83,15 @@
 
 - (void)drawInContext:(CGContextRef)context rect:(CGRect)rect {
     NSInteger numberOfLines = [self __calcNumberOfLine];
-    CGPoint lineOriginPoints[numberOfLines];
-    CTFrameGetLineOrigins(_ctFrame, CFRangeMake(0, numberOfLines), lineOriginPoints);
     BOOL isMoreThanNumberOfLineLimit = [self __isMoreThanNumberOfLineLimit];
     
     for (CFIndex lineIndex = 0; lineIndex < numberOfLines; lineIndex++) {
         ICLayoutLine *line = _lines[lineIndex];
-        CGPoint lineOrigins = lineOriginPoints[lineIndex];
+        CGPoint lineOrigins = line.lineOrigin;
         
-        CGContextSetTextPosition(context, lineOrigins.x, lineOrigins.y);//更新一下 context 中的起始坐标，若该行坐标出现了问题就会导致出错行的位置错乱
+        CGContextSetTextPosition(context,
+                                 lineOrigins.x,
+                                 lineOrigins.y);//更新一下 context 中的起始坐标，若该行坐标出现了问题就会导致出错行的位置错乱
         
         if (isMoreThanNumberOfLineLimit && lineIndex == numberOfLines - 1) {
             CFRange curLineRange = line.stringRange;
